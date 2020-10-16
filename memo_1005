@@ -1,0 +1,254 @@
+** 게시판 만들기 ***
+
+시퀀스생성: 
+create sequence board_seq increment by 1 start with 1 maxvalue 1000;
+
+테이블:
+create table board(
+num number primary key,
+writer varchar2(20),
+email varchar2(20),
+subject varchar2(20),
+password varchar2(10),
+reg_date date,
+ref number,
+re_step number,
+re_level number,
+readcount number,
+content varchar2(50) );
+
+-------------------------
+
+* BoardWriterForm.jsp
+
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+table{
+   width: 500px; height: 300px;
+}
+td{
+   width: 100px; height: 50px;
+   text-align: center;
+}
+tr,td{
+   background: lightgreen;
+}
+h2{
+   text-align: center;
+}
+</style>
+</head>
+<body>
+<h2>게시글 쓰기</h2>
+<form action="BoardWriteProc.jsp" method="post">
+<center>
+<table border="1">
+<tr>
+<td>작성자</td>
+<td><input name="writer"></td>
+</tr>
+<tr>
+<td>제목</td>
+<td><input name="subject"></td>
+</tr>
+<tr>
+<td>이메일</td>
+<td><input type="email" name="email"></td>
+</tr>
+<tr>
+<td>비밀번호</td>
+<td><input type="password" name="pw"></td>
+</tr>
+<tr>
+<td>글내용</td>
+<td><textarea cols="30" rows="5" name="content" ></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="글쓰기">
+<input type="reset" value="다시작성">
+<input type="button" value="전체 게시글보기"
+onclick="location.href='BoardList.jsp'" >
+</td>
+</tr>
+</table>
+</center>
+</form>
+
+</body>
+</html>
+
+
+-------------------------
+
+* BoardWriteProc.jsp
+
+// 게시글 작성한 데이터를 한번에 읽어들임
+
+<jsp:useBean id="boardbean" class="model.BoardBean">
+<jsp:setProperty property="*" name="boardbean"/>
+</jsp:useBean>
+<%
+request.setCharacterEncoding("utf-8");
+
+// db에 빈 클래스 넘겨줌
+BoardDAO bdao=new BoardDAO();
+bdao.insertBoard(boardbean);
+
+// 게시글 저장 후 전체 게시글로 이동
+response.sendRedirect("BoardList.jsp");
+%>
+
+
+-------------------------------
+
+* int ref=0; // 글 그룹 초창기0
+* int re_step=1; // 새글이므로=부모글이므로 초창기1
+* int re_level=1; //
+
+
+------------------------------
+
+* BoardList.jsp
+// 모든 글의 번호, 제목, 작성자, 작성일, 조회수 
+
+
+
+
+--------------------------------
+
+** BoardDAO
+
+--------------------------
+
+// 수정 BoardUpdateForm.jsp 
+삭제 BoardDeleteForm.jsp
+목록보기 BoardList.jsp
+
+-----------------------------
+
+** 표현언어: EL(Expression Language)
+
+<%=a%> -> ${a}
+
+출력문 3가지 : 
+
+${"hello" }
+<%="hello" %>
+<%
+out.print("hello");
+%>
+
+
+----------------
+
+** 표현언어방식
+
+정수형: ${10}
+실수형: ${1.2 }
+문자열: ${"hu" }
+논리: ${true }
+${4 % 3 } 
+${4 mod 3 }
+${5>3 }
+모양 그대로 표현: 
+\${1+2 } : ${1+2 }
+=> ${1+2 } : 3 이렇게 뜸
+
+
+<c:if a=${empty input }>  
+<!-- a가 널값이면(empty) if문 -->
+텅빈
+</c:if>
+
+---------------------------
+
+* 표현언어로 값 가져오기
+getParameter() 대신 param 객체 사용!
+
+.  or [ " " ] 둘 중 하나를 이용하여 사용자가 입력한 값 얻어옴
+
+
+- a.jsp
+
+<form action="test.jsp" method="post">
+<lebel for="id">아이디</lebel>
+<input name="id" id="userid"><br>
+<lebel for="pw">비번</lebel>
+<input name="pw" id="userpw"><br>
+<input type="submit" value="로그인">
+</form>
+
+
+- test.jsp
+
+아이디: ${param.id }<br>
+비번: ${param["pw"] }<br>
+${param.id=="ee"}  
+// equals 함수 이용안하고 == 으로 이용. 
+
+
+-----------------------------
+
+- a.jsp
+
+<form action="test.jsp" method="post">
+수1: <input name="n1"><br>
+수2: <input name="n2"><br>
+<input type="submit" value="전송">
+</form>
+
+
+- test.jsp
+
+${param.n1}+${param.n2 }=${ param.n1+param.n2 }
+
+---------------------------------
+
+** 서블릿에 있는 값 가져와서 출력
+* RequestDispatcher 이용
+* 서블릿의 값 가져오는 거라서 서블릿에서 실행
+
+- 서블릿
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int n1=10;
+		int n2=20;
+		int add=n1+n2;
+		
+		// 속성값 셋팅
+		request.setAttribute("n1",n1);
+		request.setAttribute("n2",n2);
+		request.setAttribute("add",add);
+		
+		RequestDispatcher di=request.getRequestDispatcher("test.jsp");
+		di.forward(request, response);
+	}
+
+
+
+- test.jsp
+
+${n1 }+${n2 }=${add }
+
+
+--------------------
+
+** 표현언어의 내장객체
+page -> pageScope
+request -> requestScope
+session -> sessionScope
+application -> applicationScope
+
+request.getParameter("name");
+-> ${requestScope.name}
+-> ${param.name}
+이렇게 표현 가능
+
+----------------------
+
+** JSTL : jsp standard tag library
