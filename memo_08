@@ -1,0 +1,8473 @@
+[0807]
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul>
+            <!-- blank�� ��â/ self�� ����â -->
+            <li><a href="http://www.naver.com" target="_blank">
+            ���̹�</a></li>
+            <li><a href="http://www.naver.com" target="_self">
+            ���̹�</a></li>
+        </ul>
+    </body>
+
+</html>
+
+
+--------------
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+            �˻�: <input type="text" size="10">
+            <!-- input ���� ��ư ����� value�� ��ư�̸� -->
+            <!-- button���� ��ư ����� <> ���� ��ư�̸� -->
+            <input type="button" value="but1">
+            <button type="button">but2</button><br>
+            <!-- submit : ������ ������ �����ϴ� ��ư -->
+            submit: <input type="submit" value="����">
+            <button type="submit">����1</button> <br>
+
+            �̹�����ư: <input type="image" src=
+            "C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg" width="200" height="100">
+        </form>
+    </body>
+
+</html>
+
+-------------
+
+üũ�ڽ�
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+            «�� <input type="checkbox" value="1" >
+            <!-- checked: üũ�� �� ���·� ��� -->
+            ������ <input type="checkbox" value="2" checked >
+        </form>
+    </body>
+
+</html>
+
+
+----
+
+������ư
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+            «�� <input type="radio"" name="a">
+            <!-- checked: üũ�� �� ���·� ��� -->
+            ������ <input type="radio"  name="a" checked >
+
+        </form>
+    </body>
+
+</html>
+
+
+-------
+
+������ư�� �̹��� ����
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+           <input type="radio" name="a">
+           ��� <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg"
+            alt="���" width="200" height="100">
+           <input type="radio" name="a">
+           ġŲ <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg"
+            alt="ġŲ" width="200" height="100">
+        </form>
+    </body>
+
+</html>
+
+
+
+----
+
+�޺��ڽ�
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+            <!-- �޺��ڽ� -->
+           <select name="food" >
+               <option value="1">����</option>
+               <option value="2">�Ľ�Ÿ</option>
+               <option value="3">ġŲ</option>
+
+           </select>
+        </form>
+    </body>
+
+</html>
+
+
+----------
+
+�����͸���Ʈ(�ؽ�Ʈ �ʵ忡 ����Ʈ �����)
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+            ���: <input type="text" list="lan"><br>
+            <datalist id="lan">
+                <option value="java">
+                <option value="c#">
+                <option value="python">
+                </option>
+            </datalist>
+        </form>
+    </body>
+
+</html>
+
+
+------------
+
+�ɼǱ׷�(�޺��ڽ� ����� �׷����� ����)
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+           <select>
+               <optgroup label="��������">
+                   <option value="1">�������</option>
+                   <option value="2">������</option>
+                   <option value="3">�������</option>
+               </optgroup>
+               <optgroup label="�ι���">
+                   <option value="1">���а�</option>
+                   <option value="1">������</option>
+                   <option value="1">������</option>
+               </optgroup>
+           </select> 
+        </form>
+    </body>
+
+</html>
+
+
+--------
+
+���̺�-text ���� 2����
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h3>�����</h3>
+        <hr>
+        <form>
+          <label >id<input type="text"></label> <br>
+          <label for="id">id</label>
+          <input type="text" id="id">
+        </form>
+    </body>
+
+</html>
+
+
+
+--------------
+
+���տ���
+
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>������</h1>
+        ����Ʈ���� ����� ���� �ǰ��� ����ϴ�. ���� ���� ��Ź�帳�ϴ�.
+        <hr>
+        <p>
+        <label for="grade">�г�</label>
+        <input type="radio" name="g" id="grade">1�г�
+        <input type="radio" name="g" id="grade">2�г�
+        <input type="radio" name="g" id="grade">3�г�
+        <input type="radio" name="g" id="grade">4�г�
+        </p>
+        <p>
+        <label for="gender">����</label>
+        <input type="radio" name="gen" id="gender">��
+        <input type="radio" name="gen" id="gender">��
+        </p>
+        <p>
+        <label for="aa">���ɺо�</label>
+        
+        <select>
+            <option value="1">����� ����Ʈ����</option>
+            <option value="2">���� ����Ʈ����</option>
+        </select>
+        </p>
+        <p>
+        <label for="bb">����(���߼���)</label>
+        <input type="checkbox" value="11" id="bb">����
+        <input type="checkbox" value="12" id="bb">��ȹ
+        <input type="checkbox" value="13" id="bb">����
+        <input type="checkbox" value="14" id="bb">â��
+        </p>
+        <p>
+        <label for="cc">����� ���� ��</label>
+        <textarea name="ta" id="cc" cols="20" rows="5"></textarea>
+        </p>
+        <p>
+            Copyright &copy 2020 by Jiwon
+        </p>
+        
+    </body>
+</html>
+
+
+----------
+
+��¥ ���� ��
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+       <form >
+           <pre>
+               month: <input type="month" value="2020-08">
+               week: <input type="week" value="2020-W36">
+               date: <input type="date" value="2020-08-07">
+           </pre>
+       </form>
+        
+    </body>
+</html>
+
+
+----------
+
+��¥, �ð� ���̺� Ʋ�� ¥��
+(table border ���� ���ϸ� �� ���� Ʋ�� ����)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+       <form >
+           �츮���� �ʴ��մϴ�
+           <table>
+               <tr>
+                   <td>�츮��</td>
+                   <td><input type="date"></td>
+               </tr>
+               <tr>
+                   <td>�ð�</td>
+                   <td><input type="time"></td>
+               </tr>
+           </table>
+       </form>
+        
+    </body>
+</html>
+
+
+----------
+
+* input type ������ ����(range ����)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <label>�����ּ�
+                <input type="emeil">
+            </label><br>
+            
+            <label for="aa">����ó</label>
+            <input type="tel" id="aa"><br>
+            <label for="bb">���α�/Ȩ������</label>
+            <input type="url" id="bb"><br>
+            
+            <label>����
+                <input type="number" min="1" max="5" value="1">
+            </label><br>
+            <!-- range �����/ 1~10���� step 2�� ����-->
+            <label for="cc">�����</label>
+            <input type="range" min="1" max="10" step="2"  id="cc">
+        </form>
+    </body>
+</html>
+
+
+
+-----------
+
+input ����
+
+   <form >
+            email: <input type="email" 
+            placeholder="id@host"><br>
+            Ȩ������: <input type="url" 
+            placeholder="http://"><br>
+            ����ó: <input type="tel" 
+            placeholder="010-1111-1111"><br>
+            �˻�â: <input type="search" 
+            placeholder="�˻���""><br>
+            
+       </form>
+
+
+
+--------
+
+form+fieldset+small
+
+ <form >
+        <fieldset>
+            <legend>�л�����</legend>
+            <label for="mail">�̸���</label>
+            <input type="email" id="mail"><br>
+            <label for="phone">��ȭ��ȣ</label>
+            <input type="tel" id="phone"><br>
+            <small>ps: 010-1234-5678</small>
+        </fieldset>
+            
+       </form>
+
+
+----------
+
+
+* autofocus ȭ�� Ű�� �ٷ� Ŀ��ǥ��
+* readonly: �ؽ�Ʈ �б⸸ ����
+
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>�������� Ư�� ��û</h1>
+        <fieldset>
+            <legend>��������</legend>
+            <label >����ȸȭ(�ʱ�)
+                <!-- readonly: �ؽ�Ʈ �б⸸ ���� -->
+                <input type="text" value="���� 9:00~11:00" readonly>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>��û��</legend>
+            <label for="name">�̸�</label>
+            <!--autofocus ȭ�� Ű�� �ٷ� Ŀ��ǥ��  -->
+            <input type="text" id="name" autofocus required><br>
+            <label for="g">�й�</label>
+            <input type="number" id="g" 
+            placeholder="�����¾��� �Է�"><br>
+            <label for="gg">�а�</label>
+            <select id="gg">
+                <option value="1">��ǻ�Ͱ��а�</option>
+                <option value="2">����</option>
+            </select>
+
+        </fieldset>
+    </body>
+</html>
+
+
+
+-----------
+
+
+�ڹٹ���
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+
+public class GGG {
+	public static void main(String[] args) throws IOException {
+		
+		int[]a= {10,-1,20,10};
+		FileOutputStream out=new FileOutputStream("data.txt");
+		for(int i=0;i<a.length;i++) {
+			out.write(a[i]);
+		}
+		out.close();
+		
+		FileInputStream in= new FileInputStream("data.txt");
+		int r=0;
+		byte b[]=new byte[4];
+		int sum=0;
+		while((r=in.read(b))!=-1) {
+			
+		}
+		
+		for(int i=0;i<b.length;i++) {
+			sum+=b[i];
+		}
+		
+		System.out.println(sum);
+		
+		
+		JFrame j=new JFrame();
+		j.setSize(500,500);
+		j.setVisible(true);
+		j.setLayout(new FlowLayout());
+		
+		j.setTitle("Java Programming");
+		JLabel l=new JLabel("Password:");
+		j.add(l);
+		JPasswordField p=new JPasswordField(10);
+		j.add(p);
+		
+		JButton ok=new JButton("ok");
+		JButton reset=new JButton("Reset");
+		j.add(ok);
+		j.add(reset);
+		
+		ok.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(p.getText());
+			}
+		});
+		
+	}
+}
+
+
+-----------
+
+
+����167 ��ǰ�ֹ���
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>��ǰ�ֹ���</h1>
+        <fieldset>
+            <legend>���� ����</legend>
+            <label for="name">�̸�</label>
+            <input type="text" id="name"
+             placeholder="������� �Է�"><br>
+             <label for="phone">����ó</label>
+             <input type="tel" id="phone" 
+             placeholder="���������� ��ȣ"><br>
+
+        </fieldset>
+        <fieldset>
+            <legend>����� ����</legend>
+            <label for="ad">�ּ�</label>
+            <input type="text" id="ad"><br>
+            <label for="p">��ȭ��ȣ</label>
+            <input type="tel" id="p"><br>
+            <label for="t">�޸�</label>
+            <textarea id="t" cols="20" rows="5"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>�ֹ� ����</legend>
+            <input type="checkbox" >���׸��� ��Ƽ����(100g)
+            <input type="number" min="1" max="5" step="1" value="0">��<br>
+            <input type="checkbox" >�ε��׽þ� ������(100g)
+            <input type="number" min="1" max="5" step="1" value="0">��<br>
+            <input type="checkbox" >Ž��µ���(������)(100g)
+            <input type="number" min="1" max="5" step="1" value="0">��<br>
+
+        </fieldset>
+        <p>
+            <button type="submit">�ֹ��ϱ�</button>
+            <button type="result">�ٽ��ۼ�</button>
+        </p>
+    </body>
+</html>
+
+
+-----------
+
+*CSS : head�� ��Ÿ�� ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS�����غ���</title>
+        <!-- style �±״� ������ head�� ǥ��! -->
+        <style>
+            /* ������ {�Ӽ�} */
+            h2{
+                font-size: 20px;
+                color: orange;
+            }
+            p{color: blue; }
+        </style>
+    </head>
+    <body>
+        <h2>������ �ݿ���</h2>
+        <p>���ϵ� ���θ� �մϴ�</p>
+    </body>
+</html>
+
+
+--------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS�����غ���</title>
+        <style>
+        </style>
+        <!-- �ܺ� ������ �̿��Ͽ� CSS���� -->
+        <link rel="stylesheet" href="b.css">  
+    </head>
+    <body>
+        <h2>������ �ݿ���</h2>
+        <p>���ϵ� ���θ� �մϴ�</p>
+    </body>
+</html>
+
+
+
+
+
+��������
+���� 1
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>����</h1>        
+    <hr>
+    <table border="1">
+        <caption>�л� ���� ǥ</caption>
+        <tr>
+            <th>�̸�</th>
+            <th>����</th>
+            <th>����</th>
+        </tr>
+        <tr>
+            <td>ȫ�浿</td>
+            <td>100</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>�̱浿</td>
+            <td>90</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>�ڱ浿</td>
+            <td>90</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <th>���</th>
+            <th>93.3</th>
+            <th>91.6</th>
+        </tr>
+    </table>
+    </body>
+</html>
+
+
+
+����2
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>��ư</h1>        
+    <hr>
+    <table>
+        <tr>
+            <td><input type="button" value="1"></td>
+            <td><input type="button" value="2"></td>
+            <td><input type="button" value="3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4"></td>
+            <td><input type="button" value="5"></td>
+            <td><input type="button" value="6"></td>
+        </tr>
+    </table>
+    </body>
+</html>
+
+
+
+����3
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>�α��� ��</h1>        
+    <hr>
+   <fieldset>
+       <legend>Login</legend>
+       <label for="id">Username</label>
+       <input type="text" id="id">
+       <label for="pw">Password</label>
+       <input type="password" id="pw">
+   </fieldset>
+    </body>
+</html>
+
+
+����4
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>ȸ�� ������ �Է��ض�.</h1>        
+    <hr>
+   <fieldset>
+       <legend>ȸ������</legend>
+       <label for="mail">�̸���:</label>
+       <input type="email" id="mail"><br>
+       <label for="home">Ȩ������:</label>
+       <input type="url"id="mail"><br>
+       <label for="p">��ȭ��ȣ:</label>
+       <input type="tell" id="p">
+   </fieldset>
+   ����ó: &phone; 010-1234-5678
+    </body>
+</html>
+
+
+--------------------
+
+
+
+�ڹٽ�ũ��Ʈ+color ���� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form>
+            <input type="color" value="#00BFFF"
+            onchange="document.body.style.color
+            =this.value">
+        </form>
+    </body>
+</html>
+
+
+
+-------
+
+* Ÿ ����Ʈ�� �� ���ö� ������ ���� �̿�:
+F12������  element.style �κп� color ���� �ƹ��ų� ģ �Ŀ� �����̵�� ���ڻ� ���ٴ�� ���� rgb��ȣ Ȯ�� ����
+
+���� ���翬��
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+                text-align: center;
+                margin-top: 150px;
+                /* Ÿ ����Ʈ�� �� ���ö� ������ ���� �̿� */
+                /* F12������  element.style �κп� color ���� �ƹ��ų� ģ �Ŀ�*/
+                /* �����̵�� ���ڻ� ���ٴ�� ���� rgb��ȣ Ȯ�� ���� */
+                color: #4285f4;
+            }
+            /* h1���̺��� �ι�° span ���� */
+            h1 span:nth-child(2){
+                color: #ea4335;
+            }
+            h1 span:nth-child(3){
+                color: #fbbc05;
+            }
+            h1 span:nth-child(4){
+                color: #4285f4;
+            }
+            h1 span:nth-child(5){
+                color: #34a853;
+            }
+            h1 span:nth-child(6){
+                color: #ea4335;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- span: �ٹٲ� ���� ���� ����(CSS���� ���� �̿�) -->
+       <h1><span >G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h1>
+    </body>
+</html>
+
+
+
+-----------
+
+CSS ���� ������: css cheat sheet
+�����ؼ� ¥�� ��
+
+��Ʈ��Ʈ���� �̿�
+
+----------
+
+*CSS ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h3{
+                color: orange;
+            }
+            h4{color: rgb(92, 92, 221);}
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <h3>�� ������ �����ΰ� ������ �и��մϴ�</h3>
+        <h4>�� ǥ�ؿ� ���� �� ������ �����ΰ� ������ �и��Ǿ� �ֽ��ϴ�</h4>
+        <h4>������ HTML�� �̿��� �����ϰ� �������� CSS�� �̿��� �ٹ̴� ���Դϴ�.</h4>
+    </body>
+</html>
+
+
+------
+
+*CSS  ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background-color: pink;}
+            h1{color: purple;}
+            /* hr �β� 5px, �Ǽ�, yellow�� */
+            hr{border: 5px solid yellow;}
+            span{color: blue; font-size: 20p;}
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <hr>
+        <p>
+            ���� <span>�� ���α׷��Ӵ�</span>
+        </p>
+    </body>
+</html>
+
+-----------
+
+*CSS����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background-color: linen;}
+          h3{text-align: center; color: black;}
+          p{
+              color: purple; margin-left: 30px; 
+              margin-right: 30px;
+          }
+        </style>
+    </head>
+    <body>
+        <h3>ȫ�浿</h3>
+        <hr>
+        <p>���� ȫ�浿�Դϴ�.
+            ���α׷����� �ϸ� �ַ� �ð��� �����ϴ�.
+            ������ �����鼭 �޽��� ���մϴ�.
+        </p>
+    </body>
+</html>
+
+-------
+
+* ���� ��Ÿ�Ͻ�Ʈ+�ζ���
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           p{color: red; font-size: 15px;}
+        </style>
+    </head>
+    <body>
+        <!-- ���� ���� �ζ��� �����ڰ� �켱 -->
+        <p style="color: blue;">���纣���� �׻�ȭ ȿ��</p>
+        <p style="color: magenta; 
+        font-size: 30px;">���纣���� �׻�ȭ����
+        ����þƴ��� �����ϰ� �ִ�.</p>
+    </body>
+</html>
+
+
+--------
+
+* �ܺ� ��Ÿ�Ͻ�Ʈ
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           p{color: red; font-size: 15px;}
+        </style>
+    </head>
+    <body>
+        <p >���纣���� �׻�ȭ ȿ��</p>
+        <p>���纣���� �׻�ȭ����
+        ����þƴ��� �����ϰ� �ִ�.</p>
+        <!-- �ܺ� ��Ÿ�Ͻ�Ʈ -->
+        <link type="text/css" rel="stylesheet"
+        href="b.css">
+    </body>
+</html>
+
+---------
+
+* �ܺ� ��Ÿ�Ͻ�Ʈ2(import)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- �ܺ� ��Ÿ�� ��Ʈ �ҷ����� ��� -->
+          <style>
+              @import url(b.css);
+         </style>
+    </head>
+    <body>
+        <p >���纣���� �׻�ȭ ȿ��</p>
+        <p>���纣���� �׻�ȭ����
+        ����þƴ��� �����ϰ� �ִ�.</p>
+    </body>
+</html>
+
+
+----------
+
+* id������/ Ŭ���� ������/�׷켱����
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          /* �Ӽ��� �����ϸ� , �� ���� �� ����(�׷켱����) */
+        h1,li{color: brown;}
+        /* Ŭ���� ������ */
+        body.main{background-color: aliceblue;}
+        .���{color: red;}
+        /* id������ */
+        #list{
+            width: 600;
+            padding: 15px;
+            border: 1px dotted gray;}
+      </style>
+    </head>
+    <body class="main">
+       <h1>�� ���α׷���</h1>
+       <hr>
+       <p>�н� ����</p>
+       <ul id="list">
+
+           <li>JAVA</li>
+           <li>DB</li>
+           <li>HTML</li>
+       </ul>
+       <p class="���">50�� ���ϴ� F</p>
+    </body>
+</html>
+
+--------------
+
+* �ζ����±�+!important 
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+         body{color: blue;}
+         /* �±׼����ں��� �ζ��� �����ڰ� �켱������ */
+         /* !important �� ���� �̰� �켱�� �� */
+         h1{color: brown !important;}
+      </style>
+    </head>
+    <body>
+      <h1 style="color: green;">�������ۺ������� �̼�</h1>
+      ������� ��ü������ ������ �ִ� å,<br>
+      �츮�� ������ ��� ����鿡�� ������ �ǰ� �ͽ��ϴ�.
+      <p>
+          �츮�� å�� �Ⱓ�ϱ� ���� ������ ���Դϴ�.
+      </p>
+      <p style="color: red; font-style: italic;">
+          "�� å�� ����鿡�� ������ �˴ϱ�?"
+      </p>
+    </body>
+</html>
+
+
+-------------
+
+www.w3.org
+����Ʈ
+
+
+---------
+
+-�ڽ� ������
+-�ڼ� ������
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        /*�ڼ� ������ */
+        div strong{color: blueviolet;}
+        /* �ڽ� ������ */
+        div>strong{background-color: yellow;}
+      </style>
+    </head>
+    <body>
+        <div>
+           <div>8��<strong>�н�����</strong></div>
+            <ul>
+                <li>DB</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+            <div>60�� ���ϴ� F����</div>
+        
+    </body>
+</html>
+
+-----------
+
+�ڽ�,�ڼ�, ��Ÿ��� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        /* �׷� */
+       h3,li{color: blue;}
+       /* �ڽ� ������ */
+       div>div>strong{background:yellowgreen;}
+       /* �ڼ�(ul�� �ڽ��� li. li�� �ڽ��� strong) */
+       ul strong{color: blueviolet;}
+       /* Ŭ���� ������ */
+       .���{color: red;}
+       .bb{background-color: lightcyan;}
+       /* id ������ */
+       #list{background: lemonchiffon;}
+       /* �ڼ� ������ Ȱ�� / ul span ���ε� ����*/
+       #list span{color: brown;}
+       /* hover: ���󼿷���(���콺 �ø��� �� ����) */
+       li:hover{background-color: goldenrod;}
+       /* first-letter: ù���� */
+       h3::first-letter{color: maroon;}
+      </style>
+    </head>
+    <body class="bb">
+        <h3>������</h3>
+        <hr>
+        <div>
+           <div>8�� <strong>�н� ����</strong></div>
+            <ul id="list">
+                <li><span>DB</span></li>
+                <li><strong>HTML</strong></li>
+                <li>CSS</li>
+            </ul>
+            <div class="���">60�� ���ϴ� F����</div>
+        
+    </body>
+</html>
+
+
+-------------
+
+* ���� ��Ÿ�� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+      
+      </style>
+    </head>
+    <body > 
+        <!-- ���� ��Ÿ�� ����. weight: ����/ -->
+       <p style="font-weight: bold;">font1</p>
+       <p style="font-weight: 900;">font2</p>
+       <p style="font-style: italic;">font3</p>
+       <p style="font-style: oblique;">font4</p>
+       <!-- em: ��� -->
+       <p><span style="font-size: 2em">2�� ũ��</span></p>
+    </body>
+</html>
+
+
+--------
+
+���� §��
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          
+          p{font-size: 11px;}
+          .a{font-weight: 700; font-size: 2em;}
+      </style>
+    </head>
+    <body > 
+       <h1>�ֽ� �� ������ Ʈ����</h1>
+       <p><strong class="a">������ �� ������</strong> - �پ��� ȭ�� ũ�⿡ ����ȭ�ϴ�</p>
+       <p><strong class="a">�÷� ������</strong> - ��ü���� �������</p>
+       <p><strong class="a">Ǯ��ũ�� ���</strong> - �������� ����</p>
+       
+    </body>
+</html>
+
+***
+
+�ٸ������ �Ѱ�
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          .a strong{font-weight: 700; font-size: larger;}
+      </style>
+    </head>
+    <body class="a"> 
+       <h1>�ֽ� �� ������ Ʈ����</h1>
+       <p><strong >������ �� ������</strong> - �پ��� ȭ�� ũ�⿡ ����ȭ�ϴ�</p>
+       <p><strong >�÷� ������</strong> - ��ü���� �������</p>
+       <p><strong >Ǯ��ũ�� ���</strong> - �������� ����</p>
+       
+    </body>
+</html>
+
+
+------------
+
+
+** ī�乮�� ����
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h1 {
+            color: brown;
+            text-align: center;
+        }
+
+        p>label {
+            color: blue;
+        }
+
+        div {
+            background-color: pink;
+        }
+
+        .copy {
+            background-color: orange;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>������</h1>
+    ����Ʈ���� ����� ���� �ǰ��� ����ϴ�. ���� ���� ��Ź�帳�ϴ�.
+    <hr>
+    <div>
+        <p><label for="grade">�г�</label>
+            <input type="radio" id="grade" name="g">1�г�
+            <input type="radio" id="grade" name="g">2�г�
+            <input type="radio" id="grade" name="g">3�г�
+            <input type="radio" id="grade" name="g">4�г�
+        </p>
+        <p>
+            <label for="gender">����</label>
+            <input type="radio" id="gender" name="gg">��
+            <input type="radio" id="gender" name="gg">��
+        </p>
+        <p>
+            <label for="aa">���� �о�</label>
+            <select id="aa">
+                <option>����� ����Ʈ����</option>
+                <option>�Ӻ���� ����Ʈ����</option>
+            </select>
+        </p>
+        <p>
+            <label for="bb">����(���� ����)</label>
+            <input type="checkbox" id="bb">����
+            <input type="checkbox" id="bb">��ȹ
+            <input type="checkbox" id="bb">����
+            <input type="checkbox" id="bb">â��
+        </p>
+        <p>
+            <label for="cc">����� ���� ��</label>
+            <textarea id="cc" id="" cols="20" rows="2"></textarea>
+        </p>
+    </div>
+    <p class="copy">
+        Copyright &copy; 2020 by Jiwon
+    </p>
+
+</body>
+
+</html>
+
+
+
+[0811]
+
+* �׸���ȿ��(text-shadow)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{font: normal 24px;}
+            /* �׸���ȿ�� ���ΰŸ�3 ���ΰŸ�3  �������� ���� */
+            .aa{text-shadow: 3px 3px;}
+            .bb{text-shadow: 3px 3px red;}
+            .cc{text-shadow: 3px 3px 5px skyblue;}
+            .dd{color: white; 
+                text-shadow: 2px 2px 4px black;}
+            /* ��� �� ���� ���� */
+            .ee{color: yellow;
+                text-shadow: 2px 2px 2px black,
+                            0 0 25px blue,
+                            0 0 5px  darkblue;}                ;}
+        </style>
+    </head>
+    <body>
+        <div class="aa">HTML5</div>
+        <div class="bb">HTML5</div>
+        <div class="cc">HTML5</div>
+        <div class="dd">HTML5</div>
+        <div class="ee">HTML5</div>
+    </body>
+</html>
+
+---------
+
+��������
+
+[HTML ����]
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            @import url(b.css);
+        </style>
+        
+    </head>
+    <body>
+        <h3>�� ���α׷���</h3>
+        <hr>
+            <details>
+            <summary>���� ����</summary>
+            <p class="su">���� �⺻ ������ �� ��ǻ�Ϳ��� ���� ������ 
+                �ٸ� ��ǻ�Ϳ��� ���� �� �� �ֵ��� �ϴ� ���̴�.</p>
+            </details>
+            <details>
+            <summary>�� Web�ΰ�?</summary>
+            <p class="su">�� ������ ��ǻ�͵��� ���ͳ����� �Ź���ó�� �����ϰ�
+                 �� ������ ���� �ְ� ���� �� �ִ�.</p>
+            </details>
+           <details>
+            <summary>�� �������� �����ϴ� 3���� ���</summary>
+            <p class="su">
+                <ul>
+                    <li>HTM - ������ ������ ����</li>
+                    <li>CSS(Casading Style Sheet) - ������ ���</li>
+                    <li>Javascript - �ൿ �� ���� ���α׷�</li>
+                </ul>
+            </p>
+            </details>
+
+            <br>
+
+            <h1>���� ���� �� �����</h1>
+            <hr>
+            <fieldset>
+                <legend>���� ���� �Է�</legend>
+                ������
+                <select >
+                    <option >�Ǽ�</option>
+                    <option >����</option>
+                </select> <br>
+                ���β� <input type="number">
+                ���� <input type="color" value="black"><br>
+                ������(0~100): <input type="range" min="1" max="100">
+            </fieldset>
+
+            <br>
+            <!-- <link rel="stylesheet" href="b.css"> -->
+            <p class="aa">
+                text
+            </p>
+    </body>
+</html>
+
+
+[CSS����]
+
+h3{color: blue;}
+.su{color: magenta;}
+.aa{text-align: center; color: blue;}
+
+
+--------------------
+
+** span => text-align: center; ����(span�� �ܶ����� ���°� �ƴ�. ������ �Ϻκ�.)
+
+
+---------
+
+* ���پ��� ��ũ(text-decoration: none)
+* �������� text-decoration: overline;
+* �鿩���� �������� text-indent: 3em; text-align: justify;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h2{text-align: right;}
+        /* ��Ҽ� */
+        span{text-decoration: line-through;}
+        /* ���� */
+        strong{text-decoration: overline;}
+        /* 3���� �鿩���� �������� */
+        .p1{text-indent: 3em; text-align: justify;}
+        /* 1���� �鿩���� ��� ���� */
+        .p2{text-indent: 1em; text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>�ؽ�Ʈ ����</h2>
+    <p class="p1">
+        HTML�±׷� �鿩����, ����, 
+        ���鰰�� <span>�ؽ�Ʈ ����</span>�� �� ����.
+    </p>
+    <p class="p2">
+        <strong>��Ÿ�� ��Ʈ</strong>�� �ؽ�Ʈ ��� �����ϴ�.
+    </p>
+    <a href="http://www.naver.com" 
+    style="text-decoration: none;">���� ���� �����۸�ũ</a>
+</body>
+</html>
+
+---------------------------
+
+* ��Ͻ�Ÿ��(p 247)
+
+
+
+----------------------
+
+* �׸���(text-shadow) ����
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            h2{background-color: darkslategrey; 
+                color: white;
+                text-align: center;
+                text-shadow: 3px 2px 5px black;}
+        </style>
+    </head>
+    <body>
+        <h2>�ֽ� �� ������ Ʈ����</h2>
+    </body>
+</html>
+
+------------------------
+
+* ���� 291 ����
+div������ ������ ���� ��Ÿ�� ����
+������ rgba ǥ��� ���, �Ķ��� �������� 0.2
+���� �׵θ����� �Ķ������� �ض�
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{
+            /* rgba(��,��,��,������) */
+            background-color:rgba(0,0,255,0.2);
+            /* 1�ȼ� �Ǽ� �׵θ� */
+            border: 1px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>�� ������ Ʈ���带 ������� ��� �����!</h3>
+        <div class="container">
+            �׷��� ���α׷����� �� ������ ��Ҹ� ������ �����
+            �� ����Ʈ�� �����ϴ� �ô�� ������. ���� �����, �º���,
+            pc�� ��Ƽ ����̽��� �� ���� ������ �� �ִ� �� ������
+            ����� �˾ƾ� �Ѵ�. �ٷ� 
+            <strong>�ڵ��� �̿��� �� ������</strong>�̴�.
+        </div>
+    </body>
+</html>
+
+
+-------------
+
+[������ �̹���(p260)]
+
+* rgba(��,��,��,������)
+background-color:rgba(0,0,255,0.2);
+
+* background-clip: ��� ������� ����
+background-clip: border-box / padding-box / content-box
+
+->border-box : ���� �ܰ��� �׵θ����� ����
+->padding-box: �׵θ� �� �е�����
+->content-box: ���� �κи�
+
+* background-image: url('�̹����ּ�');
+->����̹��� ����
+(background-repeat ���� �̹��� �ݺ� ���� ����)
+(background-size �� �̹��� ũ������ ����)
+
+
+---------------------
+
+�ؽ�Ʈ ��Ÿ��(p228)
+
+* text-decoration : none(������) / underline(����) / overline(����) / line-throgh(��Ҽ�)
+
+
+* text-shadow(�׸���)
+text-shadow:none / ���ΰŸ� ���ΰŸ� �������� ����
+
+
+----------------------
+
+���� ��Ÿ��(p235)
+
+
+
+---------------
+
+
+p241 ����
+
+
+
+-----------
+
+** div / p / span �� ������!!
+
+1.div�� p�� ���Ͽ���̰� span�� �ζ��� ����̴�.
+
+2.div�� ���̾ƿ� ������ �뵵, p�� ���ڴܶ� �뵵
+
+3.<span>�±״� ���� ����� <div>,<p>�±׸� �����±׷� ���Խ�ų �� ����. 
+
+4. ���� ����� <div>�� <p>�±״� �ζ��� ��� <span> ���� ����?
+
+5. <div> , <p>�±״� ��� ���� ��ҷ� �ڵ� �ٹٲ����� �ܶ��� �����ȴ�.
+
+?6. <p>�±� �������� �ٸ� ���� ��� ���� �� ����.
+
+?<p>�±� ���� <span>, <a> �� �ζ��� ��� ���� �� �ִ�.
+
+<div><p>����</p></div> (O)
+<p><div>����</div></p> (x)
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{border: 1px solid grey;}
+            p{border: 1px solid grey;}
+            span{border: 1px solid grey;}
+        </style>
+    </head>
+    <body>
+        <div>����</div>
+        <div>����1</div>
+        <p>����</p>
+        <p>����1</p>
+        <span>����</span>
+        <span>����1</span>
+    </body>
+</html>
+
+
+--------------
+
+<�ڹ�>
+
+
+Ŭ�������� profile�� �����ϰ� ��ü�迭�� ����Ͽ� �ڵ带 �ۼ��ض�.
+
+?
+
+���� ���) �˻��� �̸�:  ȫ�浿
+
+          ȫ�浿�� ��ȣ�� 111-1111�Դϴ�.
+
+          �˻��� �̸�: ��浿
+
+          ��浿�� ����.
+
+          �˻��� �̸�: stop
+
+         ����
+
+
+
+
+import java.util.Scanner;
+
+class Profile {
+	private String name, id;
+
+	Profile(String name, String id) {
+		this.name = name;
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+}
+
+public class GGG {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("�迭�� ����");
+		int n = s.nextInt();
+		Profile[] p = new Profile[n];
+		for (int i = 0; i < p.length; i++) {
+			System.out.println("�̸�,��ȣ");
+			p[i] = new Profile(s.next(), s.next());
+		}
+
+		while (true) {
+			for (int i = 0; i < p.length; i++) {
+				System.out.println("�˻��� �̸�");
+				String a = s.next();
+				if (a.equals("stop")) {
+					System.out.println("����");
+					System.exit(0);
+				} else if (a.equals(p[i].getName())) {
+					System.out.println(a + "�� ��ȣ�� " + p[i].getId());
+
+				} else if (!a.equals(p[i].getName()) && i == (n - 1)) {
+					System.out.println("�̸� ����");
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+** �ٴ�(column) p349
+
+** ������ �� ��ġ��(column-span:all;)
+
+** caption-side: top | bottom (ǥ ���� ��ġ����)
+
+** ���̺����� css�� ���� ���� ���� ����
+(border-collapse: collapse; - ���̺� ��ġ��)
+
+th: �߾�����
+td: ��������
+
+-----------------------------------------
+
+* ���̺� css�� �ٹ̱� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{border: 1px solid blue;
+         /* collapse - ���̺� ��ġ�� �۾�/ �и��� �⺻��(separate) */
+                border-collapse: collapse;}
+            th,td{border: 1px dotted green;}
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>�̸�</th>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>��浿</td>
+                    <td>100</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>ȫ�浿</td>
+                    <td>86</td>
+                    <td>97</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>��</th>
+                    <th>186</th>
+                    <th>192</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
+
+
+------------------------
+
+���̺� �ٹ̱� ����
+
+ /* ¦�� ���� ���� ����� */
+            tbody tr:nth-child(even){
+                background: palegreen;
+            }
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            thead th{height: 40px; width: 100px;
+                    background: aliceblue; color: blue;}
+            tfoot th{height: 20px; width: 100px;
+                    background: cadetblue; color: lightcoral;}
+            td{height: 30px; width: 100px;}
+            table{border: 1px solid blue;
+         /* collapse - ���̺� ��ġ�� �۾�/ �и��� �⺻��(separate) */
+                border-collapse: collapse;}
+            th,td{border: 1px dotted green;}
+            th,td,tfoot{ /*�Ʒ��� �׵θ��� ȸ��*/
+                border-bottom: 1px solid gray;
+            }
+            /* ¦�� ���� ���� ����� */
+            tbody tr:nth-child(even){
+                background: palegreen;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>�̸�</th>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>��浿</td>
+                    <td>100</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>ȫ�浿</td>
+                    <td>86</td>
+                    <td>97</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>��</th>
+                    <th>186</th>
+                    <th>192</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
+
+
+---------
+
+<��������>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* body{background: darksalmon; 
+                font-size: 2em; color: blue;}
+            h1{text-align: center; color: black;}
+            hr{color: gray;}
+            .a{color: red; font-size: larger;}
+            .b{background: yellow;} */
+            
+            ul{color: pink;}
+            ul>li:hover{color: violet;}
+            ul a:hover{text-decoration: underline;}
+            ul a{text-decoration: none;}
+            span{color: black;}
+        </style>
+    </head>
+    <body>
+        <!-- <h1>������</h1>
+        <hr>
+        css
+        <p class="a">
+            ���!!
+        </p>
+        <p class="b">
+            �������Ǻ�
+        </p>
+
+        <br> -->
+
+        <h2>��ũ �ٹ̱�</h2>
+        �Ҹ����� pink���� ���� ���� ��ũ, ���콺�� �ø��� ���ٰ� �Ҹ�
+        violet ������ ����
+        <hr>
+        <ul>
+            <li><a href="http://www.naver.com" ><span>���̹�</span></a></li>
+            <li><a href="http://www.naver.com" ><span>����</span></a></li>
+        </ul>
+    </body>
+</html>
+
+
+-------
+
+** px �������(�����Ǿ�����)
+** em ������(2em: ���� �۲��� 2��)
+
+
+--------
+
+
+��������2
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{border: 15px solid blue; padding: 5px;
+                margin: 20px;}
+        </style>
+    </head>
+    <body>
+        <h3>�̹��� �׵θ�</h3>
+        <hr>
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg"
+         alt="���" width="300" height="250">
+
+         <br>
+
+         <h2>���� ��Ƽ</h2>
+         <hr>
+         <div>
+             <label for="a">����</label>
+             <input type="date" id="a" value="2020-08-16"><br>
+             <label for="b">�ð�</label>
+             <input type="time" id="b"><br>
+             <label for="c">���</label>
+             <input type="text" id="c">
+         </div>
+    </body>
+</html>
+
+-----------------------
+
+��������3
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .a{border: 1px solid black; text-align: center;
+                width: 20px;}
+            .b{border-bottom: 1px solid black;}
+            td>input:hover{color: magenta;}
+
+            div{display: inline-block; border: 1px solid green;
+                margin: 10px; width: 200px;}
+        </style>
+    </head>
+    <body>
+        <h1>���� ���</h1>
+        <hr>
+        <table>
+            <tr>
+                <td class="a">
+                    1
+                </td>
+                <td class="b">�ٽ� ���� �ٴ尡</td>
+                <td>
+                    <input type="button" value="���">
+                </td>
+                <td>
+                    <input type="button" value="����">
+                </td>
+            </tr>
+            <tr>
+                <td class="a">
+                   2
+                </td>
+                <td class="b">������</td>
+                <td>
+                    <input type="button" value="���">
+                </td>
+                <td>
+                    <input type="button" value="����">
+                </td>
+            </tr>
+            <tr>
+                <td class="a">
+                    3
+                </td>
+                <td class="b">How you like that</td>
+                <td>
+                    <input type="button" value="���">
+                </td>
+                <td>
+                    <input type="button" value="����">
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <h2>div Ȱ��</h2>
+        <hr>
+        <div class="aa">
+            �� ������ ���ͳ��� ���� �� ����Ʈ�� �����ϴ� ���� ����Ų��.
+        </div>
+        <div class="bb">
+            �� ������ ���� �ܼ��� ���� ���� ������ �÷��� �ؽ�Ʈ��������
+        </div>  
+        <div class="cc">
+            ���� ������ �� ���, ���� ����Ͻ����� ���� ������ �پ��ϴ�.
+        </div>
+    </body>
+</html>
+
+-----------------------
+
+** �����÷ο�
+overflow: hidden
+overflow: visible
+overflow: scroll
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            p{
+                width: 15em;
+                height: 3em;
+                border: 1px solid gray;
+            }
+            .h{ /*overflow: hidden -> ��ġ�� ������ ����*/
+                overflow: hidden;
+            }
+            .v{ /*overflow: visible -> ��ġ�� ������ ����*/
+                overflow: visible;
+            }
+            .s{ /*overflow: scroll -> ��ġ�� ������ ��ũ��*/
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+    <p class="h">
+        (����=���մ���) ���ֶ� ���� = ������ ��ȸ�� ����� ���� 
+        �������� ���� �ڷγ����̷��� 
+    </p>        
+    <p class="v">
+        (����=���մ���) ���ֶ� ���� = ������ ��ȸ�� ����� ���� 
+        �������� ���� �ڷγ����̷��� 
+    </p>        
+    <p class="s">
+        (����=���մ���) ���ֶ� ���� = ������ ��ȸ�� ����� ���� 
+        �������� ���� �ڷγ����̷��� 
+    </p>        
+    </body>
+</html>
+
+-----------------
+
+���� 367
+ǥ �����
+(caption-side �̿� �� border-collapse�̿�)
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table{border-collapse: collapse; text-align: center;}
+            th,td{border: 1px solid black; padding: 5px;}
+            th{background: lightgray;}
+            caption{caption-side: bottom;}
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>2015 ���� ��������</caption>
+            <tr>
+                <th>����</th>
+                <th>����</th>
+                <th>�л�</th>
+            </tr>
+            <tr>
+                <th>������</th>
+                <td>65.3%</td>
+                <td>94.9%</td>
+            </tr>
+            <tr>
+                <th>����� ������</th>
+                <td>9.1��</td>
+                <td>29.8��</td>
+            </tr>
+            <tr>
+                <th>���������� �̿��</th>
+                <td>28.2%</td>
+                <td>64.9%</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+-----------------------------
+
+
+** ��ǰ�ֹ��� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{width: 500px; margin: 0 auto;}
+            .title{
+                font-weight: bold;
+                width: 80px;
+                float: left;
+            }
+            legend{font-weight: bold; color: purple;}
+            ul li{margin-bottom: 10px; list-style: none;}
+            .centered{text-align: center;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>��ǰ �ֹ���</h1>
+            <form>
+                <fieldset >
+                    <legend>���� ����</legend>
+                    <ul >
+                        <li>
+                            <label for="uname" class="title">�̸�</label>
+                            <input type="text" id="uname" 
+                            placeholder="������� �Է�" required>
+                        </li>
+                        <li>
+                            <label for="tel1" class="title">����ó</label>
+                            <input type="tel" id="tel1" 
+                            placeholder="���������� ��ȣ">
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset >
+                    <legend>����� ����</legend>
+                    <ul >
+                        <li>
+                            <label for="addr" class="title">
+                                �ּ�</label>
+                            <input type="text" size="40" id="addr" 
+                            required>
+                        </li>
+                        <li>
+                            <label for="tel2" class="title">
+                                ��ȭ��ȣ</label>
+                            <input type="tel" id="tel2" required>
+                        </li>
+                        <li>
+                            <label for="comment" class="title">
+                                �� ��</label>
+                            <textarea cols="40" rows="3" id="comment"></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset >
+                    <legend>�ֹ� ����</legend>
+                    <ul >
+                        <li>
+                            <label><input type="checkbox">
+                                ���׸��� ��Ƽ���� (100g) </label>
+                            <label><input type="number" value="0" 
+                                min="0" max="5">�� </label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox">
+                                �ε��׽þ� ������ (100g) </label>
+                            <label><input type="number" value="0"
+                                 min="0" max="5">�� </label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox">
+                                Ž��µ���(������) (100g) </label>
+                            <label><input type="number" value="0"
+                                 min="0" max="5">�� </label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="centered">
+                    <input type="submit" value="�ֹ��ϱ�">
+                    <input type="reset" value="�ٽ� �ۼ�">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+-----------
+
+**hover / focus ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input[type=text]{ 
+                /* input Ʋ css ���� */
+                color: slateblue; /*���ڻ�*/
+                border: 2px solid skyblue; /*�׵θ�*/
+                border-radius: 10px;
+            }
+            /* Ŀ���� ��� ��� �� ���� */
+            input[type=text]:hover{background: yellow;}
+            
+            /* ��Ŀ���� ������(Ŭ��) ����ũ�� 130% */
+            input[type=text]:focus{font-size: 130%;}
+        </style>
+    </head>
+    <body>
+        <label>
+       �̸�: <input type="text" placeholder="������"> 
+        </label>
+    </body>
+</html>
+
+--------------
+
+?Ʋ ��������(input[type=text] ��)?
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input[type=text] {
+            color: palegoldenrod;
+        }
+
+        input:hover,
+        textarea:hover {
+            background: aliceblue;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus {
+            font-size: 130%;
+        }
+
+        label {
+            display: block;
+            padding: 5px;
+        }
+
+        span {
+            text-align: right;
+            display: inline-block;
+            width: 90px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label> <span>Name:</span>
+        <input type="text">
+    </label>
+    <label> <span>Email:</span>
+        <input type="email">
+    </label>
+    <label> <span>Comment:</span>
+        <textarea cols="30" rows="5" 
+        placeholder="�޽���"></textarea>
+    </label>
+    <label class="a">
+        <input type="submit" value="submit">
+    </label>
+
+</body>
+
+</html>
+
+
+-------
+
+** �ִϸ��̼� ����
+
+animation-name: out; /*�ִϸ��̼� ��ȯ*/
+animation-duration: 3s; /*3�ʵ���*/
+animation-iteration-count: infinite; /*�ݺ�Ƚ��-����*/ 
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           @keyframes out{
+               from{font-size: 400%;}
+               to{font-size: 100%;}
+           }
+           h3{
+               animation-name: out; /*�ִϸ��̼� ��ȯ*/
+               animation-duration: 3s; /*3�ʵ���*/
+               animation-iteration-count: infinite; /*�ݺ�Ƚ��-����*/            
+           }
+        </style>
+    </head>
+    <body>
+        <h3>Ż��!!</h3>
+        <p>���ڰ� 4�ʵ��� 400%���� ������ 100%�� �ٲ��.</p>
+    </body>
+</html>
+
+---------------
+
+
+**�ڹٿ���
+
+
+5�� �л��̸��� ������ �Է¹޾� �ؽøʿ� �����Ѵ�. ���� ������ ���� �л��� �˻��Ͽ� ����ϴ� ���α׷�
+
+�л�, ���� : ��浿 90
+�л�, ���� : ȫ�浿 100
+�л�, ���� : �ڱ浿 98
+�л�, ���� : �̱浿 80
+�л�, ���� : �α浿 80
+
+�̷��� ���-> ���� ���� �л� ȫ�浿 100
+
+
+
+<���� Ǭ��>
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class GGG {
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		HashMap<String,Integer> h=new HashMap<>();
+		int max=0;
+		String name=null;
+		while(true) {
+			System.out.println("1. �����Է�"+'\n'+
+					"2. �ֿ�� �л� ���"+'\n'+"3.����");
+			int a=s.nextInt();
+			switch (a) {
+			case 1:
+				System.out.println("�̸�");
+				String n=s.next();
+				System.out.println("����");
+				int g=s.nextInt();
+				h.put(n,g);
+				
+				
+				for(int i=0;i<h.size();i++) {
+					if(max<g) {
+						max=g;
+						name=n;
+					}
+				}
+				break;
+			case 2:
+				System.out.println("�� ��� �л�: "+name+" "+max);
+				break;
+			case 3:
+				System.exit(0);
+			}
+		}
+	}
+}
+
+
+------------------
+
+
+�ڹٹ���2
+
+
+���ڿ��� �Է¹޾� String Ŭ������ Ȱ���Ͽ� enterŰ �Է��ϸ�
+
+�ѱ��ھ� �ڷΰ����� quit�� �Է��ϸ� �����Ѵ�.
+
+(substring, concatȰ��)
+
+?
+*****
+
+�Է�: �ڹ�, �����ͺ��̽�.
+
+      
+
+��, �����ͺ��̽�.��
+
+,�����ͺ��̽�. �ڹ�
+
+�����ͺ��̽�. �ڹ�,
+
+.........................
+
+quit
+
+����
+
+
+
+import java.util.Scanner;
+
+public class GGG {
+	public static void main(String[] args) {
+		Scanner s= new Scanner(System.in);
+		System.out.println("�Է�");
+		String str=s.nextLine();
+		
+		while(true) {
+			String b=s.nextLine();
+			if(b.equals("")) {
+				String a1=str.substring(0,1);
+				String a2=str.substring(1); 
+				// substring(n) ���� �ϳ��� n�ڸ����� ������
+				str=a2.concat(a1);
+				System.out.println(str);
+				
+			}else if(b.equals("quit")) {
+				break;
+			}
+		}
+	}
+}
+
+
+
+
+-----------
+
+
+
+<html ����- ��� �̹��� �ֱ�, �ڽ��׸���(box-shadow)>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{
+                width: 150px; height: 80px; padding: 10px;
+                border: 1px solid fuchsia;
+                background-image: 
+                url(C:/Users/soldesk/Desktop/�ڹٸ޸���/���.jpg);
+                background-size: 150px 100px;
+                background-repeat: no-repeat;
+                margin: 20px;
+            }
+            .aa{
+                box-shadow: 10px 10px 10px pink;
+            }
+            .bb{
+                box-shadow: 10px 10px 10px skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="aa">����1</div>
+        <div class="bb">����2</div>
+    </body>
+</html>
+
+
+-------------------
+
+** ȸ������ �� ����� ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            label{
+                text-align: right;
+                float: left;
+                width: 120px;
+                margin-right: 20px;
+            }
+            li{
+                list-style: none;
+                margin-bottom:  10px ;
+            }
+            input[type=submit]{
+                margin-top: 10px;
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <body>
+            <h1>ȸ�� ����</h1>
+            <form>
+                <fieldset>
+                    <legend>�α��� ����</legend>
+                    <ul>
+                        <li>
+                        <label for="user-id">���̵� </label>
+                             <input type="text" id="user-id">
+                        </li>
+                        <li>
+                            <label for="pwd1">��й�ȣ </label>
+                            <input type="password" id="pwd1">
+                        </li>
+                        <li>
+                            <label for="pwd2">��й�ȣ Ȯ�� </label>
+                            <input type="password" id="pwd2">               
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>���� ����</legend>
+                    <ul>
+                        <li>
+                            <label for="user-name">�̸� </label>
+                            <input type="text" id="user-name">
+                        </li>
+                        <li>
+                            <label for="mail">���� �ּ�</label>
+                            <input type="email" id="mail">
+                        </li>
+                        <li>
+                            <label for="phone">����ó</label>
+                            <input type="tel" id="phone">
+                        </li>
+                        <li>
+                            <label for="homep">���α�/Ȩ������</label>
+                            <input type="url" id="homep">
+                        </li>
+                    </ul>
+                </fieldset>
+                <input type="submit" value="�����ϱ�">
+            </form>
+        </body>
+        </html>
+    </body>
+</html>
+
+
+
+
+[0819]
+
+** border ��Ÿ��
+
+        <p style="border: 3px solid blue">
+            3px
+        </p>
+        <p style="border: 3px hidden blue">
+            3px
+        </p>
+        <p style="border: 3px dotted blue">
+            3px
+        </p>
+        <p style="border: 3px dashed blue">
+            3px
+        </p>
+        <p style="border: 3px double blue">
+            3px
+        </p>
+        <p style="border: 3px groove yellow">
+            3px
+        </p>
+        <p style="border: 3px ridge yellow">
+            3px
+        </p>
+
+---------------------
+
+
+** ����(p449)
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{
+                display: inline-block;
+                color: aliceblue;
+                background: darkblue;
+                padding: 5px;
+            }
+            #rotate{ /*������ ����ŭ ȸ��(����)*/
+                transform: rotate(20deg);
+            }
+            #skew{ /*������ �� ��ŭ x��� y������ �ְ�*/
+                transform: skew(0deg,-20deg);
+            }
+            #translate{ /*������ �� ��ŭ �̵�*/
+                transform: translateY(50px);
+            }
+            #scale{ /*������ ũ�⸸ŭ x,y������ Ȯ��/���*/
+                transform: scale(5,1);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="rotate">rotate</div>
+        <div id="skew">skew</div>
+        <div id="translate">translate</div>
+        <div id="scale">scale</div>
+    </body>
+</html>
+
+--------------------
+
+** hover ���콺 �ø��� ���ϴ°�
+** active ����ũ Ŭ���Ҷ�
+
+
+-----------------
+
+���� 486 2�� ����
+
+���콺 �ø��� �̹��� 20�� ȸ��
+�̹��� �׵θ� 1px ���� �Ǽ�
+�׵θ� �𼭸� 10px��ŭ �ձ۰�
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{
+                margin: 40px;
+                padding: 0px;
+            }
+            img:hover{
+                transform: rotate(20deg);
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg"
+         alt="ġŲ" width="300" height="250">
+    </body>
+</html>
+
+
+----------------
+
+** p464 Ʈ������
+
+����+��Ÿ�ϵ� �ٲٴ� �۾�
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+	/* ��Ʈ����� 5�ʵ��� ������Ű�ڴ� */
+            span{transition: font-size 5s;}
+            span:hover{font-size: 500%;}
+        </style>
+    </head>
+    <body>
+        <p>
+            <span>�հ�!!!!</span>
+        </p>
+    </body>
+</html>
+
+
+-----------------
+
+** Ʈ������ ����(p 486-1��)
+
+�簢���� ���콺 ���ٴ�� ������� �ٲ�
+����ð��� 1��
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           div{
+               margin: 20px;
+               width: 100px;
+               height: 100px;
+               border: 1px solid black;
+               border-radius: 5px;
+               background: green;
+               transition-property: background-color;
+               transition-duration: 1s;
+           }
+           div:hover{
+            background: yellow;
+           }
+        </style>
+    </head>
+    <body>
+        
+        <div>
+
+        </div>
+       
+    </body>
+</html>
+
+
+-------------------
+
+@keyframes ����(from~to~ �̿��ص� ������ %�ε� ����)
+
+-> from-to �̿��:
+
+@keyframes tt{
+            from{ color: red;}
+            to{color: orange;}
+           }
+
+
+****
+
+-> % �̿��
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            span{
+                animation-name: tt;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+           @keyframes tt{
+            0%{ color: red;}
+            30%{color: orange;}
+            100%{color: yellow;}
+           }
+        </style>
+    </head>
+    <body>
+        <p>
+            <span>span</span>
+            5�ʸ��� ������ ���ϸ鼭 ���ѹݺ��Ѵ�.
+        </p>
+    </body>
+</html>
+
+
+---------
+
+����+��������
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+                color: brown;
+                text-align: center;
+                border-bottom: 1px solid black;
+            }
+            h3{
+                color: burlywood;
+                text-shadow: 2px 2px 4px brown,
+                            1px 1px 2px black;}
+            ul{
+                padding-top: 10px;
+                border: 1px dotted;
+                width: 150px; height: 100px;
+            }
+            div>a{
+                text-decoration: none;
+                font-size: larger;
+                font-weight: bold;
+                color: blue;
+                text-shadow: 2px 4px 4px rgb(64, 64, 233);
+            }
+            div>p{
+                margin-bottom: 50px;
+                font-size: 1em;
+                text-indent: 1em;
+            }
+            h3{margin-top: 50px;}
+           div{margin-top: 50px;} 
+           #c{
+               width: 100px; height: 50px;
+               background: pink;
+               border: 1px solid purple;
+               border-radius: 2px;
+               padding-top: 15px; padding-bottom: 0px;
+               text-align: center;
+           }
+        </style>
+    </head>
+    <body>
+      <h1>��ǻ��</h1>
+      ��ǻ�� ����� ������ ���� ����� �߿��� ���� �޼��� �����ϰ� 
+      �ִ� �о��̴�. ��ǻ�Ͱ����� ��ǻ���� �ϵ����� ����Ʈ��� 
+      �����Ͽ� ��ǻ�Ϳ� ���õ� ���� ����� �����ϰ� �н��ϸ� �̸� 
+      �� �о߿� �����ϴ� ���� �������� �ϴ� �й� �о��̴�.
+    <div class="a">
+      <h3>����</h3>
+      <ul>
+          <li><a href="#cpu">cpu</a></li>
+          <li><a href="#com">��ǻ�ͱ���</a></li>
+          <li><a href="#db">�����ͺ��̽�</a></li>
+          
+      </ul>
+    </div>
+      <div class="b">
+          
+              <a href="https://terms.naver.com/entry.nhn?docId=3570778&cid=59088&categoryId=59096"
+              id="cpu" target="_blank">cpu</a>
+              <p>
+                ��ǻ���� ������ �����ϰ��� �� �� ���� ���� ���캸�� 
+                �Ǵ� ���� �ٷ� �⺻ ���ǥ��. ���⿡�� �ش� ��ǻ�͸� 
+                �����ϰ� �ִ� ��ǰ�� �׸��� �ϸ�俬�ϰ� �����Ǿ� 
+                �ִµ�, ���� ��ܿ��� ��κ� ��CPU����� �׸��� ��ġ�� 
+                �ִ�. �׸�ŭ ��ǻ�Ϳ��� CPU�� �������� ������ �¿��ϴ� 
+                ���� �߿��� ��ǰ�̶�� �� �� �ִ�.
+              </p>
+              <a href="https://terms.naver.com/entry.nhn?docId=2073343&cid=44414&categoryId=44414"
+              id="com" target="_blank">��ǻ�ͱ���</a>
+              <p>
+                ��ǻ�ͱ���(��ϰ��, computer architecture)�� ��ǻ�͸� 
+                �����ϴ� CPU, �޸�, �������ġ(I/O ��ġ)�� �⺻�� 
+                �Ǵ� ������ ȸ�μ����� Ư����, CPU�� ���ۿ����� 
+                �������� ������, CPU�� ����ȸ�� �� ����ũ�����α׷�
+                 ���� ���������ν� ��ǻ�ͱ����� ���� ������ Ư���� 
+                 ������ �й��̴�. RISC(Reduced Instruction Set
+                  Computer) ���μ��� �� �ϳ��� MIPS(Microprocessor
+                   without Inter-locked Pipeline Stages)�� ������ 
+                   �Ͽ� ���� ��ǻ���� ������ �н��� ��Ʈ�� ������
+                    �����ϰ� ���ɰ� ���õ� ���ε��� �����Ѵ�.
+              </p>
+              <a href="https://terms.naver.com/entry.nhn?docId=1082446&cid=40942&categoryId=32840"
+              id="db" target="_blank">�����ͺ��̽�</a>
+              <p>
+                ���� ����� ���� �����Ǿ� ���� �������� �����Ͽ�
+                 �����Ǵ� �������� ������ ���Ѵ�. �ڷ��׸��� �ߺ��� 
+                 ���ְ� �ڷḦ ����ȭ�Ͽ� ���������ν� �ڷ� �˻��� 
+                 ������ ȿ���� ���δ�. �������� �ǹ��� �����ͺ��̽� 
+                 ������ Ȯ���� ����� ��� ���ʷ��Ϸ�Ʈ����(��)�� �ִ�
+                  C.��ũ������ �״� 1963�� IDS(Integrated Data Store)
+                  ��� �����ͺ��̽� �����ý����� �������.
+              </p>
+          
+      </div>
+      <div id="c">
+        <a href="c.html" target="_blank">����������</a>
+      </div>
+    </body>
+</html>
+
+
+--------------
+
+��������
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{margin-top: 20px;}
+        </style>
+    </head>
+    <body>
+        <h1>������</h1>
+        ����Ʈ���� ����� ���� �ǰ��� ����ϴ�. ���� ���� ��Ź�帳�ϴ�.
+        <hr>
+        <div>
+            <label for="gender">����</label>
+            <input type="radio" name="gen" id="gender">��
+            <input type="radio" name="gen" id="gender">��
+        </div>
+        <div>
+            <label for="a">���� �о�</label>
+            <select id="a">
+                <option>����� ����Ʈ����</option>
+                <option>���� ����Ʈ����</option>
+            </select>
+        </div>
+        <div>
+            <label for="b">����(���� ����)</label>
+            <input type="checkbox" name="bb" id="b">����
+            <input type="checkbox" name="bb" id="b">��ȹ
+            <input type="checkbox" name="bb" id="b">����
+            <input type="checkbox" name="bb" id="b">â��
+        </div>
+        <div>
+            <label for="c">����� ���� ��</label>
+            <textarea id="c" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+            Copyright &copy; 2020 by Jiwon
+        </div>
+    </body>
+</html>
+
+
+-----------------
+
+** border-collapse ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                border: 1px solid;
+                border-collapse: collapse;
+            }
+            caption{
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            th,td{
+                width: 100px; height: 30px;
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>����</caption>
+            <tr>
+                <th></th>
+                <th>����</th>
+                <th>����</th>
+                <th>����</th>
+                <th>��ǻ��</th>
+            </tr>
+            <tr>
+                <th>2019��</th>
+                <td>80</td>
+                <td>90</td>
+                <td>100</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <th>2020��</th>
+                <td>85</td>
+                <td>98</td>
+                <td>100</td>
+                <td>93</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+-------------------------
+
+** CSS����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #con{
+                text-align: left;
+                margin-left: 20px;
+            }
+            h1{color: burlywood; 
+                text-shadow: 2px 2px 4px black;
+                
+            }
+           
+            h2{
+                color: wheat;
+                text-shadow: 2px 2px 4px black;
+            }
+            .bb{
+                font-size: larger;
+                font-weight: bold;
+                color: crimson;
+                text-shadow: 1px 1px 2px black,
+                            2px 2px 4px wheat;
+                text-decoration: underline;
+            }
+            .dd{font-size: larger; 
+                font-weight: bolder;
+                color: crimson;
+                text-shadow: 1px 1px 2px black,
+                            2px 2px 4px wheat;
+            }
+            .aaa{
+                color: white;
+                text-shadow: 2px 2px 2px brown;
+                background-image: 
+                url(C:/Users/soldesk/Desktop/�ڹٸ޸���/html/å.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 500px; height: 200px;
+            }
+            .ccc{
+                color: white;
+                text-shadow: 2px 2px 2px brown;
+                background-image: 
+                url(C:/Users/soldesk/Desktop/�ڹٸ޸���/html/��.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 500px; height: 200px;
+            }
+
+        </style>
+    </head>
+    <body>
+       <div id="con">
+           <h1>�Ұ�</h1>
+           <h2 class="aa">"å"</h2>
+           <p class="aaa">�ڽ��� �����ϰ� �Ǵ� ��,
+               <span class="bb">
+                �ڽ��� �ϴ� ���� �����ϰ� �Ǵ� ��</span><br>
+           �� �ɾ�� ���� �����ϰ� �Ǵ� ��</p>
+           <h2 class="cc">����</h2>
+           <p class="ccc">�� ������ <span class="dd">���</span>�� ���<br>
+            �� ��� �̹� �����ڴ�.</p>
+       </div>
+    </body>
+</html>
+
+
+---------------
+
+
+**�ڹ� ��Ŭ��Ʈ
+
+�ڹ� ��ũ��Ʈ �ڵ��� ��ġ
+1. HTML �±��� �̺�Ʈ ������ �Ӽ��� �ۼ�
+2. �ڹٽ�ũ��Ʈ ���Ͽ� �ۼ�
+3. URL �κп� �ۼ�
+4. <script></script> �±� �ȿ� �ۼ�
+
+���� Ÿ���� ����(int, string ��)
+���� var�� ����
+
+******
+
+* document (�ֻ��� �±�)
+* write ���
+
+��¹�: document.write("<h2>�ȳ�</h2>");
+
+
+******
+
+* prompt : �Է� �Լ�
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>�ڹ� ��ũ��Ʈ</h3>
+        <hr>
+        <script>
+            var r=prompt("�̸�","������");
+            if(r==null){ // ��ҹ�ư, ���� ���
+                document.write("�̸�����");
+            }else if(r==""){ //�Է� ���� Ȯ�� ���� ���
+                document.write("���");
+            }else{
+                document.write(r);
+            }
+        </script>
+    </body>
+</html>
+
+
+********
+
+* confirm (Ȯ��/���)
+-> ���� true / false
+
+
+var r=confirm("�����Ұž�?");
+            if(r==true){
+                document.write("Ȯ��");
+            }else{
+                document.write("���");
+            }
+
+
+***********
+
+* alert (���� �Է� ���� ���â)
+
+var r=alert("Ŭ��");
+
+
+---------
+
+** html �±׿� ���� ��ũ��Ʈ �ۼ� 
+onmouseover(���콺 �ø���) / onmouseout(���콺 ������)
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>�ڹ� ��ũ��Ʈ</h3>
+        <hr>
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg"
+         alt="���" 
+         onmouseover="this.src='C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg'"
+         onmouseout="this.src='C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg'"
+         >
+         <!---->
+         <!-- this: ���� img �±׸� ����Ŵ -->
+         <!-- onmouseover(���콺 �ø���) / onmouseout(���콺 ������) -->
+    </body>
+</html>
+
+
+
+-------------
+
+** ��ũ��Ʈ ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var x=35;
+            var y=x/10;
+            var z=x%2;
+
+            x+=3; // x=x+3;
+            document.write(x+"<br>");
+            document.write(y+"<br>");
+            document.write(z+"<br>");
+
+            document.write((x>y)+"<br>"); //��������(true / false)
+
+            var a=36, b=35;
+            document.write((a!=b)+"<br>");
+
+            var c=true, d=false;
+            document.write((c&&d)+"<br>"); // && �� �Ѵ� ���̾�� ��
+            document.write((c||d)+"<br>"); // || �� �ϳ��� ���̾ ��
+
+            var e=5, f=10; //���� ���� �̿��Ͽ� ū �� ���
+            document.write((e>f?e:f));
+
+        </script>
+    </body>
+</html>
+
+---------
+
+
+
+
+** �ø�ƽ�±� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html,body{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            .h{width: 100%; height: 20%;
+                background: palevioletred;}
+            .n{width: 15%; height: 70%; float: left;
+                background: peru;}
+            .s{width: 50%; height: 70%; float: left;
+                background: greenyellow;}
+            .a{width: 35%;height: 70%; float: left;
+                background: indigo;}
+            .f{width: 100%; height: 10%; clear: both;
+                background: palegreen}
+        </style>
+    </head>
+    <body>
+        <header class="h">header</header>
+        <nav class="n">nav</nav>
+        <section class="s">section</section>
+        <aside class="a">aside</aside>
+        <footer class="f">footer</footer>
+    </body>
+</html>
+
+---------------
+
+** ���� ������ ����(��ǻ�� ����)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html,body{
+                margin: 0; padding: 0; height: 100%;
+            }
+
+            header{
+                width: 100%; height: 20%;
+                background: palegreen;
+            }
+            nav{
+                width: 20%; height: 70%; float: left;
+                background: red;
+                
+            }
+            section{
+                width:80%; height: 70%; float: left;
+                background: lightblue;
+            }
+            footer{
+                width: 100%; height: 10%; clear: both;
+                background: lightgray;
+            }
+
+
+            h1{
+                color: brown;
+                margin-top: 0;
+                text-align: center;
+                border-bottom: 1px solid black;
+            }
+            h3{
+                color: burlywood;
+                text-shadow: 2px 2px 4px brown,
+                            1px 1px 2px black;}
+            ul{
+                padding-top: 10px;
+                
+                border: 1px dotted;
+                width: 150px; height: 100px;
+            }
+            div>a{
+                text-decoration: none;
+                font-size: larger;
+                font-weight: bold;
+                color: blue;
+                text-shadow: 2px 4px 4px rgb(64, 64, 233);
+            }
+            div>p{
+                margin-bottom: 50px;
+                font-size: 1em;
+                text-indent: 1em;
+            }
+            h3{margin-top: 50px;}
+           div{margin-top: 50px;} 
+           #c{
+               width: 100px; height: 50px;
+               background: pink;
+               border: 1px solid purple;
+               border-radius: 10%;
+               padding-top: 15px;
+               margin-bottom: 2px;
+               margin-left: 20%;
+               margin-top: 250px;
+               text-align: center;
+           }
+        </style>
+    </head>
+    <body>
+        
+    <header>
+      <h1>��ǻ��</h1>
+      ��ǻ�� ����� ������ ���� ����� �߿��� ���� �޼��� �����ϰ� 
+      �ִ� �о��̴�. ��ǻ�Ͱ����� ��ǻ���� �ϵ����� ����Ʈ��� 
+      �����Ͽ� ��ǻ�Ϳ� ���õ� ���� ����� �����ϰ� �н��ϸ� �̸� 
+      �� �о߿� �����ϴ� ���� �������� �ϴ� �й� �о��̴�.
+    </header>
+
+    <nav>
+    <div class="a">
+      <h3>����</h3>
+      <ul>
+          <li><a href="#cpu">cpu</a></li>
+          <li><a href="#com">��ǻ�ͱ���</a></li>
+          <li><a href="#db">�����ͺ��̽�</a></li>
+          
+      </ul>
+    </div>
+
+        <div id="c">
+        <a href="c.html" target="_blank">����������</a>
+        </div>
+    </nav>
+    
+    <section>
+      <div class="b">
+          
+              <a href="https://terms.naver.com/entry.nhn?docId=3570778&cid=59088&categoryId=59096"
+              id="cpu" target="_blank">cpu</a>
+              <p>
+                ��ǻ���� ������ �����ϰ��� �� �� ���� ���� ���캸�� 
+                �Ǵ� ���� �ٷ� �⺻ ���ǥ��. ���⿡�� �ش� ��ǻ�͸� 
+                �����ϰ� �ִ� ��ǰ�� �׸��� �ϸ�俬�ϰ� �����Ǿ� 
+                �ִµ�, ���� ��ܿ��� ��κ� ��CPU����� �׸��� ��ġ�� 
+                �ִ�. �׸�ŭ ��ǻ�Ϳ��� CPU�� �������� ������ �¿��ϴ� 
+                ���� �߿��� ��ǰ�̶�� �� �� �ִ�.
+              </p>
+              <a href="https://terms.naver.com/entry.nhn?docId=2073343&cid=44414&categoryId=44414"
+              id="com" target="_blank">��ǻ�ͱ���</a>
+              <p>
+                ��ǻ�ͱ���(��ϰ��, computer architecture)�� ��ǻ�͸� 
+                �����ϴ� CPU, �޸�, �������ġ(I/O ��ġ)�� �⺻�� 
+                �Ǵ� ������ ȸ�μ����� Ư����, CPU�� ���ۿ����� 
+                �������� ������, CPU�� ����ȸ�� �� ����ũ�����α׷�
+                 ���� ���������ν� ��ǻ�ͱ����� ���� ������ Ư���� 
+                 ������ �й��̴�. RISC(Reduced Instruction Set
+                  Computer) ���μ��� �� �ϳ��� MIPS(Microprocessor
+                   without Inter-locked Pipeline Stages)�� ������ 
+                   �Ͽ� ���� ��ǻ���� ������ �н��� ��Ʈ�� ������
+                    �����ϰ� ���ɰ� ���õ� ���ε��� �����Ѵ�.
+              </p>
+              <a href="https://terms.naver.com/entry.nhn?docId=1082446&cid=40942&categoryId=32840"
+              id="db" target="_blank">�����ͺ��̽�</a>
+              <p>
+                ���� ����� ���� �����Ǿ� ���� �������� �����Ͽ�
+                 �����Ǵ� �������� ������ ���Ѵ�. �ڷ��׸��� �ߺ��� 
+                 ���ְ� �ڷḦ ����ȭ�Ͽ� ���������ν� �ڷ� �˻��� 
+                 ������ ȿ���� ���δ�. �������� �ǹ��� �����ͺ��̽� 
+                 ������ Ȯ���� ����� ��� ���ʷ��Ϸ�Ʈ����(��)�� �ִ�
+                  C.��ũ������ �״� 1963�� IDS(Integrated Data Store)
+                  ��� �����ͺ��̽� �����ý����� �������.
+              </p>
+          
+      </div>
+
+    </section>
+
+    <footer>
+      
+    </footer>
+    </body>
+</html>
+
+
+----------------
+
+
+**����1,2,3
+
+�׸� �̹����� ���콺�� �÷��� ��
+
+4.1) �׸��� 180�� ȸ����Ų��.
+
+4.2) y������ -30�� ����δ�.
+
+4.3) 90�� ȸ���ϰ� 1:3���� ������ Ȯ���Ѵ�.
+
+?
+
+2. �̹����� 1�ʵ��� ���ѹ� �ݺ��ǰ� �����ض� ó������ 0������ 360���� ȸ���ϵ��� �ۼ��ض�.
+
+3. ������ ��image���� �ְ� �� �ؽ�Ʈ�� text-shadow�� �ٹ̰�, �̹����� ���콺�� �ø��� box-shadow�� �̿��Ͽ� �ڽ��� �׸��ڰ� ���̰� �ض�.
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           #a:hover{
+            transform: rotate(180deg);
+           }
+           #b:hover{
+            transform: skewY(-30deg);
+           }
+           #c:hover{
+            transform: rotate(90deg);
+            transform: scale(1,3);
+           }
+           @keyframes one{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+           }
+           #d{
+            animation: one 1s infinite;
+           }
+
+           h1{
+               color: yellow;
+               text-align: center;
+               text-shadow: 2px 2px 4px black;
+           }
+
+           #e{
+             border: 1px solid black;  
+           }
+           #e:hover{
+               box-shadow: 5px 5px 20px yellow,
+                            2px 2px 5px black;
+           }
+        </style>
+    </head>
+    <body>
+       <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+       alt="���" width="300" height="250" id="a">
+       <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+       alt="���" width="300" height="250" id="b">
+       <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+       alt="���" width="300" height="250" id="c">
+       <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+       alt="���" width="300" height="250" id="d">
+
+       <div>
+       <h1>image</h1>
+       <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+       alt="���" width="300" height="250" id="e">
+        </div>
+    </body>
+</html>
+
+
+-------
+
+** ��Ű �����
+
+¯���� ��Ʃ�긵ũ
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ycva3Z1am1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+��Ű ��: 0 131 117
+���̻� 243 210 172
+ǥ 245 245 245
+
+
+------------
+
+** ��ũ��Ʈ
+function �Լ�ȣ��
+
+
+<!DOCTYPE html>
+<html>
+    <header>
+
+    </header>
+    <body>
+        <script>
+            var x=100; //��������
+            function f(){  // �Լ�
+                var x=10; //��������
+                document.write(x+"<br>");
+                document.write(this.x); //this=��������
+            }
+            f();  // �Լ�ȣ��
+        </script>
+    </body>
+</html>
+
+
+--------
+
+**���� �Է��ؼ� ȭ�鿡 ����
+
+
+        <script>
+           var score;
+           score=prompt("�����Է�");
+           document.write(score);
+        </script>
+
+
+** prompt : �Է��ϴ� ���� ���ڿ�.
+
+---------
+
+** 90�� �̻� a, 80�� �̻� b, �׿� f
+
+
+        <script>
+           var score;
+           score=prompt("�����Է�");
+           score=parseInt(score); 
+           if(score>=90){
+               document.write("A");
+           }else if(score>=80){
+               document.write("B");
+           }else{
+               document.write("F");
+           }
+        </script>
+
+---------
+
+**�޴��� �Է¹޾�
+���������Ҹ� 4000��, �Ƹ޸�ī��� 4500��, �� 5000�� switch~case��
+�� ������ "���Ǵ�"
+
+        <script>
+           var a=prompt("�޴��Է�");
+           var p;
+            switch(a){
+            case "����������": p=4000; break;
+            case "�Ƹ޸�ī��": p=4500; break;
+            case "��": p=5000; break;
+            default: p=0;
+            }
+            if(p!=0){
+            document.write(p);
+            }else{
+                document.write("���Ǵ�")
+            }
+        </script>
+
+
+
+---------
+
+** �ݺ���
+
+for/ while �ڹٿ� ����
+
+
+//0~�Է��� �������� ���ؼ� ���(������)
+
+        <script>
+            var num=prompt("���� �Է�");
+            num=parseInt(num);
+            var i=0, sum=0;
+            while(i<=num){
+                sum+=i;
+                i++;
+            }
+            document.write(sum+"<br>");
+
+            for(var j=10;j<=20;j++){
+                document.write("<span ")
+                document.write("style='font-size:"+j+"px'>")
+                document.write(j);
+                document.write("</span>")
+
+            }
+
+        </script>
+
+
+----------
+
+do while ��
+
+            var ii=0;
+            do{
+                sum+=ii;
+                ii++;
+                document.write(ii);
+            }while(ii<10)
+
+-------------
+
+1���� �������� 100 ������ �ݺ��� ������
+
+
+        <script>
+            var sum=0,i=0;
+            while(true){
+                if(sum>100){
+                    break;
+                }
+                sum+=i;
+                i++;
+            }
+            document.write((sum-i)+" "+i+"<br>");
+            document.write(sum);
+        </script>
+
+
+----------
+
+
+1~10���� ���� �ȿ��� 4�� ���� �������� 1�� ���� �� ���ϱ�
+
+
+        <script>
+            var i=1, sum=0;
+            while(i<10){
+                if(i%4==1){
+                    sum+=i;
+                }
+                i++;
+            }
+            document.write(sum);
+                
+        </script>
+
+
+--------
+
+**�Լ�¥��
+
+�Լ� ���Ǵ� ���� ��忡�� ���� �ϰ� ȣ���� �ٵ𿡼� ���� ��(�ƴϾ ������ ����)
+
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <script>
+            function add(a,b){
+                return a+b;
+            }
+        </script>
+    </header>
+    <body>
+        <script>
+            var n=add(5,7);
+            document.write(n);
+        </script>
+    </body>
+</html>
+
+--------------------
+
+** �ڹ� ��ũ��Ʈ �⺻ �Լ�
+
+1. isNaN()
+NaN : ���ڰ� �ƴ��� ��Ÿ���� ��� Ű����(���ڸ� true, ���ڸ� false)
+
+
+* ����) n���� ���ڰ� �ƴϸ� ���ڰ� �ƴϴ� ���
+
+        <script>
+            var n=parseInt("hi"); 
+            if(isNaN(n)){
+                document.write("���ڰ� �ƴϴ�")
+            }
+        </script>
+
+
+
+2. parseInt()
+���ڿ��� ������ ��ȯ
+
+
+3. eval()
+=> parseint �� ��ȯ ���ص� () �ȿ��� ���� ����
+��: eval(1+2+3) => 6 ����
+
+
+----------------
+
+** ����� ����
+
+        <script>
+            
+            for(var i=0; i<5;i++){
+                for(var j=0;j<i+1;j++){
+                    document.write("*")
+                }
+                document.write("<br>")
+            }
+        </script>
+
+
+
+--------
+
+
+��ȣ(stop)�� �Էµ� �� ���� prompt ���ѹݺ�
+�ԷµǸ� ��� ���
+
+
+        <script>
+            while(true){
+            var a=prompt("��ȣ�Է�: ");
+                if(a=="stop"){
+                    document.write("���");
+                    break;
+                }
+            }
+        </script>
+
+------------
+
+
+** ���� �Է��ؼ� ��� ���Ϲ޾� ����ϴ� �Լ�
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <script>
+             function fun(){
+             var n=prompt("�����Է�");
+                return eval(n);
+
+             }
+        </script>
+    </header>
+    <body>
+        <script>
+            document.write(fun());
+        
+        </script>
+    </body>
+</html>
+
+
+
+
+------------
+
+** �ݺ������� ���̺� �����
+
+0 1 2 3
+1 2 3 4
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script>
+        function fun() {
+            for (var i = 0; i < 2; i++) {
+                document.write("<tr>");
+                if (i == 0) {
+                    for (var j = 0; j < 4; j++) {
+                        document.write("<td>" + j + "</td>");
+                    }
+                } else {
+                    for (var j = 0; j < 4; j++) {
+                        document.write("<td>" + (j + 1) + "</td>");
+                    }
+                }
+
+                document.write("</tr>");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <table border="1">
+        <script>
+            fun();
+        </script>
+
+    </table>
+</body>
+
+</html>
+
+
+
+
+��ũ��Ʈ �Լ� ����
+
+% �ټ��� ����ϴ� �Լ�
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function pr(a,b){
+            for(var i=0;i<b;i++){
+                document.write(a);
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <script>
+        pr("%",5);
+    </script>
+</body>
+
+</html>
+
+
+------------
+
+��,ȭ,�� �Է��ϸ� �ٹ�/ �ƴϸ� �޽�
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function pr(a){
+            if(a=="��"||a=="ȭ"||a=="��"){
+                document.write("�ٹ�");
+            }else{
+                document.write("�޽�");
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var a=prompt("�ٹ����� �Է�");
+        pr(a);
+    </script>
+</body>
+
+</html>
+
+---------------
+
+����1.
+prompt()�� ������ �Է¹޾� ������ŭ * ����ϴ� �� ������ �ۼ�
+
+*���ڸ� ����ϴ� �Լ��� ����� �̸� star()�� �ض�.
+prompt â�� ������ �Էµ��� ���� ���״� ������� ��� 
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function star(a) {
+           if (a == null || a == ""||isNaN(a)) {
+                document.write("����");
+            } else {
+                for (var i = 0; i < a; i++) {
+                    document.write("*");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var a = prompt("���� �Է�");
+        star(a);
+    </script>
+</body>
+
+</html>
+
+-------------
+
+** �̹����� ������ css�� �̿��� ���콺�� �ø��� �̹��� ���� 3�ʿ� ���� ������ ���� ũ��� �þ�� �ִϸ��̼� �ۼ�
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+      <style>
+
+        img{
+
+          transition:width 3s;
+
+        }
+
+        img:hover{
+
+          width:100%;
+
+        }
+
+      </style>
+
+    </head>
+
+    <body>
+
+      <span>
+
+        <img src="C:/Users/soldesk/Desktop/���.jpg"
+
+        width="200" height="200">
+
+        </span>
+
+    </body>
+
+</html>
+
+--------------
+
+�ֵ���ũ ����
+
+����
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        html,body{margin: 0; padding: 0;}
+        header{
+            width: 100%; height: 10%; text-align: center;
+            position: absolute; z-index: 1;
+            top: 0px; background: white;
+        }
+        section{
+            width: 100%; height: 70%;
+            margin-top: 20%;
+        }
+        table{
+            margin: 0 auto;
+            text-align: center;
+        }
+        td>input, td>a>input{
+            width: 300px; height: 80px; padding: 0; margin: 20px;
+            font-size: 25px; font-weight: bold;
+            border: 1px solid lightgray; 
+            background: rgb(238, 237, 237);
+            box-shadow: 1px 1px 3px rgb(185, 183, 183);
+            cursor: pointer;
+        }
+
+        footer{
+            background: rgb(56, 54, 54);
+            width: 100%; height: 20%; position: absolute;
+            bottom: 0px;
+        }
+        #a{
+            padding: 10px;
+            font-weight: bold; color: lightgray;
+            border-bottom: 1px dotted gray;
+        }
+        #b{
+            padding: 10px;
+            font-weight: bold; color: gray; font-size: 14px;
+        }
+      </style>
+    </head>
+    <body>
+        <header>
+            <h1>SOLDESK</h1>
+            <hr>
+        </header>
+        <section>
+            <table>
+                <tr>
+                    <td><input type="button" value="��������"></td>
+                    <td><input type="button" value="NCS��"></td>
+                </tr>
+                <tr>
+                    <td><a href="c.html" target="_blank"><input type="button" value="�α���"></a></td>
+                    <td><input type="button" value="���̵�/���ã��"></td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <div id="a">
+                ����������ȣ��å �����ּҹ��ܼ����ź�
+            </div>
+            <div id="b">
+                ȸ��� : �ֵ���ũ ��ǥ�� : ����� Tel : 02)6901-7000 
+                Fax : 02)725-7711 ����������ȣå���� : �庴�� 
+                Tel : 02)6901-7011 ����ڹ�ȣ : 101-86-50485 <br>
+                ����Ǹž��Ű���ȣ : ��2009-��������-1141ȣ <br>
+                031-90 ����Ư���� ���α� ����12�� 15 5��(��ö�� 13-13) <br>
+                copyright �� �ֵ���ũ. All Rights Reserved.
+            </div>
+        </footer>
+    </body>
+</html>
+
+---------------
+
+�α���ȭ��
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        html,body{margin: 0; padding: 0;}
+        header{
+            width: 100%; height: 10%; text-align: center;
+            position: absolute; z-index: 1;
+            top: 0px; background: white;
+        }
+        section{
+            width: 100%; height: 70%;
+            margin-top: 20%; 
+        }
+        
+        .log1{
+            width: 370px; height: 250px;
+            border: 2px solid rgb(187, 184, 184);
+            margin: 0 auto; padding: 20px;
+            text-align: left;
+            color: rgb(136, 132, 132);
+        }
+        #login{
+            margin: 0 auto;
+            text-align: center;
+            background: black; color: white;
+            width: 110px; height: 40px;
+            border-radius: 5px;
+        }
+
+        footer{
+            background: rgb(56, 54, 54);
+            width: 100%; height: 20%; position: absolute;
+            bottom: 0px;
+        }
+        #a{
+            padding: 10px;
+            font-weight: bold; color: lightgray;
+            border-bottom: 1px dotted gray;
+        }
+        #b{
+            padding: 10px;
+            font-weight: bold; color: gray; font-size: 14px;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>SOLDESK</h1>
+            <hr>
+        </header>
+        <section>
+            <div class="log1">
+                <label for="id">���̵�</label><br>
+                <input type="text" id="id" placeholder="���̵�"><br>
+                <label for="pw">��й�ȣ</label><br>
+                <input type="password" id="pw" placeholder="��й�ȣ"><br>
+                <input type="checkbox" id="log"><label for="log">�ڵ��α���</label><br>
+                <input type="button" value="�α���" id="login">
+                
+                <div class="log2">
+                    <p>ȸ������</p>
+                    <p>���̵�/��й�ȣ ã��</p>
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            <div id="a">
+                ����������ȣ��å �����ּҹ��ܼ����ź�
+            </div>
+            <div id="b">
+                ȸ��� : �ֵ���ũ ��ǥ�� : ����� Tel : 02)6901-7000 
+                Fax : 02)725-7711 ����������ȣå���� : �庴�� 
+                Tel : 02)6901-7011 ����ڹ�ȣ : 101-86-50485 <br>
+                ����Ǹž��Ű���ȣ : ��2009-��������-1141ȣ <br>
+                031-90 ����Ư���� ���α� ����12�� 15 5��(��ö�� 13-13) <br>
+                copyright �� �ֵ���ũ. All Rights Reserved.
+            </div>
+        </footer>
+    </body>
+</html>
+
+---------------
+
+
+�ڹ� ��ũ��Ʈ ��ü
+
+1. �ھü(�⺻��ü)
+->Array, Date, String, Math
+
+
+2. HTML DOM ��ü
+
+3. ������ ��ü(BOM)
+
+
+-----------
+
+** ��ũ��Ʈ ��ü ����
+
+var a=new Date();  // a�� Date�� ��ü(Ŭ���� ��� �ٷ� ���� ����)
+
+
+document.write(a.toLocaleString()+"<br>");
+
+=>���� ��¥,�ð� ���
+
+            var b=new String("�ڹٽ�ũ��Ʈ"+"<br>");
+            document.write(b+"<br>");
+            document.write(b.length+"<br>");
+
+
+----------
+
+** �迭
+
+var food=['aa','dd','cc'];
+
+**�迭�� �� ���ϱ� 
+
+var num=[1,2,3,4,5];
+            var sum=0;
+            for(var i=0;i<num.length;i++){
+                sum+=num[i];
+            }
+            document.write(sum+"<br>");
+
+
+num[5] = 6 => �迭 �� �ֱ�
+
+** �迭 �������
+var day=new Array(7); // �ʱ�ȭ �� ���� ������, �迭�� ����
+var d=new Array(1,2,3,4,5); // Array() �� ���� 2�� �̻��̸� �� �ʱ�ȭ
+���� �ʱ�ȭ�� var n1=[1,2,3];
+
+
+----------
+
+**for������ �迭�� �� ��ŭ * ���
+var p=[30,5,8,16,9];
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+         var p=[30,5,8,16,9];
+         for(var i=0;i<p.length;i++){
+             for(var j=0;j<p[i];j++){
+                 document.write("*");
+             }
+             document.write("<br>")
+         }
+        </script>
+    </body>
+</html>
+
+
+----------
+
+** �迭 �� ��� ���ϱ�
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+         var a=new Array();
+         a[0]=10;
+         a[1]=20;
+         a[2]=30;
+
+        var sum=0; 
+         for(var i=0; i<a.length;i++){
+            sum+=a[i];
+         }
+         document.write(sum/3);
+        </script>
+    </body>
+</html>
+
+
+-------
+
+
+����2.
+
+1���� 100�����ؼ� ������ ���� 10���� �����Ͽ�
+
+ary�̸��� �迭�� �����ϰ� 
+
+�迭�� ����� �� �� ���� ū ���� ����ض�.
+
+
+        <script>
+         var a=new Array(10);
+         for(var i=0;i<a.length;i++){
+         var b=parseInt((Math.random()*100)+1);
+             a[i]=b;
+         }
+         for(var i=0;i<a.length;i++){
+             document.write(a[i]+"<br>");
+             }
+        </script>
+
+
+----------
+
+
+** �迭+�����Լ� ����(concat, join)
+
+        <script>
+        var a=new Array("��","��","��");
+         var b=new Array("��");
+         var c;
+         c=a.concat(b); // a+b
+         document.write(c+"<br>");
+
+         c=a.join("@@");  // �迭�� ���̿� @@�߰�
+         document.write(c+"<br>");
+
+         c=a.reverse(); // �Ųٷ�
+         document.write(c+"<br>");
+
+         c=a.toString(); // ���� ���̿� "," ����
+         document.write(c+"<br>");
+
+        </script>
+
+
+
+------
+
+** ��¥ �Լ�(Date)
+
+        <script>
+         var n=new Date(2020,8,21);
+         var n1=n.getDate();
+         var n2=n.getHours();
+         document.write(n.toLocaleString()+"<br>")
+         //n.toLocaleString() -> n�� ������ ���� ��µ�
+         var nn=new Date();
+         document.write(nn.toLocaleString()+"<br>");
+         // ���� ���� ���
+
+        </script>
+
+
+---------
+
+** ��¥�Լ� ����(�ð��� ���� ��� �ٲٱ�)
+��ٷ� ��Ÿ�� ����
+document.body.style.backgroundColor="red";
+
+
+        <script>
+        var t=new Date();
+        if(t.getHours()%2==0){ // ¦�� �ð��̸� ��� ���������� ����
+            //��ٷ� style ����
+            document.body.style.backgroundColor="red";
+        }else{
+            document.body.style.backgroundColor="blue";
+        }
+
+        </script>
+
+
+---------
+
+
+** CSS �ٹ̱� ����(�α���/ ���� ��)
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> �� ��</title>
+    <style>
+        body{
+            background: cadetblue;
+        }
+        form{
+            background: rgb(241, 250, 235);
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgb(248, 216, 156),
+                        3px 3px 5px rgb(22, 19, 10);
+            width: 600px; height: 650px;
+            margin: 0 auto; padding: 7px;
+        }
+        fieldset{
+            margin: 20px; padding: 20px;
+        }
+
+        .reg{
+            float: left;
+            width: 150px;
+        }
+
+        .sendform{
+            text-align: center;
+        }
+
+        
+        input[type=submit],input[type=reset]{
+            margin: 5px;
+            background: rgb(192, 236, 150);
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px green,
+                        1px 1px 2px black;
+            border: 0; cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset class="login">
+            <legend>�α���</legend>
+            <label for="user_id">���̵� </label>
+            <input type="text" id="user_id" size="10" autofocus>
+            <label for="user_pw">��й�ȣ </label>
+            <input type="password" id="user_pw" size="10">
+            <input type="submit" value="�α���">
+        </fieldset>
+        <fieldset class="register">
+            <legend>�����ϱ�</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="user_name">���̵� <em>*</em></label>
+                    <input type="text" id="new_id" size="20" autocomplete="on" required>
+                </li>
+                <li>
+                    <label class="reg" for="new_pw1">��й�ȣ <em>*</em></label>
+                    <input type="password" id="new_pw1" size="20" required>
+                </li>
+                <li>
+                    <label class="reg" for="new_pw2">��й�ȣ Ȯ�� <em>*</em></label>
+                    <input type="password" id="new_pw2" size="20" required>
+                </li>
+                <li>
+                    <label class="reg" for="user_name">�̸� <em>*</em></label>
+                    <input type="text" id="user_name" size="20" required>
+                </li>
+                <li>
+                    <label class="reg" for="user_mail">���� �ּ� <em>*</em></label>
+                    <input type="email" id="user_mail" size="20" required>
+                </li>
+                <li>
+                    <label class="reg" for="user_tel">��ȭ��ȣ </label>
+                    <input type="tel" id="user_tel" size="20">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="easys">
+            <legend>������</legend>
+            <textarea name="intro" cols="60" rows="5">
+                �ڹ� ������ �����鼭�� �����ϴ�.
+                ��ǻ�� ��� �� �ڹٰ� ���� ��մ�.
+             </textarea>
+        </fieldset>
+        <fieldset class="sendform">
+            <input type="submit" value="�����ϱ�">
+            <input type="reset" value="�ٽþ���">
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+-------
+
+** ��ũ��Ʈ math �Լ�
+
+var n=Math.PI*2*3.14;
+
+var m1=Math.floor(m); //m���� �Ҽ��� ���� ����
+
+
+**random. floor ����
+
+<!doctype html>
+
+<head>
+
+</head>
+
+<body>
+
+   <script>
+
+      //0~100���� ������ ������ 10�� ���
+
+      for(var i=0;i<10;i++){
+
+         var m=Math.random()*100;
+
+         var m1=Math.floor(m);
+
+         //m���� �Ҽ��� ���� ������(0~99 ����)
+
+         document.write(m1 + " ");
+
+      }
+
+   </script>
+
+</body>
+
+</html>
+
+---------------
+
+
+���ϱ� ���� ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function randomInt(){
+                return Math.floor(Math.random*100)+1;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var n=randomInt()+"*"+randomInt();
+            var n1=prompt(n+"��?");
+            if(n1==null){
+                document.write("����");
+            }else{
+                var result=eval(n);
+                if(result==n1){
+                    document.write("����");
+                }  
+                document.write("�ƴϿ�");
+            }
+        </script>
+    </body>
+</html>
+
+
+
+----------
+
+����
+�����̸� yellow, ���ĸ� green������ ���� ����
+���� �ð����� ���
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <script>
+            var a=new Date();
+            if(a.getHours>11){
+                document.body.style.backgroundColor="yellow";
+                document.write(a.toLocaleString());
+            }
+                document.write(a.toLocaleString());
+                document.body.style.backgroundColor="green";
+        </script>
+    </body>
+</html>
+
+-------------------
+
+�̺�Ʈ ����
+
+** onclick : Ŭ���ϸ� ���ϴ� ��
+
+
+        <p id="aa" style="color: blue; background: yellow"
+        onclick="this.style.color='tomato'">
+        �����̴�
+        </p>
+
+
+----------
+
+** ��(dom) ����
+(�̺�Ʈ�� �߻��� ���� �˾Ƴ���)
+
+
+        <p id="aa" style="color: blue; background: yellow"
+        onclick="this.style.color='tomato'">
+        �����̴�
+        </p>
+        <script>
+            // �̺�Ʈ�� �߻��� ���� ã�Ƴ�(��ü id)
+            var n=document.getElementById("aa");
+            document.write(n.innerHTML+"<br>"); 
+            // �̺�Ʈ �߻��� ��ü�� ���� ��� 
+            document.write(n.onclick+"<br>");
+            // ��� �������� �̺�Ʈ�� �߻��ߴ��� ���
+            document.write(n.style.color);
+            // ��Ÿ�� ����(blue ��) ���
+
+        </script>
+
+
+
+
+��������
+
+Prompt()�� �̿��Ͽ� ����n�� �Է¹޾� for���� �̿��Ͽ� 0~n������ ���� ����ض�.
+
+ 
+
+Prompt()�Լ��� �̿��Ͽ� ������ �Է¹޾� ��� ����� ����ض�. ���� ����� eval()�Լ��� �̿��ض�.
+
+ 
+
+���� �迭�� ���� ���� �� Ʋ�� ����?
+
+var day=new Array(������, ��ȭ��, ������);
+
+�� var day=[������, ��ȭ��, ������]; �� ����� �� �ִ�.
+
+�� day.length�� 3�̴�.
+
+�� day.length=5�� �����Ͽ� �迭�� ũ�⸦ 5���� �ø� �� ����.
+
+�� day[1]=��ȭ���ϡ�; �ڵ�� ��ȭ���� ��ȭ���ϡ��� �����Ѵ�.
+
+**
+
+        <script>
+
+            // 1��
+        //    var a=prompt("�����Է�");
+        //    var sum=0;
+        //    for(var i=0;i<a;i++){
+        //     sum+=i;
+        //    }
+        //    document.write(sum);
+
+            //2��
+        //    var b=prompt("�����Է�");
+        //    document.write(eval(b));
+
+        // 3��
+        // ��:4��
+
+        </script>
+
+--------------
+
+
+** ����� ��ü �����
+�ھü-> Data, String, Array ��
+=> �⺻������ �����Ǿ� ��𼭵� ��� ������ ��ü
+
+�� �� ���ο� ��ü Ÿ��(���� ����� ��ü): ����� ��ü
+
+1. new Object()
+2. ���ͷ� ǥ���
+3. ������Ÿ��
+
+
+��:
+	<script>
+            var v=new Object(); // ����ڰ�ü
+            v.name="ȫ�浿";
+            v.id="1234";
+            v.maney=10000;
+
+            function a(n){
+                v.maney+=n;
+            }
+        </script>
+
+
+
+------
+
+** ����ڰ�ü ����� ����
+
+1. new Object �̿�
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function a(){
+                return this.num;
+            }
+            function plus(money){
+                this.num+=money;
+                // return money;
+            }
+            function minus(money){
+                this.num-=money;
+                // return money;
+            }
+            var mon=new Object(); // ����� ��ü
+            mon.name="��浿";
+            mon.id="123";
+            mon.num=30000; // �ʱⰪ
+
+            mon.a=a;
+            mon.plus=plus;
+            mon.minus=minus;  
+            // �޼ҵ� �ʱ�ȭ(�Լ�ȣ��-�������� ������ ��)
+        </script>
+    </head>
+    <body>
+
+        <script>
+            document.write(mon.name+"<br>");
+            mon.plus(10000); // 4��
+            document.write(mon.num+"<br>");
+            mon.minus(5000); //35000��
+            document.write(mon.num+"<br>");
+            
+        </script>
+    </body>
+</html>
+
+
+
+----------
+
+
+2. ���ͷ� ǥ���(�߰�ȣ �̿�)
+
+            var mon={ // ���ͷ� ǥ���
+                name:"��浿",
+                id:"123",
+                num:30000,
+
+                a: function(){ // ���ͷ� ǥ��� �Լ�
+                    return this.num;
+                },
+                plus:function(money){
+                    return this.num+=money;
+                },
+                minus:function(money){
+                    return this.num-=money;
+                }
+            };
+
+
+
+=> �߰�ȣ �ȿ� , �� ����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var mon={ // ���ͷ� ǥ���
+                name:"��浿",
+                id:"123",
+                num:30000,
+
+                a: function(){ // ���ͷ� ǥ��� �Լ�
+                    return this.num;
+                },
+                plus:function(money){
+                    return this.num+=money;
+                },
+                minus:function(money){
+                    return this.num-=money;
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(mon.name+"<br>");
+            document.write(mon.num+"<br>");
+            mon.plus(10000); // 4��
+            document.write(mon.a()+"<br>");
+            mon.minus(5000); //35000��
+            document.write(mon.a()+"<br>");
+        </script>
+    </body>
+</html>
+
+
+
+-------------
+
+3. ������Ÿ������ ��ü �����
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Mon(name, id, num){
+                this.name=name;
+                this.id=id;
+                this.num=num;
+
+                this.a=function(){
+                    return this.num;
+                }
+                this.plus=function(money){
+                    return this.num+=money;
+                }
+                this.minus=function(money){
+                    return this.num-=money;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var aa=new Mon("tom","132",30000);
+            document.write(aa.name+"<br>");
+            document.write(aa.a()+"<br>");
+            aa.plus(10000);
+            document.write(aa.a()+"<br>");
+            aa.minus(5000);
+            document.write(aa.a()+"<br>");
+            
+        </script>
+    </body>
+</html>
+
+
+--------------
+
+��ũ��Ʈ ����
+
+// Array()�� name ��ü �����Ͽ� names�� ����
+
+var names= new Array("aaa","b","cc");
+1.�� ��� ���
+2. ���� �� �̸� ���
+3. ���� ���� ������ �̸� ���
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <script>
+            var names= new Array("aaa","b","cc");
+            //1.�� ��� ���
+            for(var i=0;i<names.length;i++){
+            document.write(names[i]+" ");
+            }
+
+            document.write("<br>");
+
+            // //2. ���� �� �̸� ���
+            var long=names[0];
+            for(var i=1;i<names.length;i++){
+                if(names[i].length>long.length){
+                    long=names[0];
+                }
+            }
+            document.write(long+"<br>");
+
+            // //3. ���� ���� ������ �̸� ���
+            var n=names[0];
+            for(var i=0;i<names.length;i++){
+                if(names[i]<n){
+                    n=names[i];
+                }
+            }
+            document.write(n+"<br>");
+        </script>
+    </body>
+</html>
+
+
+--------
+
+����� ��ü ����� ����
+
+1. object
+
+        <script>
+            var music=new Object();
+            music.title="aa";
+            music.singer="bb";
+            music.price=20000;
+            document.write(music.title+" "+music.singer+" "+music.price);
+        </script>
+
+
+2. ���ͷ�
+
+        <script>
+            var music={
+                title:"aa", singer:"bb", price:20000
+            };
+            document.write(music.title+" "+music.singer+" "+music.price);
+        </script>
+
+
+3. ������Ÿ��
+
+        <script>
+            function M(){
+                this.title="aa";
+                this.singer="bb";
+                this.price=30000;
+            }
+            var music=new M();
+            document.write(music.title+" "+music.singer+" "+music.price);
+        </script>
+
+
+----------
+
+
+** DOM(Document Object Model)
+=> �� HTML�±׸� �ϳ��� ��ü�� ����
+   <div>,<p>...
+
+=> HTML�±װ� ��µ� ���� �������� �����Ѵ�.
+
+<DOM�� ������� 5����>
+
+1. ������Ƽ(property) : DOM ��ü�� ����
+
+2. �޼ҵ�(�Լ�)
+
+3. �÷��� : �������� ����(�迭����)
+
+4. �̺�Ʈ ������
+
+5. CSS ��Ÿ��
+
+
+
+-----
+
+- DOM ��ü ����: id�Ӽ�
+<p id="a">�ȳ�</p>
+
+- DOM ��ü ã�� : document.getElementByid("a");
+=> id�� ���� ã��(a�� ���̵��)
+var p= document.getElementByid("a");
+p.style.color="red";  // id a�� Į�� �����ϰڴٴ� �ǹ�
+
+
+
+
+
+------------
+
+��ư Ŭ���� �̺�Ʈ ����
+1. ��ũ��Ʈ ���� ����
+2. ��Ʈ ������ 30px
+3. width 3��
+4. ��輱 3px ��Ʈ��� deeppink 
+5. margin 10px
+6. block ����
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function change(){
+                var a=document.getElementById("java");
+                a.style.color="black";
+                a.style.fontSize="30px";
+                a.style.display="block";
+                a.style.width="3em";
+                a.style.border="3px dotted deeppink";
+                a.style.margin="10px";
+            }
+        </script>
+
+        <p style="color: burlywood;">�ڹ�
+        <span id="java" style="color: cornflowerblue;">��ũ��Ʈ</span>
+        </p>
+        <input type="button" value="��ư" onclick="change()">
+        
+    </body>
+</html>
+
+
+-----
+
+// ���̵� �� �˾Ƴ��� ������ ����(innerHTML)
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="chi" style="color: blue;" onclick="change()">
+        Ŭ��<span style="color: red;">�غ�����</span>
+        </p>
+        <script>
+            function change(){
+            var a=document.getElementById("chi");
+            a.innerHTML=
+            "ġŲ<img src='C:/Users/soldesk/Desktop/�ڹٸ޸���/ġŲ.jpg'> �Ķ��̵�";
+            }
+        </script>
+    </body>
+</html>
+
+
+--------
+
+
+** for-in ����(for-each�� ���)
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <script>
+            var music={
+                singer:"bts",
+                money:10000,
+                title:"dynamite"
+            };
+            var output='';
+            for(var key in music){
+                output+=key+":"+music[key]+"\n";
+            }    
+            alert(output);
+            
+        </script>
+    </body>
+</html>
+
+
+-----------
+
+** ��ü����� ����
+
+Book ��ü�� ������.
+
+title, author, price 3���� ������Ƽ�� �����Ѵ�.
+
+1) new Object()�� ���
+
+2) ���ͷ� ǥ���
+
+3) ������Ÿ��
+
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var b=new Object();
+            b.title="a";
+            b.author="b";
+            b.price =1000;
+            document.write(b.title+" "+b.author+" "+b.price);
+            document.write("<br>");
+
+            var bb={
+                title:"aa",
+                author:"bb",
+                price:2000
+            }
+            document.write(bb.title+" "+bb.author+" "+bb.price);
+            document.write("<br>");
+
+            function Bo(){
+                this.title="aaa";
+                this.author="bbb";
+                this.price =3000;
+            }
+            var bbb=new Bo();
+
+            document.write(bbb.title+" "+bbb.author+" "+bbb.price);
+            document.write("<br>");
+        </script>
+    </body>
+</html>
+
+---------
+
+** �Լ� �ȿ� �Լ�����
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function student(name, score){
+                this.name=name;
+                this.score=score;
+                this.grade=function(){ //�Լ� �ȿ� �Լ� ����
+                    if(score>90){
+                        return "A";
+                    }else if(score>80){
+                        return "B";
+                    }else{
+                        return "C";
+                    }
+                }
+            }
+
+            var a=new student("juli",60);
+            var b=new student("tom",100);
+
+            document.write(a.name+"�� ���: "+a.grade()+"<br>");
+            document.write(b.name+"�� ���: "+b.grade()+"<br>");
+        </script>
+    </body>
+</html>
+
+---------
+
+** ��ũ��Ʈ ����
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick="ch(this,'red')">��ư1</button>
+        <button onclick="ch(this,'orange')">��ư2</button>
+        <div onclick="ch(this,'yellow')">����</div>
+        <script>
+            function ch(a,b){
+                a.style.color=b;
+            }
+        </script>
+    </body>
+</html>
+
+
+------
+
+** getElementsByTagName : �±� �̸����� DOM ��ü ã��
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button onclick="ch()">����</button>
+        
+        (õ��=����1) ��ƿ� ���� = 8�� �߼����� �ٽ� ���۵� ���� 
+        �ڷγ����̷��� ������(�ڷγ�19) Ȯ�꼼�� õ������ Ȯ���ڰ� 
+        ����� 40���� �Ѿ��. <span>�������</span>�� �� �� ���� Ȯ���ڵ��� 2�� 
+        �������� ���� Ȯ�꼼�� ��� �� ������ ���δ�.
+        24�� õ�Ƚÿ� ������ 8�� 15�� ���� ������ϱ�ȸ, 
+        8��15 ��ȭ�� ��ȸ ������, ��õ�� ���걳ȸ, ��õ���õ�Ⱥ��� 
+        ��� �߻��� �ڷγ�19 Ȯ���ڴ� ��� 41���̴�.
+
+        ��ü������ ���� �ļ��� <span>������ϱ�ȸ</span> 11�� �ĸ�õ�� ���걳ȸ 10�� 
+        ���ؿ��Ա��� 3�� �ı�ȭ�� ��ȸ 1�� �ļ��� ���� 1�� �Ŀ��κҸ� 3�� 
+        �Ŀ��κҸ� Ȯ���� ������ <span>12��</span>�̴�.
+
+        <script>
+           function ch(){
+             var a=document.getElementsByTagName("span");
+             // getElementsByTagName : <> �±� ���� �� ����
+             // �±װ� ������ ���, �迭 ���·� ����
+
+             for(var i=0;i<a.length;i++){
+                var num=a[i];
+                num.style.color="yellow";
+                num.style.fontSize="30px";
+             }
+           } 
+        </script>
+    </body>
+</html>
+
+
+----------
+
+** ��ũ��Ʈ �����Լ� ����
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+           var a=new String("�ȳ� �ϼ���");
+           var b="~~~";
+
+            //1. a+b ����
+            //2. '��'�� ���
+            //3. �������� �����ؼ� ���
+            //4. �ϼ���->�ؿ� �� ����
+
+           var c=a.concat(b);
+           document.write(c+"<br>"); 
+           document.write(c.substr(0,1)+"<br>");
+        //  �̷��Ե� ����=>    document.write(c.charAt(0)+"<br>");
+            var n=c.split(" ");
+            for(var i=0;i<n.length;i++){
+            document.write(n[i]+"<br>");
+            }
+            document.write(c.replace("�ϼ���","�ؿ�")+"<br>");
+
+        </script>
+    </body>
+</html>
+
+----
+
+���� �������� ����
+
+<!DOCTYPE html> 
+<html>
+    <head>
+    </head>
+    <body id="theBody">
+        <button onclick="ch()">��� ���� �ٲٱ�</button>
+        <script>
+           function ch(){
+               var a=document.getElementById("theBody");
+               var str=["#ff0","#6c0","#fcf","#cf0","##39f"];
+               for(var i=0;i<str.length;i++){
+                   var ran=parseInt((Math.random()*5));
+                 a.style.backgroundColor=str[ran];
+               }
+           }
+        </script>
+    </body>
+</html>
+
+------
+
+p, 129 - 2��
+
+** �޴� �������� ���
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+           var menu=["¥���","������","���屹","��ġ�","ȸ����"];
+           for(var i=0;i<menu.length;i++){
+           var n=parseInt(Math.random()*5);
+           }
+               document.write(menu[n]);
+
+        </script>
+    </body>
+</html>
+
+
+------
+
+** ��ũ��Ʈ �迭 ����(�迭�� ��Ÿ�� �ֱ�)
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+            div{
+                display: inline-block;
+                width: 60px; height: 50px;
+                text-shadow: 2px 2px 2px white;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var co=["yellow","red","blue","black","aqua"];
+            for(var i=0;i<co.length;i++){
+                var str="<div style='background: ";
+                str+=co[i];
+                str+="'>"+co[i]+"</div>";
+                document.write(str);
+            }
+        </script>
+    </body>
+</html>
+
+
+------
+
+
+"����"�̶�� ��ư�� �ϳ� �����
+
+��ư�� Ŭ���ϸ� "�ڹ� ��ũ��Ʈ"��� ������ ���� ���ϵ��� �ڵ��ۼ��ض�.
+
+�Լ����·� ����
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <button onclick="ch()">����</button>
+        <p id="aa">�ڹ� ��ũ��Ʈ</p>
+        <script>
+            function ch(){
+                var a=document.getElementById("aa");
+                a.style.color="red";
+            }
+        </script>
+    </body>
+</html>
+
+
+
+=> �±׳������� �� ���:
+
+        <script>
+            function ch(){
+                var a=document.getElementsByTagName("p");
+                for(var i=0;i<a.length;i++){
+                a[i].style.color="red";
+                }
+            }
+        </script>
+
+
+����1
+���� �� ������ó�� �����ض�. pink��ư�� ������ ������ ���� ���ڹٸ��� �κп� pink�� ��Ʈ����� ���.
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+            h1{display: inline-block;}
+        </style>
+    </head>
+    <body>  
+        <h1>�ڹٽ�ũ��Ʈ��?</h1>
+        <button onclick="ch()">pink</button>
+        <hr>
+        <div>
+            �ڹٽ�ũ��Ʈ�� �� �������� ���� �����ų �� �ִ�.
+        </div>
+        <div>
+            <span >�ڹ�</span>�� �ƴ� ����ڴ� ������ �н��� �� �ִ�.
+        </div>
+        <div>
+            GUI���α׷��ֿ� �ʿ��� ��ҵ��� �־� �ణ�� ������� �ִ�.
+        </div>
+        <script>
+            function ch(){
+                var a=document.getElementsByTagName("span");
+                for(var i=0;i<a.length;i++){
+                    a[i].style.border="3px dotted green";
+                }
+            }
+        </script>
+    </body>
+</html>
+
+-------------
+
+2. �� ������� Ŭ��-> prompt �˾�-> ���ڿ� �Է�-> ���ڿ� ȭ�� ���
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+            h1{display: inline-block;}
+        </style>
+    </head>
+    <body>  
+        <h2>innerHTML</h2>
+        <hr>
+        <p id="aa" onclick="ch()">���� ������ �� �������?</p>
+        <script>
+            
+            function ch(){
+            var a=prompt("HTML �ؽ�Ʈ Ȥ�� �׳� �ؽ�Ʈ�� �Է��ϰԿ�");
+            var b=document.getElementById("aa");
+            aa.innerHTML=a;
+            }
+        </script>
+    </body>
+</html>
+
+-----------
+
+3. �亸�� Ŭ���ϸ� ���ڻ���, ���� Ŭ���� ���� ����
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+            h1{display: inline-block;}
+        </style>
+    </head>
+    <body>  
+        <div id="div1">
+        <div>Q. ��ǻ�� �о� ���� �����ִ�?</div>
+        <button onclick="ch()">�亸��</button>
+         </div>
+        <div id="div2">
+         <div>Q. �� �԰��ʹ�?</div>
+        <button onclick="ch2()">�亸��</button>
+        </div>
+        <script>
+            function ch(){
+                var a=document.createElement("div");
+                a.innerHTML="java";
+                var b=document.getElementById("div1");
+                b.appendChild(a);
+
+                a.addEventListener("click", 
+                function(){
+                var pa=this.parentElement;
+                pa.removeChild(this)
+                })
+                
+            }
+            function ch2(){
+                var a=document.createElement("div");
+                a.innerHTML="����";
+                var b=document.getElementById("div2");
+                b.appendChild(a); 
+
+                a.addEventListener("click", 
+                function(){
+                var pa=this.parentElement;
+                pa.removeChild(this)
+                })
+            }
+            
+        </script>
+    </body>
+</html>
+
+
+-------
+
+** ���� ����(�� ���� ����ϱ�)
+* ��ü.value
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        ����<input type="text" id="aa">
+        <button onclick="re()">Ŭ��</button><br>
+        ���<input type="text" id="bb"><br>
+        <script>
+            function re(){
+                var a=document.getElementById("aa");
+                var b=document.getElementById("bb");
+                b.value=eval(a.value);
+            }
+        </script>
+    </body>
+</html>
+
+
+----------
+
+���콺�̺�Ʈ ����
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <span onmousedown="down(this)" onmouseover="over(this)"
+        onmouseout="out(this)" onwheel="wheel(event,this)">
+            �ڹٽ�ũ��Ʈ</span>
+        <script>
+            function down(a){  // ���콺 ������
+                a.style.fontWeight="bold";
+            }
+            function over(a){ // ���콺�� ���� �ö����
+                a.style.color="yellow";
+            }
+            function out(a){ // ���콺�� �����
+                a.style.color="red";
+            }
+            function wheel(e,a){
+                if(e.wheelDelta<0){ //���� ������
+                    a.style.backgroundColor="blue";
+                }else{ // ���� �ø���
+                    a.style.backgroundColor="green";
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+------
+
+
+** oncontextmenu
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <p>
+            ���� ���� �ڷγ����̷��� ������(�ڷγ�19) �濪 �ѷ����� 
+            ���� �������, ��ȸ�� �Ÿ��α� �ݻ��� ���� ������ ������ 
+            �µ� ���� ���̱⵵ �ߴ�. ���ִ� �����δ� ȸ�Ǽ��� ������ 
+            ������ ����� �ι������� �԰� �ڸ��ߴ�.
+        </p>
+        <script>
+            document.oncontextmenu=on; // on�� �Լ���
+            function on(){
+                alert("�ȳ�");
+                return false; 
+                // ���ؽ�Ʈ �޴� ��� ����(������ ���콺 Ŭ��x)
+            }
+        </script>
+    </body>
+</html>
+
+--------------
+
+** onload
+=> �ε� �Ǹ� ���
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body onload="alert('��� ����Ʈ �޽�')">  
+        <p>
+            ���� ���� �ڷγ����̷��� ������(�ڷγ�19) �濪 �ѷ����� 
+            ���� �������, ��ȸ�� �Ÿ��α� �ݻ��� ���� ������ ������ 
+            �µ� ���� ���̱⵵ �ߴ�. ���ִ� �����δ� ȸ�Ǽ��� ������ 
+            ������ ����� �ι������� �԰� �ڸ��ߴ�.
+        </p>
+        <script>
+            
+        </script>
+    </body>
+</html>
+
+
+------
+
+** ĸ��/�����ܰ�
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <p style="color:violet">
+        �ڹ�<span style="color: tomato" id="aa">��ũ��Ʈ</span>
+        </p>
+        <input type="text">
+        <button id="button">���</button>
+        <div id="div" style="color: teal"></div>
+        <script>
+            var d=document.getElementById("div");
+            var b=document.getElementById("button");
+            document.body.addEventListener("click",capture,true); //ĸ��
+            // �ٵ� ��ü�� ĸ�ĸ����� ���
+            b.addEventListener("click",bubble,false); //���������� ���
+            document.body.addEventListener("click",bubble,false); // �������
+
+            function capture(e){
+                var n=e.currentTarget;
+                var m=n.tagName; // �±��̸�
+                d.innerHTML+=m+"�±׿�"+e.type+"�̺�Ʈ";
+            }
+            function bubble(e){
+                var n=e.currentTarget;
+                var m=n.tagName; // �±��̸�
+                d.innerHTML+=m+"�±׿�"+e.type+"�̺�Ʈ";
+            }
+        </script>
+    </body>
+</html>
+
+
+-----
+
+** onchange
+���ÿ� ���� �̹��� ���ϴ� ����
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body onload="on()">  
+        <select id="aa" onchange="on()">
+            <option value="C:/Users/soldesk/Desktop/�ڹٸ޸���/ġŲ.jpg">ġŲ</option>
+            <option value="C:/Users/soldesk/Desktop/�ڹٸ޸���/���.jpg">���</option>
+        </select>
+        <span id="span">�����!!</span>
+        <p>
+            <img src="C:/Users/soldesk/Desktop/�ڹٸ޸���/ġŲ.jpg" 
+            id="bb">
+        </p>
+        <script>
+            function on(){
+                var n=document.getElementById("aa");
+                var m=document.getElementById("bb");
+                m.load=function(){
+                    var a=document.getElementById("span");
+                    a.innerHTML=m.width+" "+m.height;
+                }
+                var b=n.selectedIndex;
+                m.src=n.options[b].value;
+            }
+        </script>
+    </body>
+</html>
+
+--------
+
+** onblur
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <!--onblur : �ٸ����� ��Ŀ���� ������ -->
+        <input type="text" onblur="on(this)">
+        <script>
+            function on(a){
+                if(a.value==''){ // �Է� ���� �ٸ� ���� Ŭ���Ҷ�
+                    alert("����");
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+--------
+
+** ���� ��ư ����
+
+2,3�� ������ư ����� 1���� üũ �Ǿ�����
+���� �λ�
+���� üũ�ϰ� Ȯ�� ������ ���� ���â ���
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <input type="radio" name="a1" value="����">����
+        <input type="radio" name="a1" value="�λ�" checked>�λ� <br>
+        <button onclick="ch()">Ȯ��</button>
+
+        <script>
+            function ch(){
+                var city=document.getElementsByName("a1");
+                for(var i=0;i<city.length;i++){
+                    if(city[i].checked==true){
+                      var m=city[i];
+                    }
+                }
+                alert(m.value);
+            }
+        </script>
+    </body>
+</html>
+
+
+---------
+
+** üũ�ڽ� ����
+
+�Ƹ޸�ī��/ ��/ īǪġ��
+���� ���ؼ� ���
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <input type="checkbox" name="aa" value="2000">�Ƹ޸�ī��
+        <input type="checkbox" name="aa" value="3000">��
+        <input type="checkbox" name="aa" value="3500">īǪġ�� <br>
+        <button onclick="hap()">���</button>
+
+        <script>
+            function hap(){
+                var h=document.getElementsByName("aa");
+                var m=0;
+                for(var i=0;i<h.length;i++){
+                    if(h[i].checked==true){
+                    var hh=parseInt(h[i].value);
+                    m+=hh;
+                    }
+                }
+                alert("����: "+m+"��");
+            }
+        </script>
+    </body>
+</html>
+
+----------------
+
+** onchange ����
+��� ���ý� ������/ ġŲ ���ý� ġŲ����
+
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <select id="aa" onchange="ch()">
+            <option value="ġŲ">ġŲ</option>
+            <option value="���">���</option>
+        </select>
+        <p>
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+        id="bb" width="300" height="250">
+        </p>
+        <script>
+            function ch(){
+                var a=document.getElementById("aa");
+                var b=document.getElementById("bb");
+                if(a.value=="ġŲ"){
+                    b.src="C:/Users/soldesk/Desktop/�ڹٸ޸���/ġŲ.jpg";
+                }else if(a.value=="���"){
+                    b.src="C:/Users/soldesk/Desktop/�ڹٸ޸���/���.jpg";
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+-------
+
+Bom
+
+window ��ü ���� 3����
+1. �������� ���ο� �� ������ �ε��Ҷ�
+2. �ڹٽ�ũ��Ʈ �ڵ�� window��ü ����
+   window.open("�������� url","�������̸�",�Ӽ�)
+3. <iframe> �±� �� �ϳ� �� window ��ü ����
+
+
+--------
+
+** ������������ ���� ����
+
+open window/ close window
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <a href="javascript:load('http://www.naver.com')">���̹�</a>
+        <script>
+            function load(){
+                window.open("http://www.naver.com","���̹�", "width=400, height=200");
+            }
+        </script>
+    </body>
+</html>
+
+***
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <a href="javascript:window.close()">���̹�</a>
+        <script>
+            
+        </script>
+    </body>
+</html>
+
+
+------------------
+
+** ���� �����̴� �̺�Ʈ(setInterval �̿�)
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>  
+        <div>
+            <span id="aa" style="background: pink;">
+            �ڹٽ�ũ��Ʈ �ѳ� ��մ� ��</span>
+        </div>
+        <script>
+            var n=document.getElementById("aa");
+            var t=setInterval("on()",200); // 1�� �ֱ�� on�Լ� ȣ��
+            n.onclick=function(e){
+                clearInterval(t); // n=<span> Ŭ���� Ÿ�̸�����                
+            }
+            function on(){
+                var a=n.innerHTML; //  ->�ڹٽ�ũ��Ʈ �ѳ� ��մ� ��
+                var b=a.substr(0,1); //�ε��� 0���� 1���ڸ�
+                var c=a.substr(1,a.length-1);
+                a=c+b;
+                n.innerHTML=a;
+            }
+        </script>
+    </body>
+</html>
+
+
+------
+
+
+** ���� �ְ� ��ư ������ ����� ��µǰ� ����
+
+����1,2
+
+1. ���� �̺�Ʈ�� ��� ���ڿ��� ����Ŭ���ϸ� ������ pink, ���콺 Ŀ���� ��ü �������� ����� ������ blue�� �����ض�.
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <p id="aa" ondblclick="on()">�� �̺�Ʈ</p>
+        <script>
+          var a=document.getElementById("aa");
+          function on(){
+            a.style.backgroundColor="pink";
+          }
+        </script>
+    </body>
+</html>
+
+
+***
+
+
+2. �޴� 3���� ���� ��ư���� ���Ƿ� �����ϰ� �����ϸ� �ش� �̹����� ����ϴ� �� �������� �ۼ��ض�.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+function co(){
+alert("����");
+document.write("����");
+}
+function you(){
+alert("����");
+document.write("����");
+}
+function minn(){
+alert("��Ʈ");
+document.write("��Ʈ");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h3>�޴�</h3>
+<hr>
+����<input type="radio" onclick="co()">
+����<input type="radio" onclick="you()">
+��Ʈ<input type="radio" onclick="minn()">
+
+<script>
+
+
+</script>
+
+</body>
+
+
+</html>
+
+
+
+-----------
+
+
+3. ���� �ƹ����̳� ����Ŭ���ϸ� ������ �����ϰ� ���ϴ� �� �������� �ۼ��ض�.
+
+// ������� �ٷ� ������
+
+?
+        <script>
+            window.ondblclick=function(){
+                var a=Math.floor(Math.random()*256);
+                var b=Math.floor(Math.random()*256);
+                var c=Math.floor(Math.random()*256);
+                document.body.style.backgroundColor="rgb("+a+","+b+","+c+")";
+            }
+        </script>
+
+
+4. body�±׿� ���ڹٽ�ũ��Ʈ�� ���ڿ��� �ش�. �� �������� �ε�� ��, ��������������� ���ڿ��� 180*50 ũ���� �� �����쿡 ����ϵ��� �ۼ��ض�. (onload������ ���)
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="on()">  
+        <span >�ڹٽ�ũ��Ʈ</span>
+        <script>
+            function on(){
+                window.open("aa.html","��������","width=180, height=50");
+            }
+        </script>
+    </body>
+</html>
+
+
+
+--------------------
+
+** onload ����
+
+window �� onload �� �� ���̵� �˾Ƴ���border 2px �Ǽ� ������ �� ���ڻ��� orange
+
+=> �Լ��� ������ ���
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="on()">  
+        <span id="aa">�ڹٽ�ũ��Ʈ</span>
+        <script>
+            function on(){
+                var a=document.getElementById("aa");
+                a.style.border="2px solid green";
+                a.style.color="orange";
+            }
+        </script>
+    </body>
+</html>
+
+
+=> �Լ����� ��ٷ� ������ ���
+
+        <script>
+            window.onload=function(){
+                var a=document.getElementById("aa");
+                a.style.border="2px solid green";
+                a.style.color="orange";
+            }
+        </script>
+
+
+-------------
+
+
+** ���콺 ���ٴ�� 2�� �Ŀ� ���̹�â �ε�
+** setTimeout / cancel / load �̿�
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg"
+         id="im" onmouseover="start(2000)"
+         onmouseout="cancel()">
+        <script>
+            var n=null;
+            function start(t){
+                // 2�� �Ŀ� ���̹� â �ε�
+                n=setTimeout("load('http://www.naver.com')", t);
+                // �ε� �Ǹ� ���� ����(���콺 ���� ���� ��)
+                document.getElementById("im").title="����";
+            }
+            function cancel(){
+                if(n!=null){
+                clearTimeout(n); // Ÿ�̸� �ߴ�
+                }
+            }
+            function load(url){
+                // ������ �ּҸ� url ��
+                window.location=url;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+-----
+
+** location ����
+�ɼ� ������ ����Ʈ�� �̵�
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <select id="sel">
+            <option value="http://www.daum.net" selected>����</option>
+            <option value="http://www.google.com" >����</option>
+        </select>
+        <button onclick="load()">����Ʈ</button>
+        <script>
+            function load(){
+                var a=document.getElementById("sel");
+                window.location=a.value;
+            }
+
+        </script>
+    </body>
+</html>
+
+
+---
+
+** location ��ü: history
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <select id="sel">
+            
+        </select>
+        <button onclick="history_back()">�ڷ�</button>
+        <button onclick="history_forward()">������</button>
+        <button onclick="history_go(-1)">����</button>
+
+        <script>
+            function history_back(){
+                window.location=history.back();
+            }
+            function history_forward(){
+                window.location=history.forward();
+            }
+            function history_go(a){
+                window.location=history.go(a);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+-----
+
+** canvas (ĵ����:�׸���)
+
+=> ���콺�� �׸� �׸� �� ����
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <canvas id="a" width="150" height="200" style="background: rgb(143, 149, 223);"></canvas>
+        <canvas id="a" width="150" height="200" style="background: palevioletred;"></canvas>
+        <canvas id="a" width="150" height="200" style="background: deeppink;"></canvas>
+        <script>
+            
+        </script>
+    </body>
+</html>
+
+
+
+***
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>  
+        <canvas id="a" width="200" height="250"
+         id="can" style="background: rgb(143, 149, 223);"></canvas>
+       
+        <script>
+            var n=document.getElementById("can");
+            var m=n.getContext("2d");
+
+            m.beginPath(); // 1.�� ��� �����(�ʱ�ȭ)
+            m.moveTo(100,10); // 2 ������ ����(��� ��ġ���� ����-x,y��)
+            m.lineTo(20,50); // �����߰�(x,y)
+            m.lineTo(150,120); // �����߰�(x,y)
+            m.stroke(); // ��θ� ĵ������ �׸���.(��ǻ�Ͱ� �ڵ�����)
+            // ���콺�� ���� �׸����� ���콺 �̺�Ʈ �ʿ�
+        </script>
+    </body>
+</html>
+
+
+
+****
+
+* ĵ���� ���콺 �׸��׸���(�׸���)
+
+** mousemove 
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="on()">
+        <canvas id="can" style="background: beige;"
+        width="300" height="250"></canvas>
+        <script>
+            var canvas,con;
+
+           function on(){
+            canvas=document.getElementById("can");
+            con=canvas.getContext("2d");
+            con.lineWidth=3; // �� ����
+            con.strokeStyle="green"; // �� ����
+            canvas.addEventListener("mousedown",function(e){down(e)},false);
+            canvas.addEventListener("mousemove",function(e){move(e)},false);
+            canvas.addEventListener("mouseout",function(e){out(e)},false);
+            canvas.addEventListener("mouseup",function(e){up(e)},false);
+
+            }
+           
+           var x=y=0;
+           var d=false;
+
+           function draw(xx,yy){
+               con.beginPath(); // �� ��� ����
+               con.moveTo(x,y); // ������ġ
+               con.lineTo(xx,yy);
+               con.stroke();
+           }
+
+           function down(e){
+                x=e.offsetX;
+                y=e.offsetY;
+                d=true;
+           } 
+           function move(e){
+                if(!d) return;
+                var xx=e.offsetX, yy=e.offsetY;
+                draw(xx,yy);
+                x=xx; y=yy;
+           } 
+           function out(e){
+                x=e.offsetX;
+                y=e.offsetY;
+                d=false;
+           } 
+           function up(e){
+                x=e.offsetX;
+                y=e.offsetY;
+                d=false;
+           } 
+        </script>
+    </body>
+</html>
+
+
+
+
+
+---------
+
+** screen �̿�
+�ʺ�, ���� Į�� �� �˾Ƴ��� ��
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="pr()">
+        <div id="aa">�����</div>
+        <script>
+            function pr(){
+                var t=screen.width+"<br>";
+                t+=screen.height+"<br>";
+                t+=screen.availHeight+"<br>";
+                t+=screen.availWidth+"<br>";
+                t+=screen.colorDepth+"<br>";
+
+                document.getElementById("aa").innerHTML=t;
+                
+            }
+        </script>
+    </body>
+</html>
+
+
+
+-----
+
+
+** ��ũ�� ��
+
+onload="start(1000)"
+setInterval
+ window.scrollBy(a,b);
+
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="start(1000)">
+        27�� �߾��糭������å���ο� ������ ���Ǻ����� 
+        �߾ӻ����������(�߼���)�� ���� 22�� ������ϱ�ȸ 
+        ���� �������縦 ���� ���Ρ��湮�� ����, ������ ����, 
+        ���� ������, �� ���� ���ī�� ���� Ȯ���ϰ�, 5õ912����
+         �������� ����������� �����ߴ�.
+        �̴� ���� ����ÿ��� Ȯ���� �ŵ����湮�� ���� 4õ66������ 
+        1õ846�� 
+        ���� ���̴�. 5õ912�� �� �˻縦 ���� ����� 1õ902��(32%)�� 
+        �Ұ��ϴ�.
+        ������� �ŵ����湮�� �� �̴� 15�� ���� ��ȭ�� ��ȸ�� ������ 
+        ����� ������� 639������ �ľǵƴ�. �˻� �Ϸ��ڴ� 241��, 
+        Ȯ���ڴ� 79���̴�. �˻��� ��� �缺���� 33%�� ���ߴ�.
+        ���� ������ȸ�� ������ ��������ڴ� ���������� 5��1õ242���̴�. 
+        �߼����� �̵���� 3�� ������ ������ ���濡�� ����� �������� 
+        ž���� ���� ���� ���� Ȯ���� �����̴�.
+        ������� �� �˻縦 �Ϸ��� ����� 8õ36��(16%)�� �Ұ��ϴ�.
+        �߼����� ������ϱ�ȸ �� ������ȸ ���� ��������� ���� ����ü�� 
+        �뺸������, ����ü�� ��ȸ ���� ���� ���� Ȯ���ϰ� �˻縦 ������ 
+        �����̴�.
+        <script>
+           function start(interval){
+            setInterval("aa()",interval);
+           }  
+           function aa(){
+               //��ũ�� ������0, ���� 10�ȼ�
+               window.scrollBy(0,10);
+           }
+        </script>
+    </body>
+</html>
+
+------------
+
+** ���� 3�� �߻�, ��� �����ϸ� ���� ����
+
+<!DOCTYPE html> 
+<html >
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <div id="aa" onclick="on()" style="background: yellow;">111</div>
+        <script>
+            function on(){
+               var a=Math.floor((Math.random()*3)+1);
+               var b=Math.floor((Math.random()*3)+1);
+               var c=Math.floor((Math.random()*3)+1);
+               var d=document.getElementById("aa");
+               if(a==b&& b==c){
+                   d.innerHTML=a+" "+b+" "+c+"����";
+               }else{
+                d.innerHTML=a+" "+b+" "+c;
+               }
+            }
+        </script>
+    </body>
+</html>
+
+
+**
+
+������ �ڵ�
+
+<!doctype html>
+<html>
+<head>
+<style>
+span{
+font-style: italic;
+}
+#di{
+display: inline-block;
+background-color:deepskyblue;
+}
+#aa{
+display: inline-block;
+color:orange;
+width:50em;
+font-size:30px;
+}
+
+</style>
+<script>
+var n=document.getElementsByTagName("span");
+function ch(obj){
+obj.innerHTML=Math.floor(Math.random()*3)+1;
+if(n[0].innerHTML==n[1].innerHTML && n[1].innerHTML==n[2].innerHTML){
+var m=document.createElement("div");
+m.setAttribute("id","aa");
+m.innerHTML="����";
+
+m.addEventListener("click",
+function a(){
+for(var i=0;i&ltn.length;i++){
+n[i].innerHTML="1";
+}
+})
+obj.parentElement.appendChild(m);
+}
+else{
+var m=document.createElement("div");
+m.setAttribute("id","aa");
+m.innerHTML="����";
+
+m.addEventListener("click",
+function a(){
+for(var i=0;i&ltn.length;i++){
+n[i].innerHTML="1";
+}
+})
+obj.parentElement.appendChild(m);
+}
+}
+
+</script>
+<body>
+<div id="di">
+<span id="one"
+onclick="this.innerHTML=
+Math.floor(Math.random()*3)+1">1</span>
+
+<span id="two"
+onclick="this.innerHTML=
+Math.floor(Math.random()*3)+1">1</span>
+
+<span id="three"
+onclick="ch(this)">1</span>
+
+</div>
+</body>
+</html>
+
+
+---------
+
+** �������� ��ġ
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <mata http-equiv="X-UA_Compatible" content="ie=edge"></mata>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+$(document).ready(function(){
+    $('*').css('color','red');
+});
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>��������</h1>
+
+</body>
+
+</html>
+
+
+---------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+            $('*').css('border','1px solid blue');
+        });
+    </script>
+</head>
+<body>
+    <h1 id="title">��������</h1>
+    <h1 id="tit">������</h1>
+    <h1 id="title">���� ������</h1>
+</body>
+</html>
+
+------------
+
+
+
+** ��ũ��Ʈ ��ü ����� ����
+
+java��ü�� �����
+
+������Ƽ �ڹ�: 9
+
+             HTML: 12
+
+             CSS: 16
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var java=new Object();
+            java.ja=9;
+            java.html=12;
+            java.css=16;
+            document.write(java.ja+"<br>");
+
+            var java1={
+                ja:9,
+                html:12,
+                css:16
+            };
+            document.write(java1.ja+"<br>");
+
+            function Java(){
+                this.ja=9;
+                this.html=12;
+                this.css=16;
+            }
+            var java2=new Java();
+            document.write(java2.ja+"<br>");
+        </script>
+    </body>
+</html>
+
+
+
+
+
+** ��ճ���
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <script>
+
+            function stu(name,kor,eng,math){
+
+                this.name=name;
+
+                this.kor=kor;
+
+                this.eng=eng;
+
+                this.math=math;
+
+?
+
+                this.getsum=function(){
+
+                    return this.kor+this.eng+this.math;
+
+                }
+
+                this.getavg=function(){
+
+                    return this.getsum()/3;
+
+                }
+
+                this.toString=function(){
+
+                    return this.name+'\t'+this.getsum()+'\t'+this.getavg();
+
+                    }
+
+            }
+
+            var ary=[];
+
+            ary.push(new stu('����',90,100,80));
+
+            ary.push(new stu('�뼮',95,70,100));
+
+    
+
+            for(var i in ary){
+
+                alert(ary[i]);
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
+
+-----------------
+
+
+** �ּҷ� �߰�/����
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addr(){
+                result=document.getElementById("addr");
+                add=document.getElementsByName("aa")[0].value +','+document.getElementsByName("tel")[0].value;
+
+
+                item=document.createElement('li');
+                node=document.createTextNode(add);
+
+
+                item.appendChild(node);
+                result.appendChild(item);
+            }
+            function re(){
+                document.getElementById("addr").innerHTML="";
+                //�ʱ�ȭ
+            }
+        </script>
+    </head>
+    <body>
+        �̸�: <input type="text" name="aa"><br>
+        ��ȭ��ȣ: <input type="text" name="tel"><br>
+        <input type="button" value="����" 
+        onclick="addr()">
+        <input type="button" value="����"
+        onclick="re()">
+        <ul id="addr">
+
+        </ul>
+    </body>
+</html>
+
+
+---
+
+
+* createElement(tag)
+->tag�� �Ű������� �Ѱ� ���� ����
+
+* createTextNode(text)
+->html�±� ���̿� ���� �����͸� �Ű������� �ѱ�
+
+* appendChild(node)
+->������ ��� ���� �ؽ�Ʈ ��带 html��ü�� �����Ѵ�.[=�߰�]
+
+
+-------------
+
+����
+
+1. �������� ����ϴ� gugu()�Լ��� ����� 1~9 ������ ���� �Է¹޾� �������� ����ϴ� �� �������� �ۼ��ض�.(������Ʈ �̿�)
+
+            var a=prompt("�Է�");
+            document.write(eval(a));
+ 
+
+2. ���� �迭�� ����ִ� �� ���ڿ��� ����Ʈ�� ���������� ����ض�. (�ҷ����Խ�Ų ul���·�)
+
+        var food=[����顱, ���ʹ䡱, ����������, �����ɵ���];
+
+
+var food=["���","�ʹ�","������","���ɵ�"];
+            var f=document.getElementById("fo");
+            for(var i in food){
+                document.write("<li>"+food[i]);
+            }
+
+
+
+3. Prompt() �Լ��� �̿��Ͽ� ���ڿ��� �Է��� ��,�� �� �������� ���ڸ� �����Ͽ� ����ض�.
+
+?        <script>
+            var a=prompt("���ڿ� �Է�");
+            var b=a.split(",");
+            for(var i in b){
+            document.write(b[i]+"<br>");           
+            }
+        </script>
+
+
+4. ���� ��¥ �ð��� ����ض�. 
+
+(2020. 8. 28 ���� 10:10:10 �̷��� ������ ���)
+
+var d=new Date();
+            document.write(d.toLocaleDateString()+" "+d.toLocaleTimeString()+"<br>");
+
+
+
+4.1) Date ��ü�� ��, ��, �ϵ� ���� ����ض�.
+
+            var d=new Date();
+            document.write(d.toLocaleDateString()+" "+d.toLocaleTimeString()+"<br>");
+
+            document.write("����: "+d.getFullYear()+"<br>");
+            document.write("��: "+d.getMonth()+"<br>");
+            document.write("��: "+d.getDay()+"<br>");
+
+
+
+5. ���ڽ��� �ϴ� ���� �����ϰ� �Ǵ� �͡��̶�� ���ڿ��� �ְ� �����桱�̶�� ��ư�� Ŭ������ �� ���ڿ��� �������ϰԡ��Ǵ� �κ��� ���� violet, width�� 4em, block���·� �����ض�.
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function on(){
+                var a=document.getElementById("aa");
+                a.style.color="violet";
+                a.style.width="4em";
+                a.style.display="block";
+            }
+        </script>
+    </head>
+    <body>
+        <div>�ڽ��� �ϴ� ���� <span id="aa">�����ϰ�</span> �Ǵ� ��</div>
+        <button onclick="on()">����</button>
+    </body>
+</html>
+
+---------
+
+** ����Ʈ�� �ְ� ������ ����Ʈ�� Ŭ���ϸ� ����ũ�Ⱑ 1.2�� �þ��
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function cl(a){
+            a.style.fontSize="1.2em";
+            }
+               
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li onclick="cl(this)">�����ͺ��̽�</li>
+            <li onclick="cl(this)">������</li>
+            <li onclick="cl(this)">����ũ����</li>
+            <li onclick="cl(this)">������</li>
+        </ul>
+    </body>
+</html>
+
+
+-------------
+
+
+8. ���ڹٽ�ũ��Ʈ����� ���ڿ��� ���콺�� �÷��� ��, ���콺�� ��ü�� ����� �� ���� �̺�Ʈ�� ���� ���ڻ��� �����Ͽ� �͸� �Լ��� �̺�Ʈ �����ʸ� �ۼ��ض�.
+
+=> �͸��Լ��� ���ٽ� �� �ε� �ʿ���!!
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function on(){
+            var a=document.getElementById("aa");
+            a.addEventListener("mouseover",function(){
+                a.style.color="red";
+            });
+            a.addEventListener("mouseout", function(){
+                a.style.color="blue";
+            });
+            }
+        
+
+                     
+        </script>
+    </head>
+    <body onload="on()">
+        <span id="aa">�ڹٽ�ũ��Ʈ</span>
+    </body>
+</html>
+
+-------------
+
+
+���� �����
+
+����(�̿�)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var cal=document.getElementsByName("cal");
+            function on(){
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>����</h1><hr>
+        <input type="text" name="cal" placeholder="0"><br>
+        <button onclick="c()" id="c">C</button> <button onclick="result()">=</button><br>
+        <button onclick="on(this)" id="no" value="7">7</button> 
+        <button onclick="on(this)" id="no" value="8">8</button> 
+        <button onclick="on(this)" id="no" value="9">9</button> 
+        <button onclick="on()" value="/">/</button><br>
+        <button onclick="on(this)" id="no" value="4">4</button> 
+        <button onclick="on(this)" id="no" value="5">5</button> 
+        <button onclick="on(this)" id="no" value="6">6</button> 
+        <button onclick="on()" value="*">*</button><br>
+        <button onclick="on(this)" id="no" value="1">1</button> 
+        <button onclick="on(this)" id="no" value="2">2</button> 
+        <button onclick="on(this)" id="no" value="3">3</button> 
+        <button onclick="on()" value="-">-</button><br>
+        <button onclick="on(this)" id="no" value="0">0</button> 
+        <button onclick="on()" value="+">+</button><br>
+    </body>
+</html>
+
+
+***
+
+�������ڵ�
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button{
+width:70px;
+}
+input{
+width:300px;
+}
+td{
+width:100px;
+}
+
+</style>
+<script>
+function add(a){
+var n=document.getElementById("dd");
+n.value=n.value+a;
+}
+function result(){
+var n=document.getElementById("dd");
+var a=eval(n.value);
+document.getElementById("dd").value=a;
+}
+function ce(){
+var n=document.getElementById("dd");
+document.getElementById("dd").value="";
+}
+</script>
+</head>
+<body>
+<h3>����</h3>
+<hr>
+<input type="text" placeholder="0" id="dd">
+<table>
+<tr>
+<td><button type="button" onclick="ce()">C</button></td>
+<td><button type="button" onclick="result()">=</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="add(7)">7</button></td>
+<td><button type="button" onclick="add(8)">8</button></td>
+<td><button type="button" onclick="add(9)">9</button></td>
+<td><button type="button" onclick="add('/')">/</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="add(4)">4</button></td>
+<td><button type="button" onclick="add(5)">5</button></td>
+<td><button type="button" onclick="add(6)">6</button></td>
+<td><button type="button" onclick="add('*')">*</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="add(1)">1</button></td>
+<td><button type="button" onclick="add(2)">2</button></td>
+<td><button type="button" onclick="add(3)">3</button></td>
+<td><button type="button" onclick="add('-')">-</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="add(0)">0</button></td>
+<td><button type="button" onclick="add('+')">+</button></td>
+
+</tr>
+
+</table>
+</body>
+</html>
+
+--------------------------
+
+* �������� ����
+�����ڿ� ���� CSS ����
+���� �� �ٲٱ�
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('h1').css('color','blue');
+        })
+        $(document).ready(function(){
+            $('#aa').css('color','red');
+        })
+        $(document).ready(function(){
+            $('.bb').css('color','green');
+        })
+    </script>
+</head>
+<body>
+    <h1>�ڹ� ��ũ��Ʈ</h1>
+    <h1 id="aa">�ڹ� ��ũ��Ʈ</h1>
+    <h1 class="bb">�ڹ� ��ũ��Ʈ</h1>
+</body>
+</html>
+
+-----------------
+
+** �ڽļ�����
+(�ε�ȣ �̿�(body>div) or ����� ǥ������(body div))
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        
+        $(document).ready(function(){
+            // * �� ��� ����(body�� ��� �ڽĵ�)
+	// $('body * ').css('color','red'); => �ٵ� ��� ����=> ����� ����
+            $('body> * ').css('color','red');
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>������</li>
+        <li>¥���</li>
+        <li>�Ⱥ�ä</li>
+        <li>«��</li>
+    </ul>
+</body>
+</html>
+
+
+----------
+
+* ��ǲ Ÿ�Ժ� ��Ÿ�� �ֱ�
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        
+        $(document).ready(function(){
+            $('input[type="text"]').val('hi');
+            // ��ǲ Ÿ�� �ؽ�Ʈ�� ���� hi��� ��
+        })
+    </script>
+</head>
+<body>
+    <input type="text">�ڹ�
+    <input type="radio" name="">��������
+    <input type="checkbox" name="" id="">CSS
+</body>
+</html>
+
+
+-------
+
+* �θ��� ����(parent())
+
+$('��Ҽ���').parent();
+
+
+-------
+
+** ���̺� ¦��, Ȧ�� �����ؼ� ���� �ֱ�
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            // odd => Ȧ�� / even=>¦��
+            $('tr:odd').css('background','yellow');
+            $('tr:even').css('background','pink');
+        })
+    </script>
+</head>
+<body>
+    <table>
+    <tr><th>�̸�</th><th>����</th></tr>
+    <tr><td>��ȣ</td><td>����</td></tr>
+    <tr><td>ȿ��</td><td>���</td></tr>
+    <tr><td>��ö</td><td>����</td></tr>
+    <tr><td>����</td><td>���</td></tr>
+    </table>
+</body>
+</html>
+
+
+--------
+
+** 199p ����
+each()
+PL/SQL : 
+����Ŭ���� �����ϴ� ���α׷��� ���
+�Ϲ� ���α׷��� ��� �� ���� �ְ� db ����ó���� ���� ����ȭ�� ���
+
+
+[����]
+
+* declare(�����): ����, ���, Ŀ��
+
+* begin(�����): if , SQL�� ����, �ݺ�ó�� ��(�������ν��� SP)
+
+* end
+
+
+////////
+
+set serveroutput on  :  PL/SQL�� ǥ����� ���ɾ�
+
+-����-
+
+set serveroutput on 
+declare 
+v_num number:=1;  --�����
+begin
+    if v_num = 1 then 
+    dbms_output.put_line('DB');  -- �����(��¹�)
+--���ν��� ������ ����Ҷ�(print�� ���ν��� ���� ���)
+    else 
+    dbms_output.put_line('C');
+    end if;
+end;
+/
+
+
+//////////
+
+<�ݺ�ó����>
+1. loop~end loop
+2. for~loop
+3. while~loop
+
+
+-����-
+
+* 1�� loop ����
+
+set serveroutput on
+declare
+v_cnt number:=0;
+v_sum number:=0;   -- �ʱ��
+begin
+    loop
+     v_cnt := v_cnt+1;
+     v_sum := v_sum+v_cnt;
+     dbms_output.put_line(v_cnt||' '|| v_sum);
+     exit when v_cnt = 10;   -- v_cnt �� 10�϶� ����
+    end loop;
+end;
+/
+
+
+---------
+
+* 2�� for ����
+
+
+set serveroutput on
+declare
+v_cnt number:=0;
+v_sum number:=0;   -- �ʱ��
+begin
+    for
+     v_cnt in 1..10 loop  -- v_cnt�� 1~10 ��������
+     v_sum := v_sum+v_cnt;
+     dbms_output.put_line(v_cnt||' '|| v_sum);
+     
+    end loop;
+end;
+/
+
+
+-----------
+
+* 3�� while ����
+
+set serveroutput on
+declare
+v_cnt number:=0;
+v_sum number:=0;   -- �ʱ��
+begin
+    while v_cnt<10 loop  --v_cnt�� 10 �����϶� ����
+     v_cnt := v_cnt+1;   --v_cnt ����(�������� �� �����̹Ƿ� ���������� ����!!)
+     v_sum := v_sum+v_cnt;
+     dbms_output.put_line(v_cnt||' '|| v_sum);
+     
+    end loop;
+end;
+/
+
+
+
+/////////////
+
+in : �Է�
+out: �˻�(��ȯ���� ��)
+in out: �Է�, �˻�(���ν����� ó���� �� ��ȯ�Ǵ� �� ó��)
+
+
+
+-����- (�ȳ���)
+
+--�л��� ������ ���� ������ŭ �÷���, �� ��� ���
+create or replace procedure test4(v_enr_grade in out enrol.enr_grade%type,
+v_stu_no in enrol.stu_no%type,
+v_sub_no in enrol.stu_no%type)
+is begin
+update enrol set enr_grade=enr_grade+v_enr_grade where stu_no=v_stu_no and sub_no=v_sub_no;
+select enr_grade into v_enr_grade from enrol where stu_no=v_stu_no and sub_no=v_sub_no;
+end test4;
+/
+
+variable d_enr_grade number;
+
+begin :d_enr_grade :=10 
+end;
+/
+
+
+=> �Ʒ� �ɷ� ������ ����
+
+create or replace procedure test4
+(v_sub_no in enrol.sub_no%type,
+v_stu_no in student.stu_no%type,
+v_enr_grade in out enrol.enr_grade%type)
+
+is 
+begin
+
+update enrol
+set enr_grade = enr_grade +v_enr_grade
+where stu_no=v_stu_no and
+      sub_no=v_sub_no;
+      
+      select enr_grade
+      into v_enr_grade
+      from enrol
+      where stu_no=v_stu_no and
+      sub_no=v_sub_no;
+      end test4;
+      
+      /
+      
+variable d_enr_grade number
+begin : d_enr_grade :=10 ;
+end;
+/
+
+execute  test4(104,20131001,:d_enr_grade);
+print d_enr_grade;
+
+
+
+--------------------------------------
+
+<Ŀ���� fetch>
+PL/SQL ���� select ���� �̿��� �˻��� ���� ��, ����� �� ���� ��찡 �ְ�, ���� ���� ��찡 �ִ�.
+���� ���� ��� into ���� �̿��� �� ����. �̰��� ������ ���� cursor �� fetch 
+
+* cursor : �������� ���� ��ȯ�Ǵ� ��������� �����ϴ� �޸� ����
+
+* fetch : Ŀ������ ���ϴ� ����� �������� ��
+
+
+
+=> ����� ���� ���̱� ������ �ݺ������� ������ ���� �д� ������ �ʿ�. �� �ݺ��� �̿�
+
+
+* Ŀ�� ó���ܰ�
+
+1. ������ Ŀ�� ����
+cursor Ŀ����
+2. Ŀ�� ����(open)
+3. Ŀ������ ������ ����(fetch)
+4. Ŀ������(close)
+
+
+=>
+is ������ 1�� Ŀ������
+begin ������ 2,3��(����, ������ ����)->�ݺ���
+
+
+
+
+set serveroutput on
+create or replace procedure test7
+is
+v_stu_no enrol.stu_no%type;
+v_sub_no enrol.sub_no%type;
+v_enr_grade enrol.enr_grade%type;
+
+cursor t_cursor is
+ select stu_no,sub_no,enr_grade
+ from enrol
+ where sub_no=101; 
+begin
+ open t_cursor;
+ loop
+     --Ŀ���� select �� �ƴ϶� fetch �̿�
+     fetch t_cursor into v_stu_no,v_sub_no,v_enr_grade;
+     exit when t_cursor%NOTFOUND;
+     dbms_output.put_line(v_stu_no||' '||  v_sub_no||' '||v_enr_grade);
+ end loop;
+ close t_cursor;
+end test7;
+/
+
+
+--���
+execute test7;
+
+
+----------------------
+cursor ����
+
+�޿��� 2000 �̻��� ����� �����ȣ, �̸�, �μ����� �μ��̸� ������ �˻��ϴ� ���ν��� �ۼ�
+
+
+set serveroutput on
+create or replace procedure aa
+is
+v_empno emp.empno%type;
+v_ename emp.ename%type;
+v_dname dept.dname%type;
+
+cursor t_aa is
+    select empno, ename, dname from emp natural join dept where sal>=2000 order by dname;
+begin
+    open t_aa;
+    loop
+        fetch t_aa into v_empno, v_ename, v_dname;
+        exit when t_aa%NOTFOUND;
+        dbms_output.put_line(v_empno||' '||v_ename||' '||v_dname);
+        end loop;
+    close t_aa;
+end aa;
+/
+
+
+--Ȯ��
+execute aa;
+        
+
+=> for ������ ����
+
+
+create or replace procedure test7
+is
+v_enrol enrol%rowtype;  -- ������ ������ ���� ���ŷο�� ���̺���%rowtype ���� �� ���� 
+
+cursor t_cursor is
+ select stu_no,sub_no,enr_grade
+ from enrol
+ where sub_no=101; 
+begin
+ open t_cursor;
+ for
+     v_enrol in t_cursor loop
+     exit when t_aa%NOTFOUND;
+     dbms_output.put_line(v_stu_no||' '||  v_sub_no||' '||v_enr_grade);
+ end loop;
+ close t_cursor;
+end test7;
+/
+
+execute test7;
+
+
+
+------------------------------------------
+
+
+<trigger> : db�� �̿��ϸ鼭 � ���ǿ� �´� �̺�Ʈ�� �Ͼ������ �����ϴ� ���ǿ� ������ �ļ� �̺�Ʈ �߻���Ŵ
+
+before / after
+
+
+--���̺� ����
+create table tmp_tbl1(userid varchar2(10), workdate date, bigo char(1));
+
+--Ʈ����
+create or replace trigger tri1
+    after update --� ���� ������Ʈ �ɶ�
+    on student   -- student ���̺�����
+    
+    for each row -- ������ �Ǹ� ���� �ึ�� ������Ʈ(������Ʈ�Ǵ� ���� 10���� 10��)
+    
+    begin
+    insert into tmp_tbl1 values(user,sysdate,'u');
+end tri1;
+/
+
+update student set stu_weight = stu_weight*0.9;
+
+select * from tmp_tbl1;
+
+
+--------------------------------------
+
+����ó��: PL/SQL ������ ����Ǵ� ����
+������ �߻��ϰų� �������� ��Ȳ �߻�
+-> �Լ�(function)�� �ȵ�
+
+<PL/SQL ������ ó�� �� ���� �߻��ϴ� ����>
+1. NO_DATA_FOUND
+�˻��� ��� �� ����� �ִ��� ���� �Ǵ�
+2. NOT_LOGGED_ON
+�����ͺ��̽��� ���� ���� �Ǵ�
+3. TOO_MANY_ROWS
+select ���� into ���� ����� ��� �ܼ� �ุ ����� �� ������ ����� �������� ���-> ���� Ŀ�� �̿��ؾߵ�
+
+
+
+------------------------------------------
+
+����
+
+�ְ��޿��� �޴� ��� �̸� ����ϴ� �Լ�
+
+
+create or replace function prop
+return emp.ename%type
+is
+    v_ename emp.ename%type;
+begin
+    select ename into v_ename from emp where sal=(select max(sal) from emp);
+    return v_ename;
+end prop;
+/
+
+
+�Լ� ����Ҷ� ���� ���� ���� �ٷ� ����ϸ� ȣ���ص� ��
+ => select distinct prop() from emp;  -- �ߺ����� ���
+
+
+=> ���� ���� �� ����ص� ��
+variable d_ename varchar2;
+execute :d_ename := prop();
+print d_ename;
+
+
+------
+
+
+�а��� �Է¹޾� �� ������ ǥ������ ���
+// stddev �Լ�, select ���� �Լ� ȣ��
+
+
+
+create or replace function fun(v_dept in student.stu_dept%type)
+return number
+is 
+v_stddev number;
+begin 
+select stddev(enr_grade) into v_stddev from enrol natural join student where stu_dept=v_dept;
+return v_stddev;
+end fun;
+/
+
+
+-- �а� �Է��ϴ� �� �ֱ� ������ ��ȣ �ȿ� �־���
+select distinct fun('���') from student;
+
+
+----------
+
+--��� 7566 �� ����� �����ȣ�� 1234, �μ���ȣ�� 20���� �ٲ��
+
+update emp set mgr=1234, deptno=20 where empno=7566;
+
+
+---------
+
+�����ȣ�� ��������� �Է��Ͽ� �ش� ����� �μ���ȣ�� �����ض� (��� ���� ��)
+
+create or replace procedure aa ( a_empno in emp.empno%type,
+a_job in emp.job%type)
+is begin
+update emp set jop=a_job where empno=a_empno;
+end aa;
+/
+
+
+--------
+
+�й��� �����ϸ� �̸� ����ϴ� ���ν���. �����Ͱ� ������ ����ó��
+
+set serveroutput on
+create or replace procedure test10
+(v_stu_no in student.stu_no%type)
+is
+v_stu_name student.stu_name%type;
+begin
+    select stu_name into v_stu_name from student where stu_no=v_stu_no;
+    dbms_output.put_line(v_stu_name);
+exception --����ó��
+    when no_data_found then --ã�� �����Ͱ� ������ 
+    dbms_output.put_line('�����;���');
+end test10;
+/
+
+
+
+-- Ȯ���۾�
+execute test10(20153);  -- ������ ���� ���
+execute test10(20153075);  --���Ѻ� ��µ�
+
+
+--------
+
+
+--����(enrol)���̺��� ������ �߰��ϴ� ���ν���
+(���� �� Ǯ��)
+
+set serveroutput on
+create or replace procedure p_enrol
+(p_sub_no in enrol.sub_no%type,
+p_stu_no in enrol.stu_no%type,
+p_enr_grade in enrol.enr_grade%type)
+is
+begin
+    
+    insert into enrol values(p_sub_no, p_stu_no, p_enr_grade);
+exception
+    when no_data_found then
+    dbms_output.put_line('������ ����');
+end p_enrol;
+/
+
+
+
+--����ó��
+execute p_enrol('101','20141001',40);
+--�й� 20153088 ������ 101�� ������ 40������ �߰�
+execute p_enrol('101','20153088',40);
+
+
+------
+
+
+�����ȣ �Է��ϸ� �������� ��ȯ�ϴ� �Լ�
+// function �� ����ó�� �ȵȴٰ� ��
+
+����)
+
+variable x varchar2(10);
+execute :x := f_prof_return(999);
+
+�����ȣ ����
+
+execute :x := f_prof_return(107);
+
+������
+
+
+
+set serveroutput on
+create or replace function f_prof
+(f_sub_no in subject.sub_no%type)
+return varchar2
+is 
+f_pr varchar2(10);
+begin
+select sub_prof into f_pr from subject where sub_no=f_sub_no;
+return f_pr;
+exception
+when no_data_found then 
+   return('����');
+end f_prof;
+/
+
+variable x varchar2(10);
+
+execute :x:=f_prof(999);
+execute :x:=f_prof(107);
+print x;
+
+
+-- ���
+select distinct f_prof(107) from subject;
+
+
+-- ����� 7839 �� ������ ���, �̸�, ���� ��� ���(�ٷ� ����̶� ���ν��� ���� �ʿ� ����)
+
+set serveroutput on
+declare
+a_empno emp3.empno%type;
+a_ename emp3.ename%type;
+a_sal emp3.sal%type;
+begin
+    select empno, ename, sal into a_empno, a_ename, a_sal from emp3 where empno= 7839;
+    dbms_output.put_line(a_empno||' '||a_ename||' '||a_sal);
+end;
+/
+
+
+
+
+--���, �̸�, �μ���ȣ�� ���� ����, ���� �μ���(varchar2(20))�� ����, ����
+--����� 7839 �� ����� �μ���ȣ�� 10�̸� '������', 20�̸� '������', 30�̸� 'it���ߺ�'
+
+(������)
+
+set serveroutput on
+declare
+a_empno emp.empno%type;
+a_ename emp.ename%type;
+a_deptno emp.deptno%type;
+a_dname varchar2(20);
+begin
+   select empno,ename,deptno into a_empno, a_ename,a_deptno from emp where empno=7566;
+   if (a_deptno=10) then a_dname:='������';
+   elsif  (a_deptno=20) then a_dname:='�����ú�';
+   elsif  (a_deptno=30) then a_dname:='IT���ߺ�';
+   end if;
+   dbms_output.put_line(a_dname||' '||a_empno||' '||a_ename||' '||a_deptno);
+end;
+/
+
+
+=> ������ ��
+
+set serveroutput on
+declare
+v_no emp.empno%type;
+v_name emp.ename%type;
+v_deptno emp.deptno%type;
+v_dname varchar2(20);
+
+begin
+select empno,ename,deptno
+into v_no,v_name,v_deptno
+from emp
+where empno=7566;
+
+if(v_deptno=10) then v_dname:='������';
+elsif(v_deptno=20) then v_dname:='�����ú�';
+elsif(v_deptno=30) then v_dname:='IT���ߺ�';
+end if;
+
+dbms_output.put_line(v_no||' '||v_dname);
+end;
+/
+
+
+------------------
+
+�����ȣ, ����̸�,
+�μ���ȣ�� ���� ����  -> ����Ÿ������ ����
+�μ��̸��� varchar2(20)�� ����
+
+
+�����ȣ�� 7839�� �����
+
+�μ���ȣ�� 10�̸� "������"
+           20�̸� "�����ú�"
+           30�̸� "IT���ߺ�"
+
+
+
+
+set serveroutput on
+declare
+v_no emp.empno%type;
+v_name emp.ename%type;
+v_deptno emp.deptno%type;
+v_dname varchar2(20);
+
+begin
+select empno,ename,deptno
+into v_no,v_name,v_deptno
+from emp
+where empno=7566;
+
+if(v_deptno=10) then v_dname:='������';
+elsif(v_deptno=20) then v_dname:='�����ú�';
+elsif(v_deptno=30) then v_dname:='IT���ߺ�';
+end if;
+
+dbms_output.put_line(v_no||' '||v_dname);
+end;
+/
+
+
+--------------------
+
+�����ȣ�� emp ���̺��� �ִ� ����� ���� Ÿ������ ���� �� �̸��� �˻��� b�� ���۵Ǵ� �̸��� �ִ��� Ȯ�� �� ���
+
+�̸��� ������ �ش���� ���ٰ� ���
+
+
+set serveroutput on
+create or replace procedure aaa
+(a_empno in emp.empno%type)
+is
+a_ename emp.ename%type;
+begin
+    select ename into a_ename from emp where ename like 'B%';
+    dbms_output.put_line(a_ename);
+exception
+    when no_data_found then
+     dbms_output.put_line('����');
+end aaa;
+/
+ 
+ execute aaa(55);   
+
+
+------
+
+
+
+--������ 2000 �̻��� ����� ���, �̸�, �μ����� ����
+
+set serveroutput on
+create or replace procedure pro8
+is
+v_empno emp.empno%type;
+v_ename emp.ename%type;
+v_dname dept.dname%type;
+
+cursor result is
+    select empno, ename, dname from emp natural join dept
+    where sal>=2000 order by dname;
+begin
+    open result;
+    loop
+    fetch result into v_empno, v_ename, v_dname;
+    exit when result%NOTFOUND;
+    dbms_output.put_line(v_empno||' '|| v_ename||' '|| v_dname);
+    end loop;
+    close result;
+end pro8;
+/
+
+
+
+execute pro8;
+
+
+-------------------------
+
+--�Է��� �����ȣ�� ������ ������ �����ϴ� �й��� ���� ����
+--���� ��� ����ó��
+
+set serveroutput on
+create or replace procedure test11
+(v_sub_no in enrol.sub_no%type)
+is
+v_cnt number;
+cnt_error exception; --��������
+begin
+    select count(stu_no) into v_cnt from enrol where sub_no=v_sub_no;
+    dbms_output.put_line(v_sub_no||'���� �����ڴ� '||v_cnt||'��');
+    if v_cnt=0 then -- �����ϴ� �л��� ���� ���
+    raise cnt_error;  -- ���ܹ߻�
+    end if;
+    
+    exception
+    when cnt_error then  --����ó��
+    dbms_output.put_line('�����ھ���');
+    
+end test11;
+/
+
+execute test11(100);
+
+
+-------------------------
+
+Ʈ���� ����
+
+create table dept_del
+(userid varchar2(10),workdate date, deptno number(2), dname varchar2(14), loc varchar2(13));
+
+create or replace trigger dept_tri
+after delete -- after �ڿ��� ��𿡼� �̺�Ʈ ó���� �ƴ��� 
+    on dept
+    for each row  -- ���� ������ 10���̸� ���� ����
+    begin -- ���� �̺�Ʈ�� �߻��ϸ� �Ʒ� �̺�Ʈ ó���ϰڴ�
+    insert into dept_del(userid, workdate,deptno, dname, loc)
+    values(user,sysdate,
+            :old.deptno, --old->���� ������(deptno�� ���� �� ������),
+            :old.dname, :old.loc);
+end dept_tri;
+/
+
+-- deptno �� 10���� �� ����-> Ʈ���� �߻�
+delete from dept where deptno=10;
+
+-- ���� ���Եƴ��� Ȯ��
+select * from dept_del
+
+
+
+----
+
+
+--���(emp) ���̺��� �޿� 5õ �̻��� ���� �߰��Ǹ� �̸�, ��ȣ, ��¥�� emp_sal�� ����
+create table emp_sal(empno number(4), ename varchar2(10), workdate date);
+
+create or replace trigger emp_sal_tri
+after insert
+on emp
+    for each row
+    begin
+    if : new.sal>=5000 then  --���� ������ �ݾ�(new.sal)�� 5õ �̻��̸�
+    insert into emp_sal values
+   (:new.empno, :new.ename, sysdate);
+    end if;
+end emp_sal_tri;
+/   
+
+
+-- emp�� �� �߰�
+insert into emp values(3000,'aa','nn',7839,sysdate,6000, null,10);
+
+select * from emp_sal;
+
+
+
+
+-------------------------
+
+
+[������+begin�� ����]
+
+
+create table pl_test (no number, name varchar2(10)); --���̺� ����
+create sequence pl_seq; -- ������ ����
+
+begin 
+insert into pl_test values(pl_seq.nextval, 'AAA');
+end;
+/
+
+
+--Ȯ���ϸ� 1, AAA ���ԵǾ� ����
+select * from pl_test;
+
+
+-------------------------
+
+[Ŀ�� ����]
+�����ȣ�� �Է� �޾� �ش� �����ȣ�� �й�, ���� ����ϴ� ���ν���
+
+
+set serveroutput on
+create or replace procedure test9
+(v_sub_no in enrol.sub_no%type)
+is
+v_stu_no enrol.stu_no%type;
+v_enr_grade enrol.enr_grade%type;
+
+cursor tt (v_sub_no number) is -- Ŀ���� ���� ���� ����(v_sub_no�� Ÿ�Ժ���)
+    select student.stu_no, enr_grade from student, enrol 
+    where student.stu_no=enrol.stu_no and enrol.sub_no=v_sub_no;
+begin
+    open tt(v_sub_no);
+    loop
+    fetch tt into v_stu_no, v_enr_grade;
+    exit when tt%NOTFOUND;
+    dbms_output.put_line(v_stu_no||' '||v_enr_grade);
+    end loop;
+    close tt;
+end test9;
+/
+
+
+execute test9(101);
+
+-------------------------
+
+<����>
+
+--��ǻ�� ������ �л��� �� ��� ������ 160 �̻��� �г�� ��� ������ ����ض�
+
+select stu_grade, avg(stu_height) from student 
+where stu_dept ='��ǻ������' group by stu_grade having avg(stu_height)>=160;
+
+
+
+--DALLAS �̿� ������ �ִ� �μ� �̸� �˻�
+select dname from dept where loc<>'DALLAS';
+
+
+--FORD ������� ���� ���� �޴� ��� �̸� ���
+select ename from emp where sal>(select sal from emp where ename='FORD');
+
+
+
+--������ DALLAS �� ����̸� �˻� ��������
+select ename from emp, dept where emp.deptno=dept.deptno and loc='DALLAS';
+
+
+
+
+
+-------------------------
+
+[�ڹ�+���]
+
+ipconfig
+ IPv4 �ּ� . . . . . . . . . : 172.16.7.59
+
+
+JDBC �� ������ �� url ���� �ۼ� ��� :
+    url=jdbc:oracle:thin:@ip�ּ�:��Ʈ:SID   (url=jdbc:oracle:thin:@192.168.20.1:1521:ORCL)
+
+ip�ּ� ��� localhost�� �����ص� ��
+
+
+
+<Db Ŭ����>
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Db {
+	public static Connection con;  // connection �������̽� ����
+	public static Connection get() throws SQLException {
+		Connection conn=null;  // db �� �����ϱ� ���� �۾�
+		try {
+			String id="sys as sysdba";  //db ���� ���̵�
+			String pw="djaak5685"; // db���� ���
+			String url="jdbc:oracle:thin:@172.16.7.59:1521/xepdb1"; 
+			// jdbc oracle ��� ���� url
+			//jdbc:orcle:thin: �ڿ� @ IPv4 �ּ�(cmd���� ipconfig�� ã�� �� ����)
+			//db ��ġ�� �ּ� xepdb1
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver"); 
+			// jdbc ����̹��� �ε��ϴ� �ڵ�
+			
+			conn=DriverManager.getConnection(url, id, pw);
+			//������ �ּ�,���̵�,����� ����̹��� ����
+			System.out.println("�����ͺ��̽��� ����ƴ�");
+		}catch (ClassNotFoundException e) {
+			System.out.println("�ε� ����");
+		}catch (SQLException e) {
+			System.out.println("������ ���̽� ���� ����");
+		}
+		
+		return conn;
+		
+	}
+	
+}
+
+
+
+
+<Oracle Ŭ����>--------------------------
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+public class Oracle {
+	public static void main(String[] args) throws SQLException {
+		
+		Connection conn=null; //Db�� �����ϴ� �������̽�
+		PreparedStatement pstm=null; //sql�� ��ü
+		ResultSet r=null; //sql�� ���� ��ȯ
+		
+		try {
+			String que="select * from emp";
+			
+			conn=Db.get(); // DbŬ������ get() �Լ� ȣ��
+			pstm=conn.prepareStatement(que);
+			r=pstm.executeQuery();
+			
+			while(r.next()) {
+				String empno=r.getString(1); // 1�� �� ��ȣ(1���� ����)
+				String ename=r.getString(2);
+				String job=r.getString(3);
+				int mgr=r.getInt(4);
+				java.sql.Date hiredate=r.getDate(5);
+				int sal=r.getInt(6);
+				int comm=r.getInt(7);
+				int deptno=r.getInt(8);
+				
+				System.out.println(empno+" "+ename+" "+job+" "+mgr);
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println("���ܹ߻�");
+			e.printStackTrace();
+		}
+		r.close();
+		pstm.close();
+		conn.close();
+		
+	}
+}
+
+
+------------------
+
+
+[html]
+
+����� ��Ʃ��� �ڵ� ��ġ
+ũ������ ����� ��
+
+
+<!DOCTYPE html>  // ������ Ÿ���� html
+<html>
+    <head>
+        <title>
+            �ȳ��ϼ���~
+        </title>
+    </head>
+</html>
+
+
+ctrl + s �� ���� �� ������ ���� ���� ����
+(ũ��â���� ����)
+
+
+
+*****
+
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>
+            �ȳ��ϼ���~
+        </title>
+    </head>
+    <body>
+        <h1>  // ���� ũ��(1�� ���� ŭ)
+            ���� ù html��
+         </h1>
+       <hr>  // ����
+	<p> //���� ����
+           ���� ���ú��� ������ <br> // br=�ٹٲ�
+           ������ �����ϰڽ��ϴ�.</br>
+       </p>
+    </body>
+</html>
+
+
+
+--------
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ù����
+        </title>
+        <body>
+            <h1 title="h1�±�">1�� Ȩ������</h1>
+	// h1 title => ���콺 ���ٴ�� �±� ��
+          
+	  <h2 title="h1�±�">2�� Ȩ������</h2>
+          <h1>
+              1�� Ȩ������ ����
+          </h1>
+          <h2>1�� html��� </h2>
+          <h3>1. ��</h3>
+          <h4>1.1���ͳ�</h4>
+        </body>
+    </head>
+</html>
+
+
+
+------------
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            �ܶ� ������
+        </title>
+        <body>
+            <h3>�ܶ� ������</h3>
+            <p>  
+                �Ͻó�ø� ȭ���� 2020�� �������� �������� ��ȭ�� �־���, 
+                ���� 6�� 12�� ���� ������� ���������� ��ȭ�ϰ� ����
+            </p>  // �ܶ� ������
+                ȭ���� ��ġ�� ���� 27.25��, ���� 140.87����. ���� 25m�� 
+                 ���� ���� 1000�� �ػ� �ִ�.
+
+		<p>
+                    �����±� &lt/hr/&gt;
+              // &lt �� <
+	      // $gt �� >
+		</p>
+        </body>
+    </head>
+
+</html>
+
+
+
+-----------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            �׽�Ʈ
+        </title>
+    </head>
+    <body>
+        <b>���ϰ�</b>
+        <strong>�߿���</strong>
+        <i>���Ÿ�ü</i>
+        <small>���� ����</small>
+        <mark>���̶���Ʈ-������</mark>
+    </body>
+    </html>
+
+
+------------------
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            �׽�Ʈ
+        </title>
+    </head>
+    <body>
+        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg"
+        width="150" height="200" alt="ġŲ">
+
+	// �̹�������.
+	alt=> ���� �׸��� ������ "ġŲ"�̶�� ���ڿ� ����
+
+    </body>
+    </html>
+
+
+
+--------------
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ������ ����� ����
+        </title>
+    </head>
+    <body>
+        <h3>������ ����� ����</h3>
+        <hr>
+        <ol type="A">  // ���� a-b-c ....
+            <li>���� ���δ�.</li>  // ����Ʈ
+            <li>���� �ִ´�</li>
+            <li>������ �Դ´�.</li>
+        </ol>
+    </body>
+    </html>
+
+36.6
+
+
+1. ü���� 50~60 ������ ������ �˻�
+
+select * from student where stu_weight between 50 and 60;
+
+
+--------------
+
+to_date Ȱ��
+
+select empno from emp where hiredate=to_date('2020-08-05', 'yyyy-mm-dd');
+
+------------
+
+
+ü���� 60 �̻��� �л��鸸 �����Ͽ� �а����� �׷�ȭ�ϰ� �׷캰 �л� �� ���
+
+select stu_dept, count(*) from student where stu_weight>=60 group by stu_dept;
+
+----------------
+
+�а��� �л����� �л����� �л����� ���� ������ �˻�
+select stu_dept, count(*) from student group by stu_dept order by 2 desc;
+
+
+
+-----------------------
+
+
+���̺� ����
+
+1.
+create table cust (c_no number(3), c_name varchar2(10), c_flag char(1), c_addr varchar2(30),
+c_phone varchar2(20));
+
+2.
+create table video (v_no number(1), v_name varchar2(20), v_actor varchar2(30), v_group varchar2(20));
+
+3.
+create table rent (r_no number, r_date date, c_no number(3), r_rentfee number, v_no number(1));
+
+
+
+�� ����
+
+
+insert into cust values (101,'������', 1, '���� ���ϱ�', '02-455-5544');
+insert into cust values(102,'�迵��',2,'���� ������','02-299-2565');
+insert into cust values(103,'�̿���',3,'���� ���ʱ�','02-555-5555');
+insert into cust values(104,'������',1,'���� ���빮��','02-444-4444');
+
+
+
+insert into video values(1,'��������','���·� ���ϴ�','�ڹ̵�');
+insert into video values(2,'�����','�۰�ȣ','���');
+insert into video values(3,'����Ʈ','������ ����','�ڹ̵�');
+insert into video values(4,'����������','������','�׼�');
+insert into video values(5,'���۳༮��','������','�׼�');
+insert into video values(6,'82���������','������ ����','���');
+
+
+insert into rent values(1,'2020-07-30',101,1000,1);
+insert into rent values(2,'2020-07-30',101,500,2);
+insert into rent values(3,'2020-08-02',103,500,5);
+insert into rent values(4,'2020-08-02',102,1000,6);
+insert into rent values(5,'2020-08-02',102,1000,3);
+insert into rent values(6,'2020-08-03',104,2000,2);
+
+
+
+
+1. ���� ���̺����� ������ȣ�� not null�� �����ϰ�, �⺻Ű�� �����ض�.(c_no_pk)
+
+alter table cust modify(c_no number constraint c_no_pk primary key);
+
+
+2. ���� ���̺����� ������ȣ�� not null�� �����ϰ�, �⺻Ű�� �����ض�.(v_no_pk) 
+
+alter table video modify(v_no number constraint v_no_pk primary key);
+
+
+3. �뿩 ���̺����� �뿩��ȣ�� �⺻Ű�� �ϰ�(pk_rent) ������ȣ(�������̺�), ������ȣ(�������̺�)�� �����ϵ��� �ܷ�Ű�� �����ض�. 
+
+alter table rent modify(r_no constraint pk_rent primary key, 
+v_no number(1) constraint r_fk2 references video(v_no), 
+c_no number(3) constraint r_fk1 references cust(c_no));
+
+
+
+<���༳�� Ȯ��>
+
+select * from user_constraints where table_name='RENT';
+
+select * from user_constraints where table_name='CUST';
+
+select * from user_constraints where table_name='VIDEO';
+
+
+
+
+----------------
+
+
+*���� ���̺��� ������ �˻��ض�. (3��)
+
+desc cust;
+
+
+
+*���� ���̺��� �����̸�, ���, �ּҸ� �˻��ض�. (3��)
+
+select c_name, c_flag, c_addr from cust;
+
+
+
+*�����̸��� ������ȣ, �뿩���� equi join, natural join, join~using�� �� �Ἥ �˻��ض�. (10��)
+
+
+select v_name, cust.c_no, r_date from cust, rent, video where cust.c_no=rent.c_no and video.v_no=rent.v_no;
+
+select v_name, c_no, r_date from cust natural join rent natural join video;
+
+select v_name, c_no, r_date from cust join rent using(c_no) join video using(v_no);
+
+
+*�̿��� ������ �뿩�� �����̸��� �ֿ���츦 �˻��ض�. (equi join) (3��)
+
+select v_name, v_actor from video, cust, rent where video.v_no=rent.v_no and cust.c_no=rent.c_no and
+c_name='�̿���';
+
+
+
+*������� �뿩�� �������� ������ȣ�� �̸��� �˻��ض�. (3��)
+
+select c_name, c_no from cust natural join video natural join rent where v_name='�����';
+
+
+
+*����� 1����� ������ �뿩�� ���� �̸��� ��� �˻��ض�. (3��)
+
+select v_name from video natural join rent natural join cust where c_flag=1;
+
+
+*�뿩�ᰡ 2000�� �̻��� ������ ���� �˻��ض�. (3��)
+select count(*) from cust natural join rent where r_rentfee>=2000;
+
+
+
+
+*������ȣ�� 103���� ���� ���� �������� �뿩���̺��� �����Ͽ� a_rent ���̺��� �����. (5��)
+
+create table a_rent as select * from rent where c_no>103;
+
+
+*������ ���� a_rent���̺��� (9, 2020-08-01, 101, 1000, 3)�� �����Ѵ�. (3��)
+
+insert into a_rent values(9,'2020-08-01',101,1000,3);
+
+
+
+*�뿩���̺��� ��10�� ���� �����ϴ� ���� �����͸� a_rent ���̺��� ��������, ������ Ȯ���ض�. (5��)
+(like �̿�)
+
+insert into a_rent select * from rent where c_no like '10%';
+select * from a_rent;
+
+
+
+*������ȣ�� �Է����� �����̸��� �˻��ϴ� ���ν����� ������. 
+
+set serveroutput on
+create or replace procedure a_cust
+(v_c_no in cust.c_no%type)
+is
+v_c_name cust.c_name%type;
+begin
+    select c_name into v_c_name from cust where c_no=v_c_no;
+    dbms_output.put_line(v_c_name);
+end a_cust;
+/
+
+execute a_cust(101);
+
+
+=> ������ �־ ����� ����
+
+set serveroutput on
+create or replace procedure a_cust
+(v_c_no in cust.c_no%type,
+v_c_name out cust.c_name%type)
+is
+begin
+    select c_name into v_c_name from cust where c_no=v_c_no;
+    dbms_output.put_line(v_c_name);
+end a_cust;
+/
+
+variable c_name varchar2(20);
+execute a_cust(103, :c_name);
+print c_name;
+
+
+------------
+
+rent ���̺��� �뿩��ȣ ���� ������ ���� char(1)
+(���� �����Ͱ� ������ ����ȵ�)
+
+alter table rent modify(r_no char(1));
+
+------------
+
+
+���� �ֱٿ� �뿩�� ���� 4���� �̸��� �ּ� ���
+                                                                  
+select c_name, c_addr from 
+(select c_name, c_addr from cust natural join rent order by r_date desc) 
+where rownum<=4;
+
+
+------------
+
+
+�л� ���̺����� 1�г��̸� ���� +5, 2�г��� +10, 3�г��� +15 �����Ͽ� �̸��� ���� ���
+
+<select~ case �̿�>
+select stu_name, stu_height, case stu_grade when 1 then stu_height+5
+when 2 then stu_height+10 when 3 then stu_height+15 else stu_height 
+end as �����Ű from student;
+
+
+
+<decode �̿�>
+select stu_name, stu_height, decode(stu_grade, 1, stu_height+5, 2, stu_height+10,
+3, stu_height+15, stu_height)as �����Ű from student;
+
+
+---------------
+
+
+
+������ȣ�� �����̸��� �Է��Ͽ� �ش� ������ �����̸��� �����ϴ� ���ν����� ������
+(������ȣ�� 103, �̸��� ��ö��)
+
+
+create or replace procedure aa_cust
+(v_c_no in cust.c_no%type,
+v_c_name in cust.c_name%type)
+is
+begin
+    update cust set c_name=v_c_name where c_no=v_c_no;
+end aa_cust;
+/
+
+execute aa_cust(103,'��ö��');
+select * from cust;
+
+
+
+--------------------
+
+������ȣ�� 2�϶� ������ȣ�� �뿩�Ḧ ���ض�(Ŀ�����)
+
+
+set serveroutput on
+create or replace procedure v_rent
+is
+vv_c_no rent.c_no%type;
+vv_r_rent rent.r_rentfee%type;
+
+cursor a_ccc is
+select c_no, r_rentfee from rent where v_no=2;
+
+begin
+    open a_ccc;
+    loop
+        fetch a_ccc into vv_c_no, vv_r_rent;
+        exit when a_ccc%NOTFOUND;
+        dbms_output.put_line(vv_c_no||' '||vv_r_rent);
+        end loop;
+        close a_ccc;
+    end v_rent;
+/
+
+execute v_rent;
+
+
+---------------
+
+<html>
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>�������� ���� �״�� ���</title>
+    </head>
+    <body>
+        <h3>�������� ���� �״�� ����ϱ�</h3>
+        <hr>
+        <p>
+            &ltp&gt �±׸� ����ϸ� <br>
+            ���� ���� �� ĭ�� �ϳ���,<br>
+            ���� ���� �� �ٿ� �ٿ� ��µ˴ϴ�. </p>
+        <hr>
+        <pre>
+            �׷��� &ltpre&gt �±׸� ����ϸ�
+            ����ڰ� �Է���
+            �״�� ��µ˴ϴ�.
+        </pre>
+    </body>
+</html>
+
+
+-----------
+
+** ����Ʈ
+
+ol: ������ �ִ� ����Ʈ
+ul: ���� ���� ����Ʈ
+dl: ���� ����Ʈ(dl-dt(����)-dd(����))
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>�����ϴ� ����</title>
+    </head>
+    <body>
+        <ul>
+            <li>ġŲ </li>
+            <li>����</li>
+            <li>�ݶ�</li>
+            <!-- ���� ���� ����Ʈ -->
+        </ul>
+    </body>
+</html>
+
+
+
+
+****
+
+����Ʈ ����
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>��ø����Ʈ</title>
+    </head>
+    <body>
+        <ul>
+            <li> �����ϴ� ����
+                <ul>
+                    <!-- ul: ������ ���� ����Ʈ -->
+                    <li>������ũ</li>
+                    <li>ġŲ</li>
+                    <li>����</li>
+                </ul>
+            </li>
+            <li>��� ���̴� ���
+                <!-- ol: ������ �ִ� ����Ʈ(1,2,3... a,b,c..) -->
+                <ol type="1">
+                    <li>���� ���δ�</li>
+                    <li>��� �ִ´�</li>
+                    <li>�Դ´�</li>
+                </ol>
+            </li>
+        </ul>
+    </body>
+</html>
+
+
+
+
+*******
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bb</title>
+    </head>
+    <body>
+        <h1>Skills</h1>
+        <ul>
+            <li>��� ���� ���
+                <ul>
+                    <!-- mark: ������ -->
+                    <li><mark>HTML</mark></li>
+                    <li><mark>Java</mark></li>
+                </ul>
+            </li>
+            <li>��� ��
+                <ul>
+                    <!-- b: ���ϰ� -->
+                    <li><b>Eclipse</b></li>
+                    <li>Visual Studio</li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
+
+
+
+**********
+
+html ǥ �����(���̺�)
+
+
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <table border="1">
+        <!-- ���̺� ���м� �β��� 1 -->
+            <caption>
+                1�б� ����
+            </caption>
+            <!-- ǥ�� �Ӹ��κ��� thead -->
+            <thead>
+                <!-- tr: ��/ th: ����ǥ��(���� ����) -->
+                <tr><th>�̸�</th>
+                <th>HTML</th>
+                <th>CSS</th></tr>
+                <!-- �Ӹ� �� ������ �κп� /tr �ݾ��ָ� �� -->
+            </thead>
+
+            <tfoot>
+                <!-- �ٴںκ� -->
+                <tr><th>��</th>
+                <th>225</th>
+                <th>230</th>
+                </tr>
+            </tfoot>
+
+            <tbody>
+                <!-- ǥ�� ���� -->
+                <tr>
+                <!-- tr: �� ���� �� ������ ����/ td: ������ �� -->
+                    <td>Ȳ����</td>
+                    <td>80</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td>���繮</td>
+                    <td>95</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>�̺���</td>
+                    <td>40</td>
+                    <td>61</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+
+--------------------
+
+
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>���� ��</th>
+                    <td>1�� 2��</td>
+                    <td>1�� 3��</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>���� ��</th>
+                    <td>2�� 2��</td>
+                    <td>2�� 3��</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+
+----------
+
+// ǥ�� �̹��� �����ϱ�
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>
+                        <!-- �̹��� ���� �� �� ���� ���� width/ height -->
+                        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+                        width="200" height="200">
+                    </td>
+                    <td>
+                        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\���.jpg" 
+                        width="200" height="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\ġŲ.jpg" 
+                        width="200" height="200">
+                    </td>
+                    <td>
+                        <img src="C:\Users\soldesk\Desktop\�ڹٸ޸���\cgv\ggv.jpg" 
+                        width="200" height="200">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </body>
+</html>
+
+
+
+-----
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>�¶��� ������</title>
+</head>
+
+<body>
+
+    <h1>Who am I?</h1>
+    <mark>����Ʈ���� �� ���(Front-end Web Tech.)</mark>�� ������ �����ϴ�.<br>
+    ���� ������ �� �ð� �������� �ڵ� ���Դϴ�.
+    <dl>
+        <dt>
+            <h1>Experience</h1>
+        </dt>
+        <dd>
+            <ul>
+                <li> ����Ʈ���� ����
+                    <ul>
+                        <li>
+                            ���� ���� ���� ���� ���� ����
+                        </li>
+                        <li>���� ����</li>
+                        <li>���� ���� ���� ����</li>
+                    </ul>
+                </li>
+                <li> �� ������
+                    <ul>
+                        <li>���� ����</li>
+                        <li>���� ���� ���� ����</li>
+                    </ul>
+                </li>
+            </ul>
+        </dd>
+        <p>
+            <dt>
+                <h1>Skills</h1>
+            </dt>
+        </p>
+        <dt>
+            <h1>Education</h1>
+        </dt>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>����б�</th>
+                    <th>����</th>
+                    <th>�Ⱓ</th>
+                    <th>����</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>�������б�</td>
+                    <td>��ǻ�Ͱ���</td>
+                    <td>2004.3~2008.2</td>
+                    <td>����</td>
+                </tr>
+                <tr>
+                    <td>�����������б�</td>
+                    <td>��������</td>
+                    <td>2001.3~2004.2</td>
+                    <td>����</td>
+                </tr>
+            </tbody>
+        </table>
+    </dl>
+</body>
+
+</html>
+
+
+----------
+
+
+
+* �����۸�ũ
+
+<a> �±��� href �Ӽ��� �����۸�ũ �ۼ�
+
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul>
+            <li><a href="http://www.naver.com">���̹�</a></li>
+            <li><a href="http://www.daum.net">����</a></li>
+        </ul>
+    </body>
+</html>
+
+
+
+----------
+
