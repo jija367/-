@@ -1,0 +1,283 @@
+SpringFrameWork :
+웹 어플리케이션 안에서 필요한 기능 구현가능(네비게이션 같은거)
+
+(DI, AOP, MVC, JDBC 제공함)
+
+메이븐: 자바 프로젝트의 빌드를 자동으로 해주는 도구. 개발자가 xml에 작성한 프로젝트 정보를 토대로 컴파일, 라이브러리를 연결할 수 있다.
+
+id: 객체 이름지정, 아이디는 생략가능
+name: id와 비슷하지만 특문 가능
+class: 경로여서 필수정보
+
+--------------------
+
+file -> new -> maven project 
+맨위에 심플프로젝트 체크 후 넥스트
+group id : co.soft(임의로)
+Artifact id: 암거나(Spring)적고 피니쉬
+
+프로젝트 생성확인
+왼쪽 Spring 플젝 에서 src 오른쪽 마우스 properties -> project facets
+> java 체크 > 1.8 선택 후 동의닫기(왼쪽 스프링플젝 JRE System Library[JavaSE -1.8] 로 되어있음 (원래는 14인가 15)
+
+
+구글 maven 검색
+Maven Repository: Search/Browse/Explore
+클릭
+spring context 검색
+->spring context 클릭-> 5.2.x에서 젤 위에 있는거> maven -> 아래 소스코드 복사
+
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.2.9.RELEASE</version>
+</dependency>
+
+
+복사한 소스코드 스프링플젝> prom.xml 파일에 복붙
+
+project 닫기 직전에 복붙함
+
+->
+<dependency> 빨간줄  수정필요
+-> <dependencies> 태그 만들어서 소스코드 위에 적고 소스코드 밑에 / 닫는태그
+=>
+<dependencies>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.2.9.RELEASE</version>
+</dependency>
+</dependencies>
+
+
+->
+
+프로젝트에서 사용할 라이브러리 정보값 저장한거임
+
+
+->
+  <properties> 태그 version 아래에 작성
+
+  <!-- xml에서 사용할 속성들 -->
+  <properties>
+  
+  <!-- 자바버전 설정 -->
+  <java-version>1.8</java-version>
+  
+  <!-- 스프링버전 설정 사이트에서 소스코드 복붙할때 버전 -->
+  <org.springframework-version>5.2.9.RELEASE</org.springframework-version>
+  
+  </properties>
+
+->
+아까 복사한 소스코드에서 
+
+<version>5.2.9.RELEASE</version>
+이거를 버전에 따라 달라지게 변경해줘야됨 ->  <version>${org.springframework-version}</version>
+ // 아까 위에 작성한 버전정보
+
+-> 성공하면 왼쪽에 
+Maven Dependencies 생성됨
+
+
+
+-> 아까 사이트에서 slf4j 검색
+(콘솔에 로그를 띄우게 해주는 라이브러리)
+첫번째선택
+1.7.30 클릭
+
+메이븐 소스코드 복사
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.30</version>
+</dependency>
+
+
+<dependencies> 안에 </dependency> 끝나는 시점에 저 소스코드 복붙하고
+버전 수정
+
+->
+사이트에서 logback 검색 첫번째 클래식 모듈
+1.2.3 클릭
+maven 소스코드 복사 해서 아까처럼 작업
+
+
+
+완성된 코드:
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>co.soft</groupId>
+  <artifactId>Spring1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+    <!-- xml에서 사용할 속성들 -->
+  <properties>
+  
+  <!-- 자바버전 설정 -->
+  <java-version>1.8</java-version>
+  
+  <!-- 스프링버전 설정 사이트에서 소스코드 복붙할때 버전 -->
+  <org.springframework-version>5.2.9.RELEASE</org.springframework-version>
+  <org.slf4j-version>1.7.30</org.slf4j-version>
+  <ch.qos.logback>1.2.3</ch.qos.logback>
+  </properties>
+  
+  
+<dependencies>
+<dependency>
+
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>${org.springframework-version}</version>
+</dependency>
+
+<!-- slf4j -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>${org.slf4j-version}</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>${ch.qos.logback}</version>
+   
+   <exclusions>
+   <exclusion>
+   <groupId>org.slf4j</groupId>
+   <artifactId>slf4j-api</artifactId>
+   </exclusion>
+   </exclusions>
+    <scope>runtime</scope>
+</dependency>
+</dependencies>
+
+</project>
+
+-----------------------------
+
+-> 플젝 main java 에서 패키지 생성
+이름: co.soft.main
+메인클래스 생성(public void main 생성)
+
+-> 새패키지 
+co.soft.beans
+Hello 인터페이스 생성
+
+->새패키지 co.soft.config
+패키지에서 new-> xmlfile -> beans.xml 생성
+
+-----------------------
+
+헬로 인터페이스에
+hollo 함수 선언 public void hello();
+
+co.soft.beans 패키지에서 hello1 클래스 생성 및 인터페이스 상속
+
+
+-> beans.xml 파일에 아래 코드 복붙(경로)
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+</beans>
+
+------------------------------
+
+-> beans 태그 안에
+<bean id="hello" class='co.soft.bean.Hello1'/>
+
+적음
+
+-> Hello1 클래스의 객체생성(hello)
+-> 스프링 설정파일에 클래스 등록하는 작업
+
+
+---------------------------
+
+메인클래스
+
+package co.soft.main;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import co.soft.beans.Hello;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		// 1. beans.xml 파일을 로딩
+		ClassPathXmlApplicationContext ctx=
+				new ClassPathXmlApplicationContext("co/soft/config/beans.xml");
+		
+		// beans 에 있는 hello 객체를 꺼내와서 h1 객체에 저장(다운캐스팅)
+		Hello h1=(Hello)ctx.getBean("hello");
+		
+		// 다운캐스팅 안하고 이렇게도 적을 수 있음
+		Hello h2=ctx.getBean("hello",Hello.class);
+		
+		pr(h1);
+		pr(h2);
+		
+		ctx.close();
+		
+	}
+
+	public static void pr(Hello hi) {
+		hi.hello();
+	}
+}
+
+
+----------------------------
+
+* 두번째작업
+
+co.soft.beans 패키지에 Test 클래스생성, 기본생성자에 테스트 출력
+
+beans.xml 에 클래스저장->
+
+<!-- xml 을 로딩할 때 자동으로 객체 생성 -->
+<bean class='co.soft.beans.Test'></bean>   
+<bean id="test1" class='co.soft.beans.Test'></bean>   
+  
+
+-> 메인클래스 만들어서 테스트 출력
+
+package co.soft.main;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import co.soft.beans.Test;
+
+public class MainClass {
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext c=
+				new ClassPathXmlApplicationContext("co/soft/config/beans.xml");
+		
+		Test t=c.getBean("test1",Test.class);
+		c.close();
+		
+	}
+
+}
+
+
+=> beans.xml 에 클래스 설정 두번 해줘서 두번 출력됨
+=> beans 에서 id값을 주지 않아도 객체 생성됨
+=> Test t=c.getBean("test1",Test.class); 이게 없어도 이미 ClassPathXmlApplicationContext 에서 xml이 이미 로딩되어 테스트 출력됨
+
+------------------------
+
