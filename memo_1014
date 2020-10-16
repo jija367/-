@@ -1,0 +1,304 @@
+@Component :  bean 으로 등록하겠다는 의미(@bean과 거의유사)
+
+@bean은 클래스 수정 불가, @component는 수정 가능
+
+=>@component는 xml에서 id 없이 클래스만으로 bean 객체 생성하는거와 동일
+
+=>component에 이름 설정도 가능(@Component("bean4"))
+
+------------------------
+
+<context:component-scan base-package="co.soft.beans2"/>
+
+=> base 패키지에 있는 클래스들의 어노테이션을 분석하도록 지정하는 작업
+
+=> beans 태그 선언하는 부분에 context 경로 추가
+
+
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+----------------------------
+
+* Config 클래스
+
+@Configuration
+@ComponentScan(basePackages="co.soft.beans2")
+@ComponentScan(basePackages="co.soft.beans3")
+
+// base패키지의 bean 클래스들의 어노테이션을 보고
+// bean을 등록하라고 지정
+public class Config {
+
+	@Bean
+	public Test1 test1() {
+		return new Test1();
+	}
+}
+
+
+* 메인 출력**************
+
+	   	   System.out.println("----------- 어노테이션 ----------");
+
+	   AnnotationConfigApplicationContext ctx=
+			   new AnnotationConfigApplicationContext(Config.class);
+	   Test1 test1=ctx.getBean(Test1.class);
+	   System.out.println(test1);
+	   
+
+	   
+	   ctx.close();
+	   
+	   System.out.println("----------- xml ----------");
+	   
+	   ClassPathXmlApplicationContext ctx1=
+			   new ClassPathXmlApplicationContext("co/soft/config/beans.xml");
+	   Test1 test11=ctx1.getBean(Test1.class);
+	   System.out.println("test11 : "+test11);
+	   Test2 x22=ctx1.getBean("x2",Test2.class);
+	   System.out.println("x22 : "+x22);
+	   Test2 x33=ctx1.getBean("x3",Test2.class);
+	   System.out.println("x33: "+x33);
+	   
+	   System.out.println("---------------------");
+	   // xml에 Test3 의 객체를 생성하지 않아도 
+	   // 어노테이션에 component로 생성되어있어 끌고 옴
+	   Test3 x4=ctx1.getBean(Test3.class);
+	   System.out.println("x4 : "+x4);
+	   
+	   System.out.println("---------------------");
+	   Test3 x44=ctx1.getBean(Test3.class);
+	   System.out.println(x44);
+	   
+	   System.out.println("---------------------");
+	   // xml에 id값이 bean4가 없어도 어노테이션 compnent의 
+	   // 이름이 bean4가 있어서 생성됨
+	   Test4 x5=ctx1.getBean("bean4",Test4.class);
+	   System.out.println(x5);
+	   
+	   System.out.println("---------------------");
+	   Test4 x10=ctx1.getBean("x10",Test4.class);
+	   System.out.println(x10);
+	   
+	   System.out.println("---------------------");
+	   Test4 x20=ctx1.getBean("x20",Test4.class);
+	   System.out.println(x20);
+	   
+	   ctx1.close();
+	  
+
+
+----------------------------------------
+
+
+Test1과 Test2는 Lazy나 scope 설정이 없기 때문에 어노테이션 연결시 바로 객체 생성되어 생성자호출됨
+3,4,5는 getBean 메소드를 통해서만 호출 가능
+
+Test2의 경우 Config클래스에서 Bean 객체가 2개 생성되어 있어 추가로 2개가 더 출력됨. 
+
+-----------------------------------
+
+*** 객체 생성 ***
+
+* 디폴트- 싱글톤 : 하나의 주소에서 얻어옴. xml이나 어노테이션 호출시 바로 생성자 호출됨
+
+* scope-prototype : 호출할때마다 새로운
+객체 생성
+
+* Lazy : getBean 함수 이용시에 객체 생성. 싱글톤
+
+---------------------------------
+
+AOP : 개발자 관점에서 코드를 분리해서 관리
+
+** core concern : 특정 클래스에 필요한 함수만 자른거
+
+** cross-cutting concern : 필요없는거 잘라서 모아둔 거
+
+메이븐레파지토리에서 AspectJ Weaver 검색 » 1.9.6 ->메이븐 소스코드 복사
+
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.6</version>
+    <scope>runtime</scope>
+</dependency>
+
+
+-----------------
+
+
+** AOP beans 설정
+
+<!-- core consern : method1 이 동작하면 advisor로 가서 advisor1을 참조하는 point1을 참조하는 before 함수가 먼저 실행 -->		
+	<bean id="advisor1" class="co.soft.advisor.Advisor" />
+	<aop:config>
+		<aop:aspect ref="advisor1">
+			<aop:pointcut expression="execution(*method1())"
+			id="point1" />
+			<aop:before pointcut-ref="point1" 
+			method="beforMethod" />
+			<aop:after method="afterMethod" 
+			pointcut-ref="point1"/>
+			<aop:around method="aroundMethod" 
+			pointcut-ref="point1"/>
+			<aop:after-returning method="afterReturningMethod"
+			pointcut-ref="point1"/>
+			<aop:after-throwing method="afterThrowingMethod"
+			pointcut-ref="point1" throwing="e1"/>
+			
+		</aop:aspect>
+	</aop:config>
+
+
+--------------------------------
+
+* beans
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 경로가 다름 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                       http://www.springframework.org/schema/beans/spring-beans.xsd
+                       http://www.springframework.org/schema/context
+                       http://www.springframework.org/schema/context/spring-context.xsd
+                       http://www.springframework.org/schema/aop
+                       http://www.springframework.org/schema/aop/spring-aop.xsd">
+                       
+    <bean  id="x1" class="co.soft.beans.Test"/>
+    <bean id="advisor1" class="co.soft.advisor.Advisor"/>
+    <aop:config>
+    <aop:aspect ref="advisor1"> 
+    <!-- execution 안에 메소드명 넣고 -->
+    <!--expresstion 먼저 실행되는데 
+    execution(*method1()) 부분이 core concern
+    pointcut이 있으면 끼어들어서 그거 먼저 실행해서
+    실행 전, 후, 리턴, 쓰로우 이런거 할 수 있게 
+   
+      -->
+    <aop:pointcut id="point1" expression="execution(* method1())" /> 
+    <!-- * 한 칸 띄워줘 -->
+    <aop:before pointcut-ref="point1" method="beforeMethod"/>
+    <aop:after method="afterMethod" pointcut-ref="point1"/>
+    <aop:around method="aroundMethod" pointcut-ref="point1"/>
+    <aop:after-returning method="afterReturningMethod" 
+    pointcut-ref="point1"/>
+    <aop:after-throwing method="afterThrowingMethod" 
+    pointcut-ref="point1" throwing="e1"/>
+    
+    
+    
+    </aop:aspect>
+    </aop:config>
+                       
+                       
+                       
+                       </beans>
+
+************* 
+* Advisor
+package co.soft.advisor;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
+
+public class Advisor {
+
+   public void beforeMethod() {
+      System.out.println("before");
+   }
+   public void afterMethod() {
+      System.out.println("after");
+   }
+   
+   // 호출되는 객체에 대한 정보, 실행되는 메소드에 대한 정보, 인자에 대한 정보
+   // ProceedingJoinPoint -> 인터페이스
+   public Object aroundMethod(ProceedingJoinPoint p)throws Throwable {
+   System.out.println("around");
+      
+   Object obj=p.proceed();
+   
+   System.out.println("around");
+   return obj;
+   
+   
+   }
+   
+   public void afterReturningMethod() {
+      System.out.println("afterReturn");
+   }
+   
+   public void afterThrowingMethod(Throwable e1) {
+      System.out.println("afterThrow");
+      System.out.println("e1");
+   }
+   
+   
+   
+}
+
+************* 
+* Test
+
+
+package co.soft.beans;
+
+public class Test {
+
+   public int method1() {
+      System.out.println("method1");
+      return 10;
+      
+   }
+}
+
+************* 
+* 메인
+	ClassPathXmlApplicationContext ctx=
+			new ClassPathXmlApplicationContext("co/soft/config/beans.xml");
+	Test t1=ctx.getBean("x1",Test.class);
+	
+	int a=t1.method1();
+	System.out.println(a);
+	
+	ctx.close();
+
+
+=> 출력결과
+
+before // method1 함수 호출전에
+around // method1 실행 전 후로 출력
+method1 // method1 실행
+afterReturn // method1 실행 후 리턴
+around // method1 실행 전 후로 출력
+after // 완전히 종료 후
+10 // 메소드값 syso 출력문
+
+
+-------------------------------
+
+** sts 설치(스프링부트 지원)
+
+이클립스 메뉴에서 헬프->이클립스마켓->
+마켓플레이스
+sts 검색
+두번째(Spring Tools 3 Add-On for Spring Tools 4 3.9.14) 인스톨->
+체크-> confirm -> accept -> 피니쉬
+
+창 닫히면 이클립스 맨 아래
+Instaling Software 글씨 옆에 작업진행도 % 확인됨. 백퍼 되면 업데이트 리스타드
+
+----------------------
+
