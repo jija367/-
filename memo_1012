@@ -1,0 +1,951 @@
+싱글톤: 객체가 하나만 생성됨->thread safety 보장됨(스레드안정성-메모리안정성)
+
+
+lazy-init='true' => xml을 로딩할때 객체를 생성하지 않고 객체를 가져올때마다 생성
+
+ex) 
+<bean id='test2' class="soft.bean.Test" lazy-init='true'/> 
+
+
+scope="prototype" =>getBean 메소드 호출할때마다 새로운 객체를 생성(싱글톤이 아니게 됨)
+
+scope="singleton" => 싱글톤
+ex) 
+<bean id='test3' class="soft.bean.Test" scope="prototype"/> 
+
+
+-----------
+
+메인에서 bean 객체 받아오기
+
+- Test.java
+
+package soft.bean;
+
+public class Test {
+	Test() {
+		System.out.println("테스트");
+	}
+}
+
+- beans.xlm
+
+<bean class="soft.bean.Test" ></bean>
+<bean class="soft.bean.Test" id="test"></bean>
+
+<bean id='test2' class="soft.bean.Test" lazy-init='true'/> 
+<!-- lazy-init='true'=> xml을 로딩할때 객체를 생성하지 않고 객체를 가져올때마다 생성됨 -->
+
+<bean id='test3' class="soft.bean.Test" scope="prototype"/> 
+<!-- 프로토타입-> getBean 메소드 호출할때마다 새로운 객체를 생성(싱글톤이 아니게 됨) -->
+
+
+- MainClass.java
+
+package soft.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import soft.bean.Test;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		// id 가 test 인 bean 객체 주소 받아옴
+		Test t1=ctx.getBean("test",Test.class);
+		System.out.println(t1);
+		Test t11=ctx.getBean("test",Test.class);
+		System.out.println(t11);
+		
+		Test t2=ctx.getBean("test2", Test.class);
+		System.out.println(t2);
+		Test t22=ctx.getBean("test2", Test.class);
+		System.out.println(t22);
+		
+		Test t3=ctx.getBean("test3", Test.class);
+		System.out.println(t3);
+		Test t33=ctx.getBean("test3", Test.class);
+		System.out.println(t33);
+	}
+
+}
+
+
+
+
+
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		// id 가 test 인 bean 객체 주소 받아옴
+		Test t1=ctx.getBean("test",Test.class);
+		System.out.println(t1);
+
+
+=> 테스트 2번 출력됨
+=> beans.xml 에서 
+<bean class="soft.bean.Test" ></bean>
+가 생성되어 이미 객체가 한번 생성되고
+ClassPathXmlApplicationContext 로 beans 로딩하면서 테스트 출력
+<bean class="soft.bean.Test" id="test"></bean> 로 인해 test 객체를 불러와서 또 한번 출력
+
+
+=> 따로 싱글톤x 설정 안하면 기본 싱글톤,  때문에 출력시 주소값 동일 
+
+		Test t1=ctx.getBean("test",Test.class);
+		System.out.println(t1);
+		Test t11=ctx.getBean("test",Test.class);
+		System.out.println(t11);
+
+
+
+----------------
+
+init-method : 생성자 호출 이후 자동호출
+destroy-method : 객체 소멸(close)될 때 자동 호출
+
+init-method, destroy-method 가 따로 설정되어 있지 않다면 default-init(destroy)-method가 호출
+
+-----------------
+
+// 디폴트 init 이나 destroy 설정할때는 맨 위에 설정해줌
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+// 디폴트 설정
+<beans 
+default-destroy-method="default_destroy"
+default-init-method="default_init"
+ xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean destroy-method="bean_destroy" 
+init-method="bean_init"
+id="t1" class="soft.bean.Test"
+lazy-init="true"/>
+
+<bean
+id="t2" class="soft.bean.Test2"
+lazy-init="true"/>
+
+
+</beans>
+
+
+
+------------------
+
+** BeanPost
+
+package soft.pro;
+
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class BeanPost implements BeanPostProcessor{
+	
+	// init 메소드 호출 전
+	public Object postProcessBeforeInitialization(Object bean, String name) {
+		System.out.println("before");
+		switch (name) {
+		case "t1":
+			System.out.println("t1");
+			break;
+		case "t2":
+			System.out.println("t2");
+			break;
+
+		default:
+			break;
+		}
+		return bean;
+	}
+	
+	// destroy 메소드 호출 후
+	public Object postProcessAfterInitialization(Object bean, String name) {
+		System.out.println("after");
+		switch (name) {
+		case "t1":
+			System.out.println("t1");
+			break;
+		case "t2":
+			System.out.println("t2");
+			break;
+
+		default:
+			break;
+		}
+		return bean;
+	}
+	
+}
+
+
+
+** beans.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean
+init-method="bean_init"
+id="t1" class="soft.bean.Test"
+lazy-init="true"/>
+
+<bean
+init-method="default_init"
+id="t2" class="soft.bean.Test2"
+lazy-init="true"/>
+
+<bean class="soft.pro.BeanPost"></bean>
+
+</beans>
+
+
+*** 메인
+
+package soft.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import soft.bean.Test;
+import soft.bean.Test2;
+import soft.pro.BeanPost;
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test t1=ctx.getBean("t1",Test.class);
+		System.out.println(t1);
+		
+		Test2 t2=ctx.getBean("t2",Test2.class);
+		System.out.println(t2);
+		
+
+	
+		ctx.close();
+	}
+
+}
+
+
+
+=> 출력결과
+11:53:55.892 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7dc36524
+11:53:56.070 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [soft/config/beans.xml]
+11:53:56.092 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'soft.pro.BeanPost#0'
+11:53:56.127 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 't1'
+테스트
+before
+t1
+bean_init
+after
+t1
+soft.bean.Test@4690b489
+11:53:56.128 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 't2'
+test2
+before
+t2
+default_init
+after
+t2
+soft.bean.Test2@79b06cab
+11:53:56.134 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@7dc36524, started on Mon Oct 12 11:53:55 KST 2020
+
+
+
+-----------
+
+
+
+** 퀴즈
+
+test
+bean_init1
+test2
+default_init
+default_destroy
+bean_destroy1
+
+순서로 출력
+
+=>
+* Test.java
+
+package soft.bean;
+
+public class Test {
+	public Test() {
+		System.out.println("test");
+	}
+	public void bean_init() {
+		System.out.println("bean_init1");
+	}
+	public void bean_destroy() {
+		System.out.println("bean_destroy1");
+	}
+	
+}
+
+
+* Test2.java
+
+package soft.bean;
+
+public class Test2 {
+	public Test2() {
+		System.out.println("test2");
+	}
+	public void default_init() {
+		System.out.println("default_init");
+	}
+	public void default_destroy() {
+		System.out.println("default_destroy");
+	}
+}
+
+
+* beans.xml
+
+<bean
+init-method="bean_init"
+destroy-method="bean_destroy"
+id="t1" class="soft.bean.Test"
+lazy-init="true"/>
+
+<bean
+init-method="default_init"
+destroy-method="default_destroy"
+id="t2" class="soft.bean.Test2"
+lazy-init="true"/>
+
+
+* 메인
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test t1=ctx.getBean("t1",Test.class);
+		System.out.println(t1);
+		
+		Test2 t2=ctx.getBean("t2",Test2.class);
+		System.out.println(t2);
+		
+	
+		ctx.close();
+	}
+
+
+-------------------
+
+
+** constructor : 주입
+사용 예 ) Test 클래스의 int형에 10이라는 값 주입/  String 은 type에  java.lang.String 이렇게 적음
+
+
+<bean
+id="t2" class="soft.bean.Test"
+lazy-init="true">
+
+<constructor-arg value="10" type="int"/>
+<constructor-arg value="안녕" type="java.lang.String"/>
+</bean>
+
+
+------------------
+
+* Test.java
+
+package soft.bean;
+
+public class Test {
+
+	private int d1;
+	private String d2;
+	private double d3;
+
+	public Test() {
+		System.out.println("기본");
+		this.d1=1;
+		this.d2=null;
+		this.d3=1.1;
+	}
+	public Test(int d1) {
+		this.d1=d1;
+		this.d2=null;
+		this.d3=1.1;
+	}
+	public Test(String d2) {
+		this.d1=d1;
+		this.d2=d2;
+		this.d3=1.1;
+	}
+	public Test(int d1, String d2, double d3) {
+		
+		this.d1=d1;
+		this.d2=d2;
+		this.d3=d3;
+	}
+	
+	public void pr() {
+		System.out.println(d1);
+		System.out.println(d2);
+		System.out.println(d3);
+	}
+}
+
+
+* beans.xml
+
+<bean
+id="t1" class="soft.bean.Test"
+lazy-init="true"/>
+
+<bean
+id="t2" class="soft.bean.Test"
+lazy-init="true">
+
+<constructor-arg value="10" type="int"/>
+</bean>
+
+<bean
+id="t3" class="soft.bean.Test"
+lazy-init="true">
+
+<constructor-arg value="text"/>
+</bean>
+
+<bean
+id="t4" class="soft.bean.Test"
+lazy-init="true">
+
+<constructor-arg value="20" type="int"/>
+<constructor-arg value="안녕" type="java.lang.String"/>
+<constructor-arg value="22.22" type="double"/>
+</bean>
+
+
+
+* 메인
+
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test t1=ctx.getBean("t1",Test.class);
+		Test t2=ctx.getBean("t2",Test.class);
+	Test t3=ctx.getBean("t3",Test.class);
+		Test t4=ctx.getBean("t4",Test.class);
+		
+		t1.pr();
+		t2.pr();
+		t3.pr();
+		t4.pr();
+		ctx.close();
+
+
+=> 
+constructor 로 값 주입할때 매칭되는 매개변수가 있는 생성자 필요함.
+생성자에 매개변수 String 값 한개 있으면 
+constructor 로 String 값 하나 지정 가능
+
+
+--------------
+
+* Test.java
+
+public class Test {
+
+	private int d1;
+
+	public int getD1() {
+		return d1;
+	}
+
+	public void setD1(int d1) {
+		this.d1 = d1;
+	}
+
+
+
+* bean.xml
+
+<bean
+id="t1" class="soft.bean.Test"
+lazy-init="true">
+<property name="d1" value="200"></property>
+</bean>
+
+
+* 메인
+
+		Test t1=new Test();
+		t1.setD1(300);
+		System.out.println(t1.getD1());
+
+		
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test t2=ctx.getBean("t1",Test.class);
+		System.out.println(t2.getD1());
+		
+		ctx.close();
+
+=> 출력하면
+t1.getD1=300
+t2.getD1= 200
+
+-----------------------
+
+*** List 등등에 값 넣기
+
+* beans.xml
+
+<bean id='t1' class='soft.bean.Test'>
+   <property name="l1">
+      <list>
+         <value>one</value>
+         <value>two</value>
+         <value>three</value>
+      </list>
+   </property>
+   
+   <property name="l2">
+      <list>
+         <value type='int'>10</value>
+         <value>20</value>
+         <value>30</value>
+      </list>
+   </property>
+   
+   <property name="l3">
+      <list>
+         <bean class='soft.bean.Data'/>
+         <bean class='soft.bean.Data'/>
+            <ref bean='data_1'></ref>
+            <ref bean='data_1'></ref>
+      </list>
+   </property>
+   
+   <property name="s1">
+      <set>
+         <value>one</value>
+         <value>two</value>
+         <value>three</value>
+      </set>
+   </property>
+   
+   <property name="s2">
+      <set>
+         <value type='int'>100</value>
+         <value type='int'>3</value>
+         <value type='int'>6</value>
+      </set>
+   </property>
+   
+   <property name="s3">
+      <set>
+         <bean class='soft.bean.Data'/>
+            <ref bean='data_1'></ref> 
+      </set>
+   </property>
+   
+   
+   <property name="m1">
+      <map>
+         <entry key="a1" value="str"/>
+         <entry key="a2" value="100" value-type='int'></entry>
+         <entry key="a3">
+            <bean class='soft.bean.Data'/>
+         </entry>
+         <entry key="a4" value-ref="data_1"></entry>   
+      </map>
+   </property>
+   
+   <property name="p1">
+      <props>
+         <prop key="pp1">one</prop>
+         <prop key="pp2">one</prop>
+         <prop key="pp3">one</prop>
+      </props>
+   
+   </property>
+   
+   </bean>
+
+   <bean id='data_1' class='soft.bean.Data' 
+   scope='prototype'/>
+   
+
+* Test.java
+
+package soft.bean;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+
+public class Test {
+
+	private List<String> l1;
+	private List<Integer> l2;
+	private List<Data> l3;
+	
+	private Set<String> s1;
+	private Set<Integer> s2;
+	private Set<Data> s3;
+	
+	private Map<String, Object> m1;
+	
+	private Properties p1;
+
+	public List<String> getL1() {
+		return l1;
+	}
+
+	public void setL1(List<String> l1) {
+		this.l1 = l1;
+	}
+
+	public List<Integer> getL2() {
+		return l2;
+	}
+
+	public void setL2(List<Integer> l2) {
+		this.l2 = l2;
+	}
+
+	public List<Data> getL3() {
+		return l3;
+	}
+
+	public void setL3(List<Data> l3) {
+		this.l3 = l3;
+	}
+
+	public Set<String> getS1() {
+		return s1;
+	}
+
+	public void setS1(Set<String> s1) {
+		this.s1 = s1;
+	}
+
+	public Set<Integer> getS2() {
+		return s2;
+	}
+
+	public void setS2(Set<Integer> s2) {
+		this.s2 = s2;
+	}
+
+	public Set<Data> getS3() {
+		return s3;
+	}
+
+	public void setS3(Set<Data> s3) {
+		this.s3 = s3;
+	}
+
+	public Map<String, Object> getM1() {
+		return m1;
+	}
+
+	public void setM1(Map<String, Object> m1) {
+		this.m1 = m1;
+	}
+
+	public Properties getP1() {
+		return p1;
+	}
+
+	public void setP1(Properties p1) {
+		this.p1 = p1;
+	}
+	
+
+}
+
+
+
+* 메인
+
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test t1=ctx.getBean("t1", Test.class);
+		List<String> l1=t1.getL1();
+		
+		for(String l:l1) {
+			System.out.println(l);
+		}
+		
+		ctx.close();
+
+=> List l1값 출력됨
+
+
+---------------------
+
+메인에서 Map 출력:
+
+
+		Map<String,Object> m1=t1.getM1();
+		System.out.println((String)m1.get("a1"));
+		System.out.println((Integer)m1.get("a2"));
+
+
+-> iterator 이용해보기
+
+		Set<String> s=m1.keySet();
+		Iterator<String> i=s.iterator();
+		while(i.hasNext()) {
+			System.out.println(m1.get(i.next()));
+		}
+
+------------------------
+
+메인에서 Properties 출력 : 
+		
+		Properties p1=t1.getP1();
+		System.out.println(p1.getProperty("pp1"));
+		System.out.println(p1.get("pp2"));
+		System.out.println(p1.get("pp3"));
+		
+
+------------------------
+
+주입:
+1. constructor-arg (생성자를 통한 주입)
+2. setter 
+3. ref
+4. 자동주입->autowire
+(이름, 타입, 생성자)
+autowire="byName" => 이름을 통한 자동주입
+=>  빈 객체의 프로퍼티 이름과 정의된 빈의 이름이 같은 것을 찾아서 자동으로 주입됨 
+=> byType 은 동일 타입 찾음. 단 동일 타입의 빈이 두개 이상 정의되어 있으면 오류
+
+
+@Autowired : 클래스에서 정의
+// bean 자동설정(주입)->byName 이나 byType 같은게 없으면 변수가 참조값이 됨(ex: 클래스에 private Bookdao bookdao; 전역변수 있으면 bookdao 객체가 참조값이 됨)
+
+------------------------
+
+<!-- ref를 이용해 id가 d1인 bean에 data1,2 객체 생성 -->
+<bean id="obj1" class="soft.bean.Test" scope="prototype">
+<property name="data1" ref="d1"/>
+<property name="data2" ref="d1"/>
+</bean>
+
+<bean id="d1" class="soft.bean.Data" scope="prototype"></bean>
+
+
+<!-- autowire : 자동 주입 -->
+<!-- Test 클래스에서 변수명(정의된 빈)이 d1,d2(빈 객체의 프로퍼티)와 동일하면 객체생성 -->
+<bean id="obj2" class="soft.bean.Test" autowire="byName"></bean>
+<bean id="d1" class="soft.bean.Data"/>
+<bean id="d2" class="soft.bean.Data"/>
+
+
+<!-- 자동주입을 이용해  동일타입이면 객체생성-->
+<!-- Test2클래스의 변수타입과 동일 타입이면 객체 생성 -->
+<bean id="obj3" class="soft.bean.Test2" autowire="byType"></bean>
+<bean class="soft.bean.Data2"/>
+
+----------------------
+
+
+** 주입연습 코드
+
+* Test 클래스
+
+package soft.bean;
+
+
+public class Test {
+	// Data 클래스의 객체 두개 생성해서 세터게터
+	
+	private Data d1;
+	private Data d2;
+	public Data getD1() {
+		return d1;
+	}
+	public void setD1(Data d1) {
+		this.d1 = d1;
+	}
+	public Data getD2() {
+		return d2;
+	}
+	public void setD2(Data d2) {
+		this.d2 = d2;
+	}
+	
+
+}
+
+------------
+
+* Test2 클래스
+package soft.bean;
+
+public class Test2 {
+	private Data2 dd1;
+	private Data2 dd2;
+
+	public Data2 getDd1() {
+		return dd1;
+	}
+
+	public void setDd1(Data2 dd1) {
+		this.dd1 = dd1;
+	}
+
+	public Data2 getDd2() {
+		return dd2;
+	}
+
+	public void setDd2(Data2 dd2) {
+		this.dd2 = dd2;
+	}
+
+}
+
+---------
+
+* Data, Data2 클래스 생성
+-----------
+* beans.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- ref를 이용해 id가 d1인 bean에 data1,2 객체 생성 -->
+<bean id="obj1" class="soft.bean.Test" scope="prototype">
+<property name="d1" ref="d1"/>
+<property name="d2" ref="d1"/>
+</bean>
+
+<bean id="d1" class="soft.bean.Data" scope="prototype"></bean>
+
+
+<!-- autowire : 자동 주입 -->
+<!-- Test 클래스에서 변수명(정의된 빈)이 d1,d2(빈 객체의 프로퍼티)와 동일하면 객체생성 -->
+<bean id="obj2" class="soft.bean.Test" autowire="byName"></bean>
+<bean id="d2" class="soft.bean.Data"/>
+
+
+<!-- 자동주입을 이용해  동일타입이면 객체생성-->
+<!-- Test2클래스의 변수타입과 동일 타입이면 객체 생성 -->
+<bean id="obj3" class="soft.bean.Test2" autowire="byType"></bean>
+<bean class="soft.bean.Data2"/>
+
+</beans>
+
+
+----------
+* 메인
+
+				ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test obj1=ctx.getBean("obj1",Test.class);
+		System.out.println(obj1.getD1());
+		System.out.println(obj1.getD2());
+		
+		Test obj2=ctx.getBean("obj2", Test.class);
+		System.out.println(obj2.getD1());
+		System.out.println(obj2.getD2());
+		
+		Test2 obj3=ctx.getBean("obj3", Test2.class);
+		System.out.println(obj3.getDd1());
+		System.out.println(obj3.getDd2());
+		
+		ctx.close();
+
+
+=> 객체 주소값 출력됨
+
+----------------------------
+
+@Autowired
+
+자바코드내에 자동주입 코드 넣을 수 있음(클래스 전역변수 위치에)
+
+-------------------------
+
+* Bookdao.java
+
+package co.book.dao;
+
+
+import java.awt.print.Book;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Bookdao implements InitializingBean, DisposableBean {
+	// 빈 사용 초기화 처분
+	
+		
+		private Map<String, Book> bo=new HashMap<String, Book>();
+		
+		public void insert(Book book) {
+			bo.compute(book.getnum(),book);
+		}
+		
+		public Book sel(String num) {
+			return bo.get(num);
+		}
+		
+		public void update(Book book) {
+			
+		}
+		
+		public void delete(Book book) {
+			
+		}
+		
+		public Map<String, Book> getbo(){
+			return bo;
+		}
+		
+		@Override
+		public void afterPropertiesSet() throws Exception {
+			System.out.println("빈 객체 생성");
+		}
+		
+		@Override
+		public void destroy() throws Exception {
+			System.out.println("빈 객체 소멸");
+		}
+}
+
+
+******************
+
