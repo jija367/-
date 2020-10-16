@@ -1,0 +1,278 @@
+//bean 객체 생성하는 자바파일임을 선언
+@Configuration
+//스캔하는 패키지가 여러개면 배열형태로
+@ComponentScan(basePackages={"co.soft.beans","co.soft.advisior"})
+//aspect 설정한거 끌고온다는 의미
+@EnableAspectJAutoProxy
+
+
+--------------------------------
+
+** AOP 어노테이션 연습
+
+* Advisior
+
+package co.soft.advisor;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class Advisor {
+	
+	@Before("execution(* method1())")
+	public void beforeMethod() {
+		System.out.println("before");
+	}
+	@After("execution(* method1())")
+	public void afterMethod() {
+		System.out.println("after");
+	}
+	@Around("execution(* method1())")
+	public Object aroundMethod(ProceedingJoinPoint p) throws Throwable {
+		System.out.println("around");
+		Object r = p.proceed();
+		System.out.println("around");
+		return r;
+	}
+	@AfterReturning("execution(* method1())")
+	public void afterReturningMethod() {
+		System.out.println("afterReturningMethod");
+	}
+	@AfterThrowing("execution(* method1())")
+	public void afterThrowingMethod() {
+		System.out.println("afterThrowingMethod");
+	}
+}
+
+*************************
+
+* Test1
+package co.soft.beans;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Test1 {
+	
+	public void method1() throws Exception {
+		System.out.println("test");
+		int a = 10/0;
+	}
+}
+
+************************
+
+* BeanConfig
+
+package co.soft.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+@Configuration
+@ComponentScan(basePackages = {"co.soft.beans", "co.soft.advisor" })
+@EnableAspectJAutoProxy
+public class BeanConfig {
+
+}
+
+
+********************
+
+* beans.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                       http://www.springframework.org/schema/beans/spring-beans.xsd
+                       http://www.springframework.org/schema/context
+                       http://www.springframework.org/schema/context/spring-context.xsd
+                       http://www.springframework.org/schema/aop
+                       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<context:component-scan base-package="co.soft.beans" />
+<context:component-scan base-package="co.soft.advisor" />
+<aop:aspectj-autoproxy />
+<!--  -->
+</beans>
+                       
+
+**********************
+
+*main
+
+package co.soft.main;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import co.soft.beans.Test1;
+import co.soft.config.BeanConfig;
+
+public class MainClass {
+	public static void main(String[]args) {
+		ClassPathXmlApplicationContext ctx1=
+			new ClassPathXmlApplicationContext("co/soft/config/beans.xml");
+	
+		Test1 x1 = ctx1.getBean(Test1.class);
+		
+		try {
+			x1.method1();
+		} catch(Exception e) {}
+		ctx1.close();
+		
+		AnnotationConfigApplicationContext ctx=
+				new AnnotationConfigApplicationContext(BeanConfig.class);
+		
+Test1 x2 = ctx.getBean(Test1.class);
+		
+		try {
+			x2.method1();
+		} catch(Exception e) {}
+		ctx.close();
+		
+	}
+}
+
+
+
+************************
+
+출력결과 :
+
+around
+before
+test
+afterThrowingMethod
+after
+
+=>around는 비포 애프터 이전 이후 출력(ProceedingJoinPoint 클래스의 proceed() 함수 때문)
+
+=>point-cut으로 잘라낸 경우엔 before가 먼저 출력
+
+-------------------------------------
+
+** MVC
+
+* java : 
+자바파일이 위치한다. 
+주로 패키지를 묶어서 관리. 
+웹 어플리케이션에서 사용되는 Controller, Service, DAO 객체들이 위치.
+
+* webapp :
+웹과 관련된 파일들(스프링 설정파일, JSP, HTML 파일 등)이 위치한다.
+
+* rewources : 
+JSP 파일을 제외한 HTML, CSS, JS 파일이 위치한다.
+
+* spring폴더 :
+스프링 컨테이너를 생성하기 위한 스프링 설정파일이 위치한다.
+
+* views 폴더 : 
+View로 사용될 JSP 파일이 위치한다.
+
+* pom.xml : 
+메인 repository에서 프로젝트에 필요한 라이브러리를 내려받기 위한 메이븐 설정 파일
+
+-------------------
+
+웹 어플리케이션에서 사용자의 요청이 발생하면 DispatcherServlet 클래스가 요청을 받음
+
+개발자는 DispatcherServlet  을 서블릿으로 등록해야 함
+그리고 사용자의 모든 요청을 받기 위해서 서블릿으로 맵핑을 해줘야 한다(경로는 '/' 로 설정)
+
+DispatcherServlet  
+1) HandlerMapping(사용자의 요청에 부합하는 컨트롤러 객체 검색해서 DispatcherServlet  에게 알려줌)
+
+2) HandlerAdapter(사용자의 요청에 부합하는 컨트롤러의 메소드 실행 요청)
+(ModelAndView 객체 이용하여 컨트롤러로 넘어감)
+2-1) Controller(사용자의 요청을 실제로 처리하는 객체들이 있음) 
+2-2) Service
+2-3) DAO
+2-4) DataBase
+
+3) ViewResolver
+3-1) View(사용자의 응답 브라우저)
+
+-------------------------
+
+프론트 컨트롤러(DispatcherServlet) -> 컨트롤러
+
+HttpServletRequest :
+요청에서 HttpServletRequest 객체가 소멸하기까지 상태정보를 유지하고자 할 때, 
+또는 한번의 요청으로 실행된 페이지끼리 정보를 공유하고자 할 때 사용
+
+HttpServletRequest 객체의 setAttribute()로 데이터를 등록하고
+요청 재지정으로 getAttribute()로 메소드를 추출 할 수도 있음
+
+
+@RequestMapping("경로") : 
+요청 URL을 어떤 메소드가 처리할 지 결정하는 것(경로지정)
+
+@Controller : 
+이 파일이 컨트롤러임을 선언
+view를 반환하기 위해 사용
+=>
+클라이언트는 URI형식으로 웹 서비스에 요청을 보냄-> 
+Mapping 되는 Handler를 찾는 DispatcherServlet 이 요청을 인터셉트 한다.->
+Controller가 요청을 처리한 후에 응답을 DispatcherServlet으로 반환하고
+DispatcherServlet은 View를 사용자에게 반환한다.
+
+
+
+
+컨트롤러 구현 -> 클라이언트의 요청을 처리할 메소드를 개발
+
+---------------------
+
+** 스프링 플젝(RequestMapping 연습)
+
+* HomeController
+
+package co.soft.com;
+
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+   
+   @RequestMapping("/") //  "/" :모든 경로라는 의미(=jsp의 파일명) or (* .mvc)라고 적어도 됨
+   public String home(Model model) {
+      return "home";
+   }
+   @RequestMapping("/du") //=>a경로라는 의미
+   public String du(Model model) {
+      return "du";
+   }
+   @RequestMapping(value="/seung",method=RequestMethod.GET)
+   public String seung(Model model) {
+      return "seung";
+   }
+}
+
+-------------------------
+
+
