@@ -1,0 +1,333 @@
+web.xml : 아파티 톰캣 안에 서블릿 설정
+스프링 플젝 할때 필요
+-> 다이나믹웹프로젝트 생성-> 메이븐플젝으로 config-> 웹 컨텐트>WEB-INF 에 web.xml 생성->
+Server 폴더에있는 web.xml에서 아래 코드 긁어서 복붙.
+<servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+그리고 위에 이 코드도 복붙
+<web-app xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="4.0">
+
+
+=> 최종 : 
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="4.0">
+	
+<!-- 현재 웹앱(앱어플리케이션)에서 받아들이는 모든 요청에 대해 appServlet이라는 이름으로
+되어있는 서블릿을 사용하겠다는 의미 -->	
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+
+
+=>일종의 디스패쳐클래스 설정
+
+-----------------------------
+
+servlet / jsp url 주소
+사용자가 서버에 접속해서 서비스를 받기 위해 입력하는 주소: URL
+
+도메인주소: 포트번호/경로1/경로2
+servlet / jsp 에서 첫번째 경로는 Context Path 라고 부른다.
+하나의 서버에서 각 웹 어플리케이션을 구분하기 위해 지정되는 이름이며 그 이후 경로는 하위경로이다.
+
+-----------------------
+
+** 메소드 방식(get, post)에 따른 연결 연습
+
+* Test 클래스
+
+
+package co.soft.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class Test {
+
+	@RequestMapping(value = "/test1", method = RequestMethod.GET)
+	public String test1() {
+		return "test1";
+	}
+	
+	@RequestMapping(value="/test2", method=RequestMethod.POST)
+	public String test2() {
+		return "test2";
+	}
+	
+	// get, post 동시에 받는 방법1
+	//get,post 둘다 작성해서 동시에 받을 수있음
+	@RequestMapping(value="/test3", method=RequestMethod.GET)
+	public String test3() {
+		return "test3";
+	}
+	
+	@RequestMapping(value="/test3", method=RequestMethod.POST)
+	public String test3_post() {
+		return "test3";
+	}
+	
+	// get, post 동시에 받는 방법2
+	@RequestMapping(value="/test6",method= {RequestMethod.GET, RequestMethod.POST})
+	public String test6() {
+		return "test6";
+	}
+	
+	
+	@GetMapping("/test4")
+	public String test4() {
+		return "test4";
+	}
+	
+	@PostMapping("/test5")
+	public String test5() {
+		return "test5";
+	}
+	
+}
+
+
+------------------
+
+index.jsp
+
+*따로 post 설정 안하면 get임
+
+
+<a href="test1">test1</a><br>
+<form action="test1" method="post">
+<button type="submit">test1</button>
+</form>
+
+<a href="test2">test2</a><br>
+<form action="test2" method="post">
+<button type="submit">test2</button>
+</form>
+
+<a href="test3">test3</a><br>
+<form action="test3" method="post">
+<button type="submit">test3</button>
+</form>
+
+<a href="test4">test4</a><br>
+<form action="test4" method="post">
+<button type="submit">test4</button>
+</form>
+
+<a href="test5">test5</a><br>
+<form action="test5" method="post">
+<button type="submit">test5</button>
+</form>
+
+<a href="test6">test6</a><br>
+<form action="test6" method="post">
+<button type="submit">test6</button>
+</form>
+
+
+=>Test 클래스에서 메소드방식을 post로 준 경우 form 에서는 정상연결(메소드 post 여서)되지만 a태그로는 연결안됨(get방식)
+=> Test 클래스에서 메소드 방식 get, post 둘다 준 경우 a태그와 submit 둘다 연결 가능
+
+-------------------------------
+
+
+* 값을 받아올때
+1. HttpServletRequest 클래스 : 
+Spring MVC 에서 HttpServletRequest 객체를 주입 받아 사용가능
+
+값 전달할때는 
+setAttribute("name", value); 이용
+
+2. WebRequest 클래스 : 
+HttpServletRequest  클래스보다 확장된 개념. HttpServletRequest 와 이용방법은 동일.
+
+값 전달할때는 
+setAttribute("name", value, int); 
+이용(매개변수3개, 마지막 int형 scope)
+
+3. @PathVariable : 
+데이터가 요청 주소에 있을 경우, 값을 주입 받을 수 있는 어노테이션.
+-> 요청주소/값1/값2 ...
+-> 
+@GetMapping("/t1/{d1}/{d2}/{d3}")
+public String t1(
+@PathVariable int d1, 
+@PathVariable int d2, 
+@PathVariable  int d3){       }
+
+값 전달할때 따로 셋팅 안해도 자동 전달됨
+
+
+4. @RequestParam :
+파라미터 값을 직접 주입받을 수 있음.
+->지정된 변수이름과 파라미터 이름이 같을 경우 주입 받음.
+->이름이 다르면 밸류값으로 지정
+->required 가 true냐 false 냐로 구분
+
+public String t1(@RequestParam(value="d1", required) int n1, )
+
+값 전달하는 객체가 따로 없어 HttpServletRequest 객체의 매개변수를 추가해서 setAttribute() 함수로 전달함
+예) 
+   @GetMapping("/t6")
+   public String t6(@RequestParam (value="a") int a, @RequestParam int b, @RequestParam int c,HttpServletRequest r) {
+      r.setAttribute("a", a);
+      r.setAttribute("b", b);
+      r.setAttribute("c", c);
+      return "result";
+   }
+
+
+---------------------------------
+
+위 에서 값 받아오는 방식 응용해서 출력해보기
+=>
+
+* Test 클래스
+
+package co.soft.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
+
+@Controller
+public class Test {
+   @RequestMapping(value="/t1",method=RequestMethod.GET)
+   public String t1(HttpServletRequest request) {
+      String a = request.getParameter("a");
+      String b = request.getParameter("b");
+      String c = request.getParameter("c");
+      
+      System.out.println(a);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+   
+   @PostMapping("/t2")
+   public String t2(HttpServletRequest request) {
+      String a = request.getParameter("a");
+      String b = request.getParameter("b");
+      String c = request.getParameter("c");
+      
+      System.out.println(a);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+   
+   @RequestMapping(value="/t3",method=RequestMethod.GET)
+   public String t3(WebRequest request) {
+      String a = request.getParameter("a");
+      String b = request.getParameter("b");
+      String c = request.getParameter("c");
+      
+      System.out.println(a);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+   
+   @RequestMapping(value="/t4/{a}/{b}/{c}",method=RequestMethod.GET)
+   public String t4(@PathVariable int a,
+               @PathVariable int b,
+               @PathVariable int c) {
+      
+      System.out.println(a);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+
+   @GetMapping("/t5")
+   public String t5(@RequestParam int a,
+         @RequestParam int b,
+         @RequestParam int c) {
+      
+      System.out.println(a);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+   
+   // value 이름이 다르면 직접 주입
+   @GetMapping("/t6")
+   public String t6(@RequestParam(value="a") int aa,
+         @RequestParam int b,
+         @RequestParam int c) {
+      
+      System.out.println(aa);
+      System.out.println(b);
+      System.out.println(c);
+      
+      return "result";
+   }
+
+}
+
+
+***********************
+
+* index.jsp
+
+<a href="t1?a=10&b=20&c=30">t1</a>
+<form action="t2" method="post">
+a: <input name="a"><br>
+b: <input name="b"><br>
+c: <input name="c"><br>
+<input type="submit" value="t2">
+</form>
+
+<a href="t4/10/20/30">t4</a><br>
+<a href="t5?a=10&b=20&c=30">t5</a><br>
+<a href="t6?a=10&b=20&c=30">t6</a><br>
+
+
+-----------------------------
+
+
+과제:
+
+수1=100
+수2=50
+결과=150
+
+@RequestParam 어노테이션 이용
+<form> 태그 이용
+Spring MVC or 메이븐으로
+출력은 EL언어(표현언어)
+Style 적용(
+중앙에 출력,
+top-margin=0,
+font-size=1.5em)
+
+비대면은 메일로
+
+-----------------------------
+
+
