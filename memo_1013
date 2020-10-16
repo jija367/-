@@ -1,0 +1,311 @@
+**어노테이션
+
+@Configuration : 해당 클래스에 빈 등록하겠다
+
+
+* Config.java
+
+package soft.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+
+import soft.bean.Test;
+import soft.bean.Test2;
+import soft.bean.Test3;
+import soft.bean.Test4;
+
+@Configuration
+public class Config {
+	@Bean
+	public Test test1() {
+		Test t1 = new Test();
+		return t1;
+	}
+
+	@Bean(name = "test100")
+	public Test test10() {
+		Test t1 = new Test();
+		return t1;
+	}
+
+	@Bean
+	@Lazy // lazy-init true 라고 지정
+	public Test2 test2() {
+		Test2 t2 = new Test2();
+		return t2;
+	}
+	
+	@Bean
+	@Scope("prototype")
+	public Test3 test3() {
+		Test3 t3=new Test3();
+		return t3;
+	}
+	
+	@Bean
+	public Test4 test4() {
+		Test4 t4=new Test4();
+		return t4;
+	}
+	
+	@Bean
+	@Primary // 우선순위
+	public Test4 test5() {
+		Test4 t5=new Test4();
+		return t5;
+	}
+}
+
+
+
+*********************
+
+* beans.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="x1" class="soft.bean.Test"/>
+
+<!-- 싱글톤은 아니지만 동일 아이디 호출시 동일 주소에서 호출됨 -->
+<bean id="x2" class="soft.bean.Test2"
+lazy-init="true"/>
+
+<!-- 프로토타입은 싱글톤이 아님. 호출할때마다 객체 새로생성 -->
+<bean id="x3" class="soft.bean.Test3"
+scope="prototype"/>
+
+<bean class="soft.bean.Test4"/>
+<bean class="soft.bean.Test4" primary="true"/>
+
+</beans>
+
+*************************
+
+* 메인
+
+package soft.main;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import soft.bean.Test;
+import soft.bean.Test2;
+import soft.bean.Test3;
+import soft.config.Config;
+
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		
+		ClassPathXmlApplicationContext ctx= 
+				new ClassPathXmlApplicationContext("soft/config/beans.xml");
+		
+		Test x1=ctx.getBean("x1",Test.class);
+		System.out.println(x1);
+		
+		Test x11=ctx.getBean("x1",Test.class);
+		System.out.println(x11);
+		
+		System.out.println("-------------------");
+		
+		Test2 x2=ctx.getBean("x2",Test2.class);
+		System.out.println(x2);
+		Test2 x22=ctx.getBean("x2",Test2.class);
+		System.out.println(x22);
+		
+		System.out.println("-------------------");
+		
+		Test3 x3=ctx.getBean("x3",Test3.class);
+		System.out.println(x3);
+		Test3 x33=ctx.getBean("x3",Test3.class);
+		System.out.println(x33);
+		
+		ctx.close();
+		
+		System.out.println("------ 어노테이션  ----------");
+		// 어노테이션 파일 로딩(자바)
+		// 괄호안엔 어노테이션 설정한 클래스명
+		AnnotationConfigApplicationContext ctx1=
+				new AnnotationConfigApplicationContext(Config.class);
+		
+		// getBean 에서 함수명이 객체명이 됨
+		Test test1=ctx1.getBean("test1",Test.class);
+		System.out.println(test1);
+		
+		Test test100=ctx1.getBean("test100",Test.class);
+		System.out.println(test100);
+		
+		System.out.println("-------------------");
+		
+		Test2 test2=ctx1.getBean("test2",Test2.class);
+		System.out.println(test2);
+		Test2 test22=ctx1.getBean("test2",Test2.class);
+		System.out.println(test22);
+		
+		System.out.println("-------------------");
+		
+		Test3 test3=ctx1.getBean("test3",Test3.class);
+		System.out.println(test3);
+		Test3 test33=ctx1.getBean("test3",Test3.class);
+		System.out.println(test33);
+		
+	}
+
+}
+
+----------------------------------------
+
+xml 속성추가연습
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="x1" class="co.soft.beans.Test" lazy-init="true">
+
+      <!-- 주입 -->
+      <constructor-arg value="200" type="int" index="0" />
+      <constructor-arg value="bb" index="1" />
+      <constructor-arg ref="d_1" index="2" /> 
+   </bean>
+
+
+   <bean id="x2" class="co.soft.beans.Test" lazy-init="true">
+      
+      <property name="dd1" value="20"></property> <!-- 정수 -->
+      <property name="dd2" value="hello"></property><!--문자 -->
+      <property name="dd3" ref="d_1"></property><!-- 객체 -->
+   </bean>
+
+   <bean id="d_1" class="co.soft.beans.Data"></bean>
+
+   <bean id="dd1" class="co.soft.beans.Data2" />
+   <bean id="dd2" class="co.soft.beans.Data2" />
+   <bean id="x3" class="co.soft.beans.Test2" lazy-init="true"
+      autowire="byName" />
+
+
+   <bean class="co.soft.beans.Data3" />
+   <bean id="x4" class="co.soft.beans.Test3" autowire="byType" />
+
+</beans>
+
+----------------------------------------
+
+클래스 3개
+각각 생성자 만듦
+
+* java -> 어노테이션
+
+@Configuration
+public class Config {
+	@Bean
+	public Test test() {
+		return new Test();
+	}
+	@Bean
+	public Test2 test2() {
+		return new Test2();
+	}
+	@Bean
+	public Test3 test3() {
+		return new Test3();
+	}
+}
+
+
+**********
+
+* xml -> <bean>
+
+<bean id="test" class="soft.bean.Test"></bean>
+<bean id="test2" class="soft.bean.Test2"></bean>
+<bean id="test3" class="soft.bean.Test3"></bean>
+
+----------------------------------------
+
+
+** 어노테이션 config 클래스 연습
+
+package co.soft.config;
+
+import org.springframework.beans.factory.annotation.Autowire;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+
+import co.soft.beans.Data1;
+import co.soft.beans.Data2;
+import co.soft.beans.Test1;
+import co.soft.beans.Test2;
+import co.soft.beans.Test3;
+import co.soft.beans.Test4;
+import co.soft.beans.Test5;
+import co.soft.beans.Test6;
+
+@Configuration
+public class Config {
+
+   @Bean(initMethod = "init1", destroyMethod = "destroy1")
+   @Lazy
+   public Test1 obj1() {
+      return new Test1();
+   }
+
+   @Bean
+   @Lazy
+   public Test2 obj2() {
+      return new Test2();
+   }
+
+   // 밑에 @Bean 두개 있어야함
+   @Bean
+   public Data1 data1() {
+      return new Data1();
+   }
+
+   @Bean
+   public Data2 data2() {
+      return new Data2();
+   }
+
+   @Bean(autowire = Autowire.BY_NAME)
+   public Test3 obj3() {
+      return new Test3();
+   }
+
+   @Bean
+   public Test4 obj4() {
+      return new Test4();
+   }
+
+   @Bean
+   public Test5 obj5() {
+      return new Test5();
+   }
+
+   @Bean
+   public Test6 obj6() {
+      return new Test6();
+   }
+
+}
+
